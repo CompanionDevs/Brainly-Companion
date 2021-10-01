@@ -510,8 +510,9 @@ function loadedhome() {
         let ticket = document.createElement("button")
         if (i !== 0) {
             let section = document.querySelector("#main-content > div.sg-animation-fade-in-fast > div.brn-feed-items > div:nth-child(" + i + ") > div > div > div.brn-feed-item__footer > div > div")
+            let question = document.querySelector("#main-content > div.sg-animation-fade-in-fast > div.brn-feed-items > div:nth-child(" + i +") > div > div")
             if (section.id === "") {
-                section.appendChild(report)
+                question.appendChild(report)
                 const button = "report" + i
                 const constant = i
 
