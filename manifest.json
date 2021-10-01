@@ -1,0 +1,52 @@
+{
+"update_url": "https://clients2.google.com/service/update2/crx",
+
+    "name":"Brainly Companion",
+    "version":"2.5",
+    "manifest_version":3,
+    
+    "content_scripts":[
+    
+        {
+        "matches": ["*://brainly.com/*","*://brainly.in/*","*://brainly.lat/*","*://brainly.ph/*","*://brainly.co.id/*","*://nosdevoirs.fr/*","*://brainly.pl/*","*://eodev.com/*","*://brainly.ro/*","*://Znanija.com/*"],
+        "css": ["styles/homepage.css"],
+        "js": ["script/homepage.js"]
+        },
+        
+        {
+        "matches":
+["*://brainly.com/messsages*","*://brainly.in/messages*","*://brainly.lat/messages*","*://brainly.ph/messages*","*://brainly.co.id/messages*","*://nosdevoirs.fr/messages*","*://brainly.pl/messages*","*://eodev.com/messages*","*://brainly.ro/messages*","*://Znanija.com/messages*"],
+        "css": ["styles/messages.css"]},
+        {
+        "matches":
+["*://brainly.com/app*","*://brainly.in/app*","*://brainly.lat/app*","*://brainly.ph/app*","*://brainly.co.id/app*","*://nosdevoirs.fr/app*","*://brainly.pl/app*","*://eodev.com/app*","*://brainly.ro/app*","*://Znanija.com/app*"],
+        "css": ["styles/app.css"],
+        "js": ["script/app.js"]},
+        {
+        "matches": ["*://brainly.com/moderation/ranking*","*://brainly.in/moderation/ranking*","*://brainly.lat/moderation/ranking*","*://brainly.ph/moderation/ranking*","*://brainly.co.id/moderation/ranking*","*://nosdevoirs.fr/moderation/ranking*","*://brainly.pl/moderation/ranking*","*://eodev.com/*","*://brainly.ro/moderation/ranking*","*://Znanija.com/moderation/ranking*"],
+        "css": ["styles/ranking.css"]},
+        {
+        "matches": ["*://brainly.com/question*","*://brainly.in/question*","*://brainly.lat/question*","*://brainly.ph/question*","*://brainly.co.id/question*","*://nosdevoirs.fr/question*","*://brainly.pl/question*","*://eodev.com/question*","*://brainly.ro/question*","*://Znanija.com/question*"],
+        "css": ["styles/question.css"]},
+        {
+        "matches": ["*://brainly.com/tasks/archive_mod*","*://brainly.in/tasks/archive_mod*","*://brainly.lat/tasks/archive_mod*","*://brainly.ph/tasks/archive_mod*","*://brainly.co.id/tasks/archive_mod*","*://nosdevoirs.fr/tasks/archive_mod*","*://brainly.pl/tasks/archive_mod*","*://eodev.com/tasks/archive_mod*","*://brainly.ro/tasks/archive_mod*","*://Znanija.com/tasks/archive_mod*","*://brainly.com/users*","*://brainly.in/users*","*://brainly.lat/users*","*://brainly.ph/users*","*://brainly.co.id/users*","*://nosdevoirs.fr/users*","*://brainly.pl/users*","*://eodev.com/users*","*://brainly.ro/users*","*://Znanija.com/users*","*://brainly.com/users*","*://brainly.in/users*","*://brainly.lat/users*","*://brainly.ph/users*","*://brainly.co.id/users*","*://nosdevoirs.fr/users*","*://brainly.pl/users*","*://eodev.com/users*","*://brainly.ro/users*","*://Znanija.com/users*","*://brainly.com/profile*","*://brainly.in/profile*","*://brainly.lat/profile*","*://brainly.ph/profile*","*://brainly.co.id/profile*","*://nosdevoirs.fr/profile*","*://brainly.pl/profile*","*://eodev.com/profile*","*://brainly.ro/profile*","*://Znanija.com/profile*"],
+        "css": ["styles/mod.css"],
+        "js":["script/mod.js"]},
+        {
+        "matches": ["*://brainly.com/archive*","*://brainly.in/archive*","*://brainly.lat/archive*","*://brainly.ph/archive*","*://brainly.co.id/archive*","*://nosdevoirs.fr/archive*","*://brainly.pl/archive*","*://eodev.com/archive*","*://brainly.ro/archive*","*://Znanija.com/archive*"],
+        "css": ["styles/archive.css"]
+        }],
+    
+    "action": {
+    
+    "default_popup": "icon/popup.html"
+    
+    },
+    
+
+    "icons": {
+        "128": "icon/icon.png"
+      }
+    
+    
+}
