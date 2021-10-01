@@ -1,0 +1,116 @@
+#moderate-functions-panel .covering-text .icon{
+background: none!important;
+}
+#moderate-functions-panel .covering-text .text{
+top: 160px!important;
+color: white!important;
+}
+#moderate-functions-panel .covering-text{
+background-color: #4fc3f6!important;
+height: 155px!important;
+border: 1px solid black!important;
+}
+#moderate-functions-panel .covering-text .text.orange{
+color: white!important;
+}
+#moderate-functions-panel .content-scroll {
+    background: white!important;
+    border-color: #000000!important;
+border-radius: 15px!important;
+}
+#moderate-functions-panel .content-scroll a {
+    color: black!important
+}
+#moderate-functions-panel .statistics .content-scroll {
+    color: black!important;
+border-radius: 20px!important;
+}
+#moderation-all .top .sub-header{
+background-color:#FF7968!important;
+border: none!important
+}
+select{
+border: 1px solid black!important;
+}
+select, textarea, input[type=text], input[type=password], input[type=datetime], input[type=datetime-local], input[type=date], input[type=month], input[type=time], input[type=week], input[type=number], input[type=email], input[type=url], input[type=search], input[type=tel], input[type=color], .uneditable-input{
+color: black!important;
+border-radius: 20px!important;
+}
+#moderation-all .content .moderation-item .header{
+background-color: #C3D1DD!important;
+border-radius: 5px!important;
+border: 1px solid rgb(195, 209, 221)!important;
+}
+#moderation-all {
+border: 1px solid black!important;
+border-radius: 20px!important;
+}
+#moderation-all .content .moderation-item{
+border: none!important;
+}
+#moderation-all .content .moderation-item .content{
+border-radius: 7px!important;
+border: 1px solid #C3D1DD!important;
+}
+#moderation-all .content .moderation-item .header .qa{
+color: white!important;
+background: black!important;
+}
+#moderation-all .content .loader{
+border: 1px solid black!important;
+background-color:#FBBE2E!important;
+border-radius: 20px!important;
+}
+#moderation-all .content .loader > .loadMore{
+color: black!important;
+}
+#content{
+border-radius: 20px!important;
+padding-bottom: 0px!important
+}
+#html .mint #profile #main-left .personal_info{
+border: 2px solid black!important;
+}
+.mint-button-secondary--with-icon{
+border-color: black!important;
+background:black!important;
+}
+.sg-select__element{
+border: 2px solid #1a1a1a!important;
+color: white!important;
+background: #1a1a1a!important;
+}
+#moderate-functions-panel .covering-text{
+background-color: #2fc3f6!important;
+}
+#moderation-all .top .sub-header{
+border: none!important;
+}
+#moderate-functions-panel .panel .content-scroll #moderate-functions ul li.marked a{
+color: red!important;
+}
+#html .mint .panel .content-scroll{
+width: 130px!important;
+}
+#html .mint .mint-header .mint-input{
+border-color: black!important;
+}
+#moderate-functions-panel .statistics .content-scroll{
+color: black!important;
+}
+#moderation-all .content .loader.calm > .loadMore:hover{
+background: #DBA628!important;
+border-radius: 20px!important;
+}
+.btn.zadane-green{
+background-image: none!important;
+}
+#toplayer .contener-center.mod .moderation-toplayer .moderation-task .boxxy.action-box > div > p > textarea, #toplayer .contener-center.mod .moderation-toplayer .moderation-response .boxxy.action-box > div > p > textarea, #toplayer .contener-center.mod .moderation-toplayer .moderation-taskline .boxxy.action-box > div > p > textarea{
+border-radius: 0px!important;
+}
+#html .mint #footer{
+background: #2fc3f6!important;
+}
+.sg-button__text{
+    font-weight: 600;
+}
