@@ -725,10 +725,11 @@ function loadednew() {
         if (r !== 0) {
             
             let section = document.querySelector("body > div.js-page-wrapper > div > div.js-react-single-page-entry > div.sg-layout > div.sg-layout__container.sg-layout__container--reversed-order.sg-layout__container--no-margin-top > div.sg-layout__content.ProfilePage__container--3mI4J > main > div > div:nth-child(2) > div > div:nth-child("+r+") > div > div.sg-flex.sg-flex--full-width.sg-flex--align-items-flex-end.sg-flex--justify-content-flex-end")
+            let question = document.querySelector("#main-content > div.sg-animation-fade-in-fast > div.brn-feed-items > div:nth-child(" + i +") > div > div")
             if (section.id === "") {
                 
                 if (window.location.href.includes("questions") === true){
-                    section.appendChild(report)
+                    question.appendChild(report)
                 }
                 
                 const button = "report" + r
