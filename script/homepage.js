@@ -12,31 +12,10 @@
 // and injected into the same or different pages.
 let area = document.querySelector("body > div.js-page-wrapper > div > div.sg-flex.sg-flex--column.js-feed > div.sg-layout > div > div.sg-layout__aside-content")
 
-function getMeta(metaName) {
-    const metas = document.getElementsByTagName('meta');
 
-    for (let i = 0; i < metas.length; i++) {
-        if (metas[i].getAttribute('name') === metaName) {
-            return metas[i].getAttribute('content');
-        }
-    }
 
-    return '';
-}
 
-let data = getMeta('user_data')
-data = JSON.parse(data)
-let ranks = data["ranks"]
-let i;
 
-for (i = 0; i < ranks.length; i++) {
-    let name = ranks[i]["name"]
-
-    if (String(name).includes("Moderator") === true) {
-        localStorage.setItem("0576474418", true)
-    }
-}
-let isadmin = localStorage.getItem("0576474418")
 let url = window.location.href;
 let webpage = String(window.location.host)
 let market = webpage.split('.')[1];
@@ -181,125 +160,14 @@ if (url === "https://brainly." + market + "/") {
     }
 
     f();
-    class Actions {
-        constructor(moderatorID){
-            this.actionsUrl = `${window.document.location.origin}/moderation_new/view_moderator/${moderatorID}/page:99999`
-            let menu = document.querySelector("body > div.js-page-wrapper > div > nav > div.brn-moderation-panel__content.sg-box.sg-box--padding-m.sg-box--shadow.js-moderation-panel-content > div > div.sg-content-box__content > div > ul")
-            let totalactionelement = document.createElement("li")
-            totalactionelement.className = "sg-menu-list__element"
-            
-            totalactionelement.innerHTML = "<a id=link href=https://brainly.com/moderation_new/view_moderator/"+moderatorID+"> Total Actions: <strong id=actions></strong></a>"
-            
-            menu.prepend(totalactionelement)
-            this.Init().then(() => document.getElementById("actions").innerText = (this.totalActions), document.getElementById("link").style.color = "black").catch(console.error)
-        }
-            
-        async Init(){
-            this.response = await this.requestPage()
-            this.responseText = await this.response.text()
-            this.responseHTML = new DOMParser().parseFromString(this.responseText, "text/html")
-            this.userNick = this.responseHTML.querySelector("h1.alignCenter.marginTop.marginBottom > a.nick").innerText
-    
-            this.actionsElements = this.responseHTML.querySelector("div.numbers > span.current")
-            if(!this.actionsElements) return
-    
-            this.totalPages = Number(this.actionsElements.innerText)
-            this.lastPageTotalActions = this.responseHTML.querySelectorAll(".activities > tbody > tr").length
-            this.totalActions = (this.totalPages - 1) * 15 + this.lastPageTotalActions
-        }
-    
-        async requestPage(){
-            let response = await fetch(this.actionsUrl, {
-                redirect: "manual",
-                method: "GET",
-                credentials: "include"
-            })
-    
-            if(!response || [0, 302].includes(response.status)) throw "You cannot view this moderator's actions"
-            if(!response.ok && response.status != 200) throw "Request failed"
-      
-            return response
-        }
-    }
-    function getMeta(metaName) {
-        const metas = document.getElementsByTagName('meta');
-    
-        for (let i = 0; i < metas.length; i++) {
-            if (metas[i].getAttribute('name') === metaName) {
-                return metas[i].getAttribute('content');
-            }
-        }
-    
-        return '';
-    }
-    
-    let data = getMeta('user_data')
-    let userid = JSON.parse(data)["id"]
-    new Actions(userid)
+  
 }
 
 
-function loadedmsg() {
-    let topbar = document.querySelector("#private-messages-container > section.brn-messages__chatbox.brn-chatbox.js-chatbox > div > div:nth-child(4) > footer > div.sg-content-box.sg-content-box--spaced-top.js-chatbox-footer > div > div > div.sg-actions-list__hole.sg-actions-list__hole--to-end")
-    let thmsg = document.createElement("button")
-    let corrmsg = document.createElement("button")
-    if (isadmin === "true") {
-        topbar.appendChild(thmsg)
-        thmsg.outerHTML = '<button id="INCOMPLETE" style="height:32px; font-size: 12px; top: 1px; background-color:rgb(251, 190, 46)"class="sg-button">\n' +
-            '                        <span class="sg-button__text">INC</span>\n' +
-            '                    </button>';
-        document.getElementById("INCOMPLETE").addEventListener("click", function() {
-            let textfield = document.querySelector("#private-messages-container > section.brn-messages__chatbox.brn-chatbox.js-chatbox > div > div:nth-child(4) > footer > div.sg-content-box.sg-content-box--spaced-top.js-chatbox-footer > div > div > div.sg-actions-list__hole.sg-actions-list__hole--grow > textarea")
-            textfield.value = "Hey there! Brainly is all about giving students the tools they need to tackle future problems on their own, so it's important to always show your work. Your answers didn't contain enough explanation to follow our guidelines, so all of your answers have been removed. In the future, please be sure to elaborate and add more to your answers, such as full explanations, examples, and any information that can help our fellow Brainiacs. Thanks!"
-
-        });
-
-        topbar.appendChild(corrmsg)
-        corrmsg.outerHTML = '<button id="CORRECTION" style="  margin-left: 4px; height:32px; font-size: 12px; top: 1px; background-color:rgb(251, 190, 46)"class="sg-button">\n' +
-            '                        <span class="sg-button__text">COR</span>\n' +
-            '                    </button>';
-        document.getElementById("CORRECTION").addEventListener("click", function() {
-            let textfield = document.querySelector("#private-messages-container > section.brn-messages__chatbox.brn-chatbox.js-chatbox > div > div:nth-child(4) > footer > div.sg-content-box.sg-content-box--spaced-top.js-chatbox-footer > div > div > div.sg-actions-list__hole.sg-actions-list__hole--grow > textarea")
-            textfield.value = "Hi there! I'm a moderator here on Brainly and just wanted to send you a friendly reminder to check your notifications regarding the answer that we asked you to correct. Please remember that you can only edit it within the next 24 hours. Please do not respond to this message."
-
-        });
-    }
 
 
 
-}
 
-if (url.includes("message") === true) {
-    async function f() {
-
-        let promise = new Promise((resolve, reject) => {
-            setTimeout(() => resolve(loadedmsg()), 1000)
-
-        });
-
-        let result = await promise; // wait until the promise resolves (*)
-
-    }
-
-    f();
-
-}
-if (url.includes("users/view") || url.includes("." + market + "/profile/")) {
-    async function f() {
-
-        let promise = new Promise((resolve, reject) => {
-            setTimeout(() => resolve(loadedold()), 10000)
-
-        });
-
-        let result = await promise; // wait until the promise resolves (*)
-
-    }
-
-    f();
-    let newlink = document.querySelector("#main-left > div.personal_info > a")
-    newlink.innerHTML = "New Profile";
-}
 if (url.includes("/app/profile")) {
     async function f() {
 
@@ -322,29 +190,7 @@ if (url.includes("question") === true) {
 
 
 
-function loadedold() {
 
-    
-    
-   
-    let answered = document.querySelector("#tabIdsolved > span > span > a")
-    answered.innerHTML = "Answered"
-    let asked = document.querySelector("#tabIdsubmitted > span > span > a")
-    asked.innerHTML = "Asked"
-    let friends = document.getElementsByClassName("avatar")
-   
-
-
-
-    url = url.replace("/profile","/app/profile");
-    url = url.replace("user-","");
-
-    let button = document.getElementById("a");
-    button.href = (url);
-    
-
-
-}
 
 let asked = null;
 
@@ -771,149 +617,4 @@ function loadednew() {
 
 
 
-}
-if (window.location.href.includes("user_content") === true) {
-    console.log(true)
-    async function f() {
-
-        let promise = new Promise((resolve, reject) => {
-            setTimeout(() => resolve(loadedcontent()), 1000)
-
-        });
-
-        let result = await promise; // wait until the promise resolves (*)
-
-    }
-
-    f();
-
-}
-function copyToClipboard(text) {
-    var dummy = document.createElement("textarea");
-    // to avoid breaking orgain page when copying more words
-    // cant copy when adding below this code
-    // dummy.style.display = 'none'
-    document.body.appendChild(dummy);
-    //Be careful if you use texarea. setAttribute('value', value), which works with "input" does not work with "textarea". – Eduard
-    dummy.value = text;
-    dummy.select();
-    document.execCommand("copy");
-    document.body.removeChild(dummy);
-}
-function loadedcontent(){
-    let ans = document.getElementsByTagName("tr")
-    
-    
-    let i;
-    for (i = 0; i < ans.length; i++) {
-        if (i > 0){
-            let check = document.createElement("input")
-            check.type = "checkbox";
-            check.className = "selectbox"
-            
-               
-           
-            ans[i].appendChild(check)
-            check.id = String(check.parentElement.children[1].children[0].href)
-            
-            
-        }
-        
-        
-    }
-    
-    let answersection = document.querySelector("#content-old > div:nth-child(2)")
-    let toggle = document.createElement("button")
-    toggle.id = "toggle"
-    toggle.innerHTML = "Toggle Selected"
-    answersection.appendChild(toggle)
-    let delbtn = document.createElement("button")
-    delbtn.id = "delete"
-    delbtn.innerHTML = "Delete Selected"
-    answersection.appendChild(delbtn)
-    let selectall = document.createElement("button")
-    selectall.id = "select"
-    selectall.innerHTML = "Select All Content"
-    answersection.appendChild(selectall)
-    let deselect = document.createElement("button")
-    deselect.id = "deselect"
-    deselect.innerHTML = "Deselect All Content"
-    answersection.appendChild(deselect)
-    let copyall = document.createElement("button")
-    copyall.id = "copy"
-    copyall.innerHTML = "Copy Selected Links"
-    answersection.appendChild(copyall)
-    let copiedlinks = []
-    document.getElementById("delete").addEventListener("click", function() {
-        
-        let checks = document.getElementsByClassName("selectbox")
-        for (let i = 0; i < checks.length; i++) {
-            let box = checks[i]
-            if (box.checked === true){
-                deletequestion(box.id)
-            } 
-         
-        }
-        
-
-        
-    });
-    document.getElementById("toggle").addEventListener("click", function() {
-        
-        let checks = document.getElementsByClassName("selectbox")
-        for (let i = 0; i < checks.length; i++) {
-            let box = checks[i]
-            if (box.checked === true){
-                box.checked = false;
-            } else {
-                box.checked = true;
-            }
-         
-        }
-        
-
-        
-    });
-    document.getElementById("deselect").addEventListener("click", function() {
-        
-        let checks = document.getElementsByClassName("selectbox")
-        for (let i = 0; i < checks.length; i++) {
-            let box = checks[i]
-            box.checked = false;
-         
-        }
-        
-
-        
-    });
-    document.getElementById("select").addEventListener("click", function() {
-        
-        let checks = document.getElementsByClassName("selectbox")
-        for (let i = 0; i < checks.length; i++) {
-            let box = checks[i]
-            box.checked = true;
-           
-        }
-        
-
-        
-    });
-    document.getElementById("copy").addEventListener("click", function() {
-        
-        let checks = document.getElementsByClassName("selectbox")
-        for (let i = 0; i < checks.length; i++) {
-            let box = checks[i]
-            if (box.checked === true){
-
-                copiedlinks.push(box.id)
-                
-            }
-         
-        }
-        copiedlinks = String(copiedlinks).replaceAll(',', '\n')
-        copyToClipboard(copiedlinks)
-
-        
-    });
-    
 }
