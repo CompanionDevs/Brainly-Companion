@@ -24,10 +24,7 @@
         {
         "matches": ["*://brainly.com/question*","*://brainly.in/question*","*://brainly.lat/question*","*://brainly.ph/question*","*://brainly.co.id/question*","*://nosdevoirs.fr/question*","*://brainly.pl/question*","*://eodev.com/question*","*://brainly.ro/question*","*://Znanija.com/question*"],
         "css": ["styles/question.css"]},
-        {
-        "matches": ["*://brainly.com/tasks/archive_mod*","*://brainly.in/tasks/archive_mod*","*://brainly.lat/tasks/archive_mod*","*://brainly.ph/tasks/archive_mod*","*://brainly.co.id/tasks/archive_mod*","*://nosdevoirs.fr/tasks/archive_mod*","*://brainly.pl/tasks/archive_mod*","*://eodev.com/tasks/archive_mod*","*://brainly.ro/tasks/archive_mod*","*://Znanija.com/tasks/archive_mod*","*://brainly.com/users*","*://brainly.in/users*","*://brainly.lat/users*","*://brainly.ph/users*","*://brainly.co.id/users*","*://nosdevoirs.fr/users*","*://brainly.pl/users*","*://eodev.com/users*","*://brainly.ro/users*","*://Znanija.com/users*","*://brainly.com/users*","*://brainly.in/users*","*://brainly.lat/users*","*://brainly.ph/users*","*://brainly.co.id/users*","*://nosdevoirs.fr/users*","*://brainly.pl/users*","*://eodev.com/users*","*://brainly.ro/users*","*://Znanija.com/users*","*://brainly.com/profile*","*://brainly.in/profile*","*://brainly.lat/profile*","*://brainly.ph/profile*","*://brainly.co.id/profile*","*://nosdevoirs.fr/profile*","*://brainly.pl/profile*","*://eodev.com/profile*","*://brainly.ro/profile*","*://Znanija.com/profile*"],
         
-        },
         {
         "matches": ["*://brainly.com/archive*","*://brainly.in/archive*","*://brainly.lat/archive*","*://brainly.ph/archive*","*://brainly.co.id/archive*","*://nosdevoirs.fr/archive*","*://brainly.pl/archive*","*://eodev.com/archive*","*://brainly.ro/archive*","*://Znanija.com/archive*"],
         "css": ["styles/archive.css"]
@@ -39,14 +36,13 @@
     ],
     "permissions": [
         
-        "scripting",
-        "storage",
-        "contextMenus"
+        "scripting"
+       
         
         
        
         ],
-    "options_page": "options.html",
+   
     "browser_action":{
         
         "default_title":"High-Contrast-Brainly"
