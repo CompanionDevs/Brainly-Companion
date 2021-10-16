@@ -23,7 +23,9 @@
         
         {
         "matches": ["*://brainly.com/question*","*://brainly.in/question*","*://brainly.lat/question*","*://brainly.ph/question*","*://brainly.co.id/question*","*://nosdevoirs.fr/question*","*://brainly.pl/question*","*://eodev.com/question*","*://brainly.ro/question*","*://Znanija.com/question*"],
-        "css": ["styles/question.css"]},
+        "css": ["styles/question.css"],
+        "js": ["script/question.js"]},
+        
         
         {
         "matches": ["*://brainly.com/archive*","*://brainly.in/archive*","*://brainly.lat/archive*","*://brainly.ph/archive*","*://brainly.co.id/archive*","*://nosdevoirs.fr/archive*","*://brainly.pl/archive*","*://eodev.com/archive*","*://brainly.ro/archive*","*://Znanija.com/archive*"],
@@ -43,11 +45,7 @@
        
         ],
    
-    "browser_action":{
-        
-        "default_title":"High-Contrast-Brainly"
-
-    },
+    
     
     "action": {
     
