@@ -71,3 +71,44 @@ padding: 2px!important;
 .sg-text--gray-secondary{
 color: #687b8c!important;
 }
+#calc{
+ border: none;   
+}
+input#btn[name = "display"]{
+    background: #F5F8FA!important;
+    border: 2px solid #C3D1DD;
+    font-size: 14px!important;
+    outline: none;
+    margin-top: 5px;
+    padding-left: 10px;
+}
+input#btn[type = "button"]{
+    background: var(--askloadsec);
+    border-color: var(--askloadsec);
+    border-radius: 26px;
+    border: none;
+    width: 60px;
+    height: 35px;
+    margin: 1px;
+    font-weight: 600;
+    font-size: 14px;
+}
+input#btn[value = "C"]{
+    background: #FF7968;
+}
+#calc>tbody>tr>td{
+    border-style: hidden;
+}
+form[name = "calc"]{
+    display: flex;
+    justify-content: center;
+}
+#showcalc{
+    border:none;
+    background: transparent;
+}
+#showcalc>svg{
+    fill: #323C45;
+    background: transparent;
+    height: 25px;
+}
