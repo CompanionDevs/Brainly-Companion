@@ -116,7 +116,7 @@ input#btn[value = "C"]{
     background: transparent;
 }
 .showcalctoggle{
-    left:12%!important;
+    left:2%!important;
 }
 #showcalc>svg{
     fill: #323C45;
