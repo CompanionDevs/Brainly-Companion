@@ -306,9 +306,7 @@ function appendcalculator(){
                     calc.display.value = eval(calc.display.value);
             }
 }
-if (document.getElementsByClassName("brn-answer-editor-layer__editor")[0] !== undefined){
-    appendcalculator()
-}
+
 
 
 
@@ -481,7 +479,9 @@ if (url.includes("/app/profile")) {
 
 }
 if (url.includes("question") === true) {
-    //pass
+    if (document.getElementsByClassName("brn-answer-editor-layer__editor")[0] !== undefined){
+        appendcalculator()
+    }
 
 }
 
