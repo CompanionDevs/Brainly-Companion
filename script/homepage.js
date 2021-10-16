@@ -11,6 +11,9 @@
 // Several foreground scripts can be declared
 // and injected into the same or different pages.
 let area = document.querySelector("body > div.js-page-wrapper > div > div.sg-flex.sg-flex--column.js-feed > div.sg-layout > div > div.sg-layout__aside-content")
+
+
+
 function appendcalculator(){
     let html="";
     html += "";
@@ -269,8 +272,15 @@ function appendcalculator(){
     html += "";
 
     let co = document.createElement("li")
-    document.getElementsByClassName("brn-answer-editor-layer__aside-content")[0].appendChild(co)
-    co.outerHTML = html
+    if (document.getElementsByClassName("brn-answer-editor-layer__aside-content")[0].id !== "apd"){
+        document.getElementsByClassName("brn-answer-editor-layer__aside-content")[0].appendChild(co)
+        document.getElementsByClassName("brn-answer-editor-layer__aside-content")[0].id = "apd"
+        co.outerHTML = html
+    } else {
+        //pass
+    }
+    
+    
     function backspace(calc) {                                            
                 size = calc.display.value.length;
                 calc.display.value = calc.display.value.substring(0, size-1);
@@ -306,11 +316,29 @@ function appendcalculator(){
                     calc.display.value = eval(calc.display.value);
             }
 }
-
-
-
-
-
+function check(){
+    if (document.getElementsByClassName("brn-answer-editor-layer__editor")[0] !== undefined){
+        async function f() {
+            
+            let promise = new Promise((resolve, reject) => {
+                setTimeout(() => resolve(appendcalculator()), 2000)
+    
+            });
+            var intervalId = window.setInterval(function() {
+                appendcalculator()
+            }, 1000);
+    
+            let result = await promise; // wait until the promise resolves (*)
+    
+        }
+    
+        f();
+        
+    }
+}
+var intervalId = window.setInterval(function() {
+    check()
+}, 1000);
 let url = window.location.href;
 let webpage = String(window.location.host)
 let market = webpage.split('.')[1];
@@ -479,9 +507,7 @@ if (url.includes("/app/profile")) {
 
 }
 if (url.includes("question") === true) {
-    if (document.getElementsByClassName("brn-answer-editor-layer__editor")[0] !== undefined){
-        appendcalculator()
-    }
+    //pass
 
 }
 
