@@ -9,9 +9,6 @@ border-color: #2e2b2b!important;
 .sg-icon--dark{
 fill: white!important;
 }
-#calc{
-    display:none;
-}
 .sg-box--light{
 border-color: #c3d1dd!important;
 background: white!important;
@@ -72,7 +69,12 @@ padding: 2px!important;
 color: #687b8c!important;
 }
 #calc{
- border: none;   
+ border: none;
+    transition-duration: 150ms;
+    position: absolute;
+    background: #c3d1dd;
+    border-radius: 20px;
+    padding:5px;
 }
 input#btn[name = "display"]{
     background: #F5F8FA!important;
@@ -99,13 +101,22 @@ input#btn[value = "C"]{
 #calc>tbody>tr>td{
     border-style: hidden;
 }
-form[name = "calc"]{
+.calc{
     display: flex;
     justify-content: center;
+    position: absolute;
+    display: flex;
+    width: 90px;
+    transition-duration: 100ms;
+    left: -50%;
+    bottom:15%;
 }
 #showcalc{
     border:none;
     background: transparent;
+}
+.showcalctoggle{
+    left:12%!important;
 }
 #showcalc>svg{
     fill: #323C45;
