@@ -99,6 +99,14 @@ input#btn[type = "button"]{
 }
 input#btn[value = "C"]{
     background: #FF7968;
+    color: white;
+}
+input#btn[value = "n!"], input#btn[value = "sin"], input#btn[value = "cos"], input#btn[value = "tan"], input#btn[value = "E"], input#btn[value = "exp"],input#btn[value = "ln2"],input#btn[value = "l2e"],input#btn[value = "l10e"],input#btn[value = "ln10"], input#btn[value = "log"], input#btn[value = "+"], input#btn[value = "-"], input#btn[value = ","], input#btn[value = "("], input#btn[value = ")"], input#btn[value = "pi"], input#btn[value = "^"], input#btn[value = "sqrt"], input#btn[value = "%"], input#btn[value = "*"], input#btn[value = "/"], input#btn[value = "<-"], input#btn[value = "."]{
+    background: #687B8C;
+    color: white;
+}
+input#btn[value = "="]{
+    background: #60D399;
 }
 #calc>tbody>tr>td{
     border-style: hidden;
