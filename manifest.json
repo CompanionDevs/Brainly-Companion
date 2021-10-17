@@ -1,6 +1,6 @@
 {
     "name":"Brainly Companion",
-    "version":"3",
+    "version":"3.25",
     "manifest_version":3,
     
     "content_scripts":[
