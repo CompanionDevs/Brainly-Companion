@@ -313,7 +313,10 @@ function run(){
                 button.addEventListener("click",function(){
                     document.getElementById("calc").classList.toggle("showcalctoggle");
                 })
-                toolsbox.appendChild(button)
+                if (document.getElementById("showcalc") == null){
+                    toolsbox.appendChild(button)
+                }
+                
                 let result = await promise; // wait until the promise resolves (*)
             
             }
