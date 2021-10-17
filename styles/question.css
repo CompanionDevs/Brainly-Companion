@@ -75,6 +75,8 @@ color: #687b8c!important;
     background: #c3d1dd;
     border-radius: 20px;
     padding:5px;
+    width: max-content;
+    z-index: 5;
 }
 input#btn[name = "display"]{
     background: #F5F8FA!important;
