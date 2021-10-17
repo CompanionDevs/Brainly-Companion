@@ -621,8 +621,24 @@ function appendToFooter(){
     viewAll.id = "notificationcenter"
     viewAll.style = "    background-color: black;color: white;font-weight: bold;border-radius: 30px;height: 40PX;margin-left: 50px;}"
     viewAll.addEventListener("click",function(){
-        document.body.outerHTML = "<!DOCTYPE html><html><head> <title>Title of the document</title></head><body></body>"
-          
+        document.body.outerHTML = "<!DOCTYPE html><html><head></head><body><select name='types' id='types'><option value='choose'>Category</option><option value='all'>All</option><option value='thanks'>Thanks ❤️</option><option value='comment'>Comments 💬</option><option value='answered'>Answers 📝</option><option value='lost'>Challenges 🤔</option><option value='expired'>Questions ❓</option><option value='brainliest'>Brainliest 👑</option></select></body>"
+        document.getElementById("types").addEventListener("change",function(){
+            let total = document.getElementsByClassName("filter")
+              for (let i = 0; i < total.length; i++) {
+                  total[i].style.display = "none"
+              }
+            if (this.value === "all"){
+                let total = document.getElementsByClassName("filter")
+                  for (let i = 0; i < total.length; i++) {
+                      total[i].style.display = "block"
+                  }
+            }
+            let all = document.getElementsByClassName(this.value)
+            for (let i = 0; i < all.length; i++) {
+              
+              all[i].style.display = "block"
+            }
+        })
        
        
         var data = JSON.stringify({
@@ -640,7 +656,31 @@ function appendToFooter(){
               let items = jsn["data"]["items"]
               for (let i = 0; i < items.length; i++) {
                 let txt = document.createElement("p")
-                txt.innerText = items[i]["text"].replace("%1$s",items[i]["user_id"])
+                if (String(items[i]["text"]).includes("thanks") === true){
+                    txt.innerText = items[i]["text"].replace("%1$s",items[i]["user_id"])+" ❤️" 
+                    txt.className = "thanks filter"
+                } else if (String(items[i]["text"]).includes("comment") === true){
+                    txt.innerText = items[i]["text"].replace("%1$s",items[i]["user_id"])+" 💬" 
+                    txt.className = "comment filter"
+                } else if (String(items[i]["text"]).includes("delete") === true){
+                    txt.innerText = items[i]["text"].replace("%1$s",items[i]["user_id"])+" 🗑️" 
+                    txt.className = "deleted filter"
+                } else if (String(items[i]["text"]).includes("Seems like") === true){
+                    txt.innerText = items[i]["text"].replace("%1$s",items[i]["user_id"])+" ⏰" 
+                    txt.className = "expired filter"
+                } else if (String(items[i]["text"]).includes("answered") === true){
+                    txt.innerText = items[i]["text"].replace("%1$s",items[i]["user_id"])+" 📝" 
+                    txt.className = "answered filter"
+                } else if (String(items[i]["text"]).includes("beat") === true){
+                    txt.innerText = items[i]["text"].replace("%1$s",items[i]["user_id"])+" 😔" 
+                    txt.className = "lost filter"
+                } else if (String(items[i]["text"]).includes("Brainliest") === true){
+                    txt.innerText = items[i]["text"].replace("%1$s",items[i]["user_id"])+" 👑" 
+                    txt.className = "brainliest filter"
+                } else {
+                    txt.innerText = items[i]["text"].replace("%1$s",items[i]["user_id"])
+                    txt.className = "default filter"
+                }
                 document.body.appendChild(txt)
               }
             }
