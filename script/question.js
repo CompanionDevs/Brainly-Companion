@@ -1,4 +1,4 @@
-
+localStorage.setItem("done", "false")
 function appendcalculator(){
     
     let html="";
@@ -255,12 +255,16 @@ function appendcalculator(){
     html += "";
 
     let co = document.createElement("li")
-    if (document.getElementsByClassName("brn-answer-editor-layer__layout")[0].id !== "apd"){
-        document.getElementsByClassName("brn-answer-editor-layer__layout")[0].id = "apd"
-        document.getElementsByClassName("brn-answer-editor-layer__layout")[0].prepend(co)
-        
-        co.outerHTML = html
-    } else {
+    try {
+        if (document.getElementsByClassName("brn-answer-editor-layer__layout")[0].id !== "apd"){
+            document.getElementsByClassName("brn-answer-editor-layer__layout")[0].id = "apd"
+            document.getElementsByClassName("brn-answer-editor-layer__layout")[0].prepend(co)
+            
+            co.outerHTML = html
+        } else {
+            //pass
+        }
+    }catch(err){
         //pass
     }
     
@@ -277,10 +281,50 @@ function appendcalculator(){
 
 
 function run(){
+    function ansbtn(){
+        const urlParams = new URLSearchParams(window.location.search);
+        const myParam = urlParams.get('answering');
+        
+        if (myParam === "true"){
+            async function f() {
+                if (localStorage.getItem("done") !== "true"){
+                    let promise = new Promise((resolve, reject) => {
+                        try{
+                            setTimeout(() => resolve(apdcalc()), 1500)
+                        }catch(err){
+                            //pass
+                        }
+                        
+                        localStorage.setItem("done","true")
+                    });
+                    let result = await promise; // wait until the promise resolves (*)
+                }
+                
+                
+               
+                
+            
+            }
+            f();
+        }
+    }
+    async function f() {
+        
+        let promise = new Promise((resolve, reject) => {
+            setTimeout(() => resolve(ansbtn()), 1000)
+    
+        });
+        
+       
+        let result = await promise; // wait until the promise resolves (*)
+    
+    }
+    f();
     if (document.getElementsByClassName("sg-button sg-button--m sg-button--outline sg-button--full-width brn-qpage-next-question-box-actions__button")[0] !== undefined){
         var intervalId = window.setInterval(function() {
             appendcalculator()
         }, 100);
+        
         document.getElementsByClassName("sg-button sg-button--m sg-button--outline sg-button--full-width brn-qpage-next-question-box-actions__button")[0].addEventListener("click",function(){
     
             async function f() {
@@ -302,7 +346,7 @@ function run(){
             async function f() {
         
                 let promise = new Promise((resolve, reject) => {
-                    setTimeout(() => resolve(appendcalculator()), 2000)
+                    setTimeout(() => resolve(appendcalculator()), 1000)
             
                 });
                 
