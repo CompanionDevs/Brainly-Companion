@@ -621,7 +621,7 @@ function appendToFooter(){
     viewAll.id = "notificationcenter"
     viewAll.style = "    background-color: black;color: white;font-weight: bold;border-radius: 30px;height: 40PX;margin-left: 50px;}"
     viewAll.addEventListener("click",function(){
-        document.body.outerHTML = "<!DOCTYPE html><html><head></head><body><select name='types' id='types'><option value='choose'>Category</option><option value='all'>All</option><option value='thanks'>Thanks ❤️</option><option value='comment'>Comments 💬</option><option value='answered'>Answers 📝</option><option value='lost'>Challenges 🤔</option><option value='expired'>Questions ❓</option><option value='brainliest'>Brainliest 👑</option></select></body>"
+        document.body.outerHTML = "<!DOCTYPE html><html><head></head><body><select name='types' id='types'><option value='choose'>Category</option><option value='all'>All</option><option value='thanks'>Thanks ❤️</option><option value='comment'>Comments 💬</option><option value='answered'>Answers 📝</option><option value='lost'>Challenges 🤔</option><option value='expired'>Questions ❓</option><option value='brainliest'>Brainliest 👑</option><option value='deleted'>Deleted 🗑️</option></select></body>"
         document.getElementById("types").addEventListener("change",function(){
             let total = document.getElementsByClassName("filter")
               for (let i = 0; i < total.length; i++) {
