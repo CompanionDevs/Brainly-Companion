@@ -614,3 +614,65 @@ function loadednew() {
 
 
 }
+function appendToFooter(){
+    let viewAll = document.createElement("button")
+    document.getElementsByClassName("brn-footer")[0].appendChild(viewAll)
+    viewAll.innerHTML = "Notification Center"
+    viewAll.id = "notificationcenter"
+    viewAll.style = "    background-color: black;color: white;font-weight: bold;border-radius: 30px;height: 40PX;margin-left: 50px;}"
+    viewAll.addEventListener("click",function(){
+        document.body.outerHTML = "<!DOCTYPE html><html><head> <title>Title of the document</title></head><body></body>"
+          
+       
+       
+        var data = JSON.stringify({
+            "limit": 3000,
+            "last_id": null
+          });
+          
+          var xhr = new XMLHttpRequest();
+          xhr.withCredentials = true;
+          
+          xhr.addEventListener("readystatechange", function() {
+            if(this.readyState === 4) {
+             
+              let jsn = JSON.parse(this.responseText)
+              let items = jsn["data"]["items"]
+              for (let i = 0; i < items.length; i++) {
+                let txt = document.createElement("p")
+                txt.innerText = items[i]["text"].replace("%1$s",items[i]["user_id"])
+                document.body.appendChild(txt)
+              }
+            }
+          });
+          
+          xhr.open("POST", "https://brainly.com/api/28/api_notifications/view");
+          xhr.setRequestHeader("authority", "brainly.com");
+          xhr.setRequestHeader("sec-ch-ua", "\"Chromium\";v=\"94\", \"Google Chrome\";v=\"94\", \";Not A Brand\";v=\"99\"");
+          xhr.setRequestHeader("accept", "application/json");
+          xhr.setRequestHeader("content-type", "application/json");
+          xhr.setRequestHeader("sec-ch-ua-mobile", "?0");
+          xhr.setRequestHeader("user-agent", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36");
+          xhr.setRequestHeader("sec-ch-ua-platform", "\"macOS\"");
+          xhr.setRequestHeader("origin", "https://brainly.com");
+          xhr.setRequestHeader("sec-fetch-site", "same-origin");
+          xhr.setRequestHeader("sec-fetch-mode", "cors");
+          xhr.setRequestHeader("sec-fetch-dest", "empty");
+          xhr.setRequestHeader("accept-language", "en-US,en;q=0.9");
+          
+          
+          xhr.send(data);
+    })
+}
+async function f() {
+
+    let promise = new Promise((resolve, reject) => {
+        setTimeout(() => resolve(appendToFooter()), 1500)
+
+    });
+
+    let result = await promise; // wait until the promise resolves (*)
+
+}
+
+f();
