@@ -33,10 +33,13 @@
         }],
         
     "host_permissions": [
-        "http://*/*",
-        "https://*/*"
+        "*://brainly.com/*"
+      
     ],
-  
+    "permissions":[
+        "storage",
+        "scripting"
+    ],
    
     
     
@@ -45,7 +48,7 @@
     "default_popup": "icon/popup.html"
     
     },
-    
+    "options_page": "options.html",
     "background":{
         "service_worker":"background.js"
     },
