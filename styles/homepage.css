@@ -4,7 +4,20 @@
     --profilecard : #4fc3f6;
     --askloadsec: #FBBE2E;
 }
-
+.thanks, .comment, .deleted, .expired, .answered, .lost, .brainliest, .default{
+    display:none;
+}
+#types{
+    margin-left: 25%;
+    margin-top: 25%;
+    width: 1000px;
+    height: 250px;
+    /* border-radius: 20%; */
+    font-weight: BOLD;
+    font-size: 100px;
+    text-align: center;
+    background-color: #D9F0FF;
+}
 /*Header and Footer color*/
 .HeaderController__innerwrap--1RjnZ, .HeaderController__subnav--1hTF0, .sg-header__container, header[class^="HeaderController"], .mint-header, .brn-header-placeholder__subnav, .brn-header-placeholder__inner-wrapper, .HeaderController__subnavWrapper--1mfz7:after, .HeaderController__subnavWrapper--1WODB:after, .brn-new-footer, .HeaderController__header--3BXr6, .HeaderController__innerwrap--1RjnZ, .HeaderController__limitWidth--2ORAB, .brn-header-placeholder, .brn-header, .brn-footer, .HeaderController__subnav--gvKms, .sg-label--gray-secondary-light,#moderate-functions-panel .covering-text, #html .mint .mint-header, #moderation-all .top .sub-header, #moderation-all .content .loader, .HeaderController__subnav--gvKms.js-ads-top-offset-element, #moderate-functions-panel .covering-text, #html .mint .mint-header, #moderate-functions-panel .covering-text, #html .mint #footer, #moderate-functions-panel .covering-text, #html .mint .mint-header .mint-input{
     background: var(--headerfooter)!important;
