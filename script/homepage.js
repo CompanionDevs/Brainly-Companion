@@ -10,7 +10,12 @@
 // (see "content_script" key).
 // Several foreground scripts can be declared
 // and injected into the same or different pages.
-
+let primary = localStorage.getItem("primary")
+let secondary = localStorage.getItem("secondary")
+let accent = localStorage.getItem("accent")
+let sty = document.createElement("style")
+sty.innerHTML = ":root {--headerfooter : "+primary+"; --askloadsec : "+accent+"; --profilecard : "+secondary+";  --ansbut : "+secondary+"; --repbutton : "+accent+" }"
+document.body.appendChild(sty)
 let full = document.createElement("div")
 full.id = "container"
 chrome.runtime.sendMessage({type: "notification", options: { 
