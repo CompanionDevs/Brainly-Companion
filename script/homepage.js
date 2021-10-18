@@ -623,6 +623,7 @@ function appendToFooter(){
     viewAll.addEventListener("click",function(){
         document.body.outerHTML = "<!DOCTYPE html><html><head></head><body><select name='types' id='types'><option value='choose'>Category</option><option value='all'>All</option><option value='thanks'>Thanks ❤️</option><option value='comment'>Comments 💬</option><option value='answered'>Answers 📝</option><option value='lost'>Challenges 🤔</option><option value='expired'>Questions ❓</option><option value='brainliest'>Brainliest 👑</option><option value='deleted'>Deleted 🗑️</option></select></body>"
         document.getElementById("types").addEventListener("change",function(){
+           
             let total = document.getElementsByClassName("filter")
               for (let i = 0; i < total.length; i++) {
                   total[i].style.display = "none"
@@ -640,7 +641,68 @@ function appendToFooter(){
             }
         })
        
-       
+        function getUser(id, ele){
+            
+    var data = "_method=POST&data%5B_Token%5D%5Bkey%5D=8add13e684369e380d7739860ab281bd58276324&data%5BUser%5D%5Bnick%5D="+id+"&data%5BUser%5D%5Bsearch_option%5D=12&data%5B_Token%5D%5Bfields%5D=4392888fab39be3ea02021080af163797524525f%253An%253A0%253A%257B%257D&data%5B_Token%5D%5Block%5D=_PHP76b87dd7b12e9ebfd7ef7af510d1a971f9933f8c";
+
+
+    var xhr = new XMLHttpRequest();
+    xhr.withCredentials = true;
+
+    xhr.addEventListener("readystatechange", function() {
+      if(this.readyState === 4) {
+        
+         this.responseHTML = new DOMParser().parseFromString(this.responseText, "text/html")
+         let data = this.responseHTML.getElementsByClassName("nick")[0].innerText
+         ele.innerText = ele.innerText.replace(ele.innerText.match(/[a-zA-Z]/)["input"].split(ele.innerText.match(/[a-zA-Z]/)[0])[0],data+" ")
+         let allx = document.getElementsByClassName("filter")
+         for (let i = 0; i < allx.length; i++) {
+            allx[i].parentElement.setAttribute("usable","false")
+            allx[i].style.opacity = "0.5"
+            function reset(){
+                allx[i].style.opacity = "1"
+                allx[i].parentElement.setAttribute("usable","true")
+            }
+            async function f() {
+
+                let promise = new Promise((resolve, reject) => {
+                    setTimeout(() => resolve(reset()), 10000)
+            
+                });
+            
+                let result = await promise; // wait until the promise resolves (*)
+            
+            }
+            
+            f();
+        }
+         let img = document.createElement("img")
+         img.src = this.responseHTML.getElementsByClassName("user-data")[0].children[0].children[0].src
+         ele.parentElement.appendChild(img)
+      }
+    });
+
+    xhr.open("POST", "https://brainly.com/users/search");
+    xhr.setRequestHeader("authority", "brainly.com");
+    xhr.setRequestHeader("cache-control", "max-age=0");
+    xhr.setRequestHeader("sec-ch-ua", "\"Chromium\";v=\"94\", \"Google Chrome\";v=\"94\", \";Not A Brand\";v=\"99\"");
+    xhr.setRequestHeader("sec-ch-ua-mobile", "?0");
+    xhr.setRequestHeader("sec-ch-ua-platform", "\"macOS\"");
+    xhr.setRequestHeader("upgrade-insecure-requests", "1");
+    xhr.setRequestHeader("origin", "https://brainly.com");
+    xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
+    xhr.setRequestHeader("user-agent", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36");
+    xhr.setRequestHeader("accept", "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9");
+    xhr.setRequestHeader("sec-fetch-site", "same-origin");
+    xhr.setRequestHeader("sec-fetch-mode", "navigate");
+    xhr.setRequestHeader("sec-fetch-user", "?1");
+    xhr.setRequestHeader("sec-fetch-dest", "document");
+    xhr.setRequestHeader("referer", "https://brainly.com/users/search");
+    xhr.setRequestHeader("accept-language", "en-US,en;q=0.9");
+
+
+    xhr.send(data);
+}
         var data = JSON.stringify({
             "limit": 3000,
             "last_id": null
@@ -655,33 +717,51 @@ function appendToFooter(){
               let jsn = JSON.parse(this.responseText)
               let items = jsn["data"]["items"]
               for (let i = 0; i < items.length; i++) {
+                let dv = document.createElement("div")
+                dv.setAttribute("usable","true")
                 let txt = document.createElement("p")
+                dv.addEventListener("click",function(){
+                    let usable = null
+                  
+                    usable = dv.getAttribute("usable")
+                   
+                   
+                    if (usable === "true"){
+                        let conf = confirm('Fetch more data?')
+                        if (conf === true){
+                            getUser(this.children[0].innerText.match(/[a-zA-Z]/)["input"].split(this.children[0].innerText.match(/[a-zA-Z]/)[0])[0],this.children[0])
+                        }
+                    }
+                    
+                    
+                })
+                dv.appendChild(txt)
                 if (String(items[i]["text"]).includes("thanks") === true){
                     txt.innerText = items[i]["text"].replace("%1$s",items[i]["user_id"])+" ❤️" 
                     txt.className = "thanks filter"
                 } else if (String(items[i]["text"]).includes("comment") === true){
-                    txt.innerText = items[i]["text"].replace("%1$s",items[i]["user_id"])+" 💬" 
+                    txt.innerText = items[i]["text"].replace("%1$s",items[i]["user_id"]).replace("%2$s",items[i]["model_id"]).replace("%3$s",items[i]["model_id"])+" 💬" 
                     txt.className = "comment filter"
                 } else if (String(items[i]["text"]).includes("delete") === true){
-                    txt.innerText = items[i]["text"].replace("%1$s",items[i]["user_id"])+" 🗑️" 
+                    txt.innerText = items[i]["text"].replace("%1$s",items[i]["user_id"]).replace("%2$s","")+" 🗑️" 
                     txt.className = "deleted filter"
                 } else if (String(items[i]["text"]).includes("Seems like") === true){
                     txt.innerText = items[i]["text"].replace("%1$s",items[i]["user_id"])+" ⏰" 
                     txt.className = "expired filter"
                 } else if (String(items[i]["text"]).includes("answered") === true){
-                    txt.innerText = items[i]["text"].replace("%1$s",items[i]["user_id"])+" 📝" 
+                    txt.innerText = items[i]["text"].replace("%1$s",items[i]["user_id"]).replace("%2$s",items[i]["model_id"])+" 📝" 
                     txt.className = "answered filter"
                 } else if (String(items[i]["text"]).includes("beat") === true){
                     txt.innerText = items[i]["text"].replace("%1$s",items[i]["user_id"])+" 😔" 
                     txt.className = "lost filter"
                 } else if (String(items[i]["text"]).includes("Brainliest") === true){
-                    txt.innerText = items[i]["text"].replace("%1$s",items[i]["user_id"])+" 👑" 
+                    txt.innerText = items[i]["text"].replace("%1$s",items[i]["user_id"]).replace("%2$s","on "+items[i]["model_id"]) +" 👑" 
                     txt.className = "brainliest filter"
                 } else {
                     txt.innerText = items[i]["text"].replace("%1$s",items[i]["user_id"])
                     txt.className = "default filter"
                 }
-                document.body.appendChild(txt)
+                document.body.appendChild(dv)
               }
             }
           });
