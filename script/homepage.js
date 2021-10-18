@@ -10,6 +10,14 @@
 // (see "content_script" key).
 // Several foreground scripts can be declared
 // and injected into the same or different pages.
+let full = document.createElement("div")
+full.id = "container"
+chrome.runtime.sendMessage({type: "notification", options: { 
+    type: "notification", 
+    
+    title: "colors",
+    message: 'colors'
+}});
 let area = document.querySelector("body > div.js-page-wrapper > div > div.sg-flex.sg-flex--column.js-feed > div.sg-layout > div > div.sg-layout__aside-content")
 
 let url = window.location.href;
@@ -621,19 +629,30 @@ function appendToFooter(){
     viewAll.id = "notificationcenter"
     viewAll.style = "    background-color: black;color: white;font-weight: bold;border-radius: 30px;height: 40PX;margin-left: 50px;}"
     viewAll.addEventListener("click",function(){
-        document.body.outerHTML = "<!DOCTYPE html><html><head></head><body><select name='types' id='types'><option value='choose'>Category</option><option value='all'>All</option><option value='thanks'>Thanks ❤️</option><option value='comment'>Comments 💬</option><option value='answered'>Answers 📝</option><option value='lost'>Challenges 🤔</option><option value='expired'>Questions ❓</option><option value='brainliest'>Brainliest 👑</option><option value='deleted'>Deleted 🗑️</option></select></body>"
+        document.body.outerHTML = "<!DOCTYPE html><html><head><header class='HeaderController__header--3BXr6'><div class='HeaderController__limitWidth--2ORAB'><div class='HeaderController__innerwrap--1RjnZ'><div class='sg-flex sg-flex--align-items-center sg-flex--margin-right-m'><a href='/' data-testid='navigation_header_brainly_logo_link' class='HeaderController__logoLink--3xFry'><div data-testid='navigation_header_brainly_logo' class='sg-logo HeaderController__logo--1gT-T'><img class='sg-logo__image' src='https://styleguide.brainly.com/images/logos/brainly-5c4a769505.svg'></div></a></div><div class='HeaderController__search--32Q97' data-testid='navigation_header_search'><div class='sg-flex sg-flex--full-width Search__searchWrapper--2K-TQ'><form method='GET' action='/app/ask?source=topbar' class='Search__searchForm--3VpJx'><div class='sg-search sg-search--m sg-search--full-width'><input aria-label='Search' placeholder='Search for an answer to any question...' name='q' data-test='navigation_search' maxlength='2048' data-hj-whitelist='true' type='search' class='sg-input sg-input--with-icon sg-search__input' value=''><button class='sg-search__icon'><div class='sg-icon sg-icon--gray-secondary sg-icon--x16'><svg class='sg-icon__svg'><use xlink:href='#icon-search'></use></svg></div></button></div></form></div></div><div class='sg-flex sg-flex--align-items-center HeaderController__childrenWrapper--2o_0B'><div class='sg-flex sg-flex--align-items-center sg-space-x-xxs md:sg-space-x-s'><div class='sg-flex sg-flex--margin-left-s'><a data-testid='navigation_add_question' class='sg-button sg-button--m sg-button--transparent' href='/question/add?entry=6' role='button'><span class='sg-button__text'>Ask Question</span></a></div><div><div class='sg-flex sg-space-x-xxs md:sg-space-x-s'><div class='sg-flex'><div class='sg-flex' style='position: relative;'><button aria-label='' data-testid='navigation-nested-panel-button' class='sg-button sg-button--m sg-button--transparent sg-button--icon-only'><span class='sg-button__icon sg-button__icon--m'><div class='sg-icon sg-icon--adaptive sg-icon--x24'><svg class='sg-icon__svg'><use xlink:href='#icon-notifications'></use></svg></div></span><span class='sg-button__text'></span></button></div></div><div class='sg-flex'><div class='sg-flex' style='position: relative;'><button aria-label='profile' data-testid='navigation_profile_panel_button' class='sg-button sg-button--m sg-button--transparent sg-button--icon-only'><span class='sg-button__icon sg-button__icon--m'><div class='sg-avatar sg-avatar--xs'><img class='sg-avatar__image' src='https://us-static.z-dn.net/files/daa/792a6895f607fadea54b4f7f0e595617.png'></div></span><span class='sg-button__text'></span></button></div></div></div></div></div></div></div></div><div data-testid='navigation_header_subnav' class='HeaderController__subnav--gvKms js-ads-top-offset-element'><div class='HeaderController__limitWidth--2ORAB'><div class='HeaderController__subnavInner--10VQX'><div class='sg-flex sg-flex--full-height sg-flex--margin-left-xs'><div class='sg-flex sg-flex--full-height sg-flex--no-shrink sg-flex--align-items-center'><span class='SubNav__linkWrapper--3SFe0 SubNav__linkWrapperMargin--EbAv7'><a role='link' data-test='sub_navigaton_for_students' tabindex='0' href='/for-students?source=topbar' class='sg-text sg-text--small sg-text--link sg-text--bold sg-text--black sg-text--regular'>For students</a></span></div><div class='sg-flex sg-flex--full-height sg-flex--no-shrink sg-flex--align-items-center'><span class='SubNav__linkWrapper--3SFe0 SubNav__linkWrapperMargin--EbAv7'><a role='link' data-test='sub_navigaton_for_parents' tabindex='0' href='/for-parents?source=topbar' class='sg-text sg-text--small sg-text--link sg-text--bold sg-text--black sg-text--regular'>For parents</a></span></div><div class='sg-flex sg-flex--full-height sg-flex--no-shrink sg-flex--align-items-center'><span class='SubNav__linkWrapper--3SFe0 SubNav__linkWrapperMargin--EbAv7'><a role='link' data-test='sub_navigaton_for_teachers' tabindex='0' href='/schools-and-teachers?source=topbar' class='sg-text sg-text--small sg-text--link sg-text--bold sg-text--black sg-text--regular'>For teachers</a></span></div><div class='sg-flex sg-flex--full-height sg-flex--no-shrink sg-flex--align-items-center'><span class='SubNav__linkWrapper--3SFe0 SubNav__linkWrapperMargin--EbAv7'><a role='link' data-test='sub_navigaton_honor_code' tabindex='0' href='/honor-code?source=topbar' class='sg-text sg-text--small sg-text--link sg-text--bold sg-text--black sg-text--regular'>Honor code</a></span></div><div class='sg-flex sg-flex--full-height sg-flex--no-shrink sg-flex--align-items-center'><span class='SubNav__linkWrapper--3SFe0 SubNav__linkWrapperMargin--EbAv7'><a role='link' data-test='sub_navigaton_brainly_app' tabindex='0' href='/brainly-app?source=topbar' class='sg-text sg-text--small sg-text--link sg-text--bold sg-text--black sg-text--regular'>Brainly App</a></span></div><div class='sg-flex sg-flex--full-height sg-flex--no-shrink sg-flex--align-items-center'><span class='SubNav__linkWrapper--3SFe0'><a role='link' data-test='sub_navigaton_tutor' tabindex='0' href='/online-tutoring?source=topbar' class='sg-text sg-text--small sg-text--link sg-text--bold sg-text--black sg-text--regular'>Brainly Tutor</a></span></div></div></div></div></div></header></head><body><select name='types' id='types'><option value='choose'>Category</option><option value='all'>All</option><option value='thanks'>Thanks ❤️</option><option value='comment'>Comments 💬</option><option value='answered'>Answers 📝</option><option value='lost'>Challenges 🤔</option><option value='expired'>Questions ❓</option><option value='brainliest'>Brainliest 👑</option><option value='deleted'>Deleted 🗑️</option></select></body>"
+        
         document.getElementById("types").addEventListener("change",function(){
            
             let total = document.getElementsByClassName("filter")
               for (let i = 0; i < total.length; i++) {
+
                   total[i].style.display = "none"
               }
+              let imgs = document.getElementsByClassName("apdimg")
+              for (let i = 0; i < imgs.length; i++) {
+                  imgs[i].style.display = "none"
+              }
             if (this.value === "all"){
+                let imgs = document.getElementsByClassName("apdimg")
+                for (let i = 0; i < imgs.length; i++) {
+                    imgs[i].style.display = "block"
+                }
                 let total = document.getElementsByClassName("filter")
                   for (let i = 0; i < total.length; i++) {
                       total[i].style.display = "block"
                   }
             }
+            
             let all = document.getElementsByClassName(this.value)
             for (let i = 0; i < all.length; i++) {
               
@@ -677,8 +696,15 @@ function appendToFooter(){
             f();
         }
          let img = document.createElement("img")
-         img.src = this.responseHTML.getElementsByClassName("user-data")[0].children[0].children[0].src
-         ele.parentElement.appendChild(img)
+        
+         if (this.responseHTML.getElementsByClassName("user-data")[0].children[0].children[0].src !== "https://brainly.com/img/"){
+            img.src = this.responseHTML.getElementsByClassName("user-data")[0].children[0].children[0].src
+         } else {
+             img.src = "https://brainly.com/img/avatars/100-ON.png"
+         }
+         
+         img.className = "apdimg"
+         ele.appendChild(img)
       }
     });
 
@@ -718,6 +744,7 @@ function appendToFooter(){
               let items = jsn["data"]["items"]
               for (let i = 0; i < items.length; i++) {
                 let dv = document.createElement("div")
+                dv.className = "divfilt"
                 dv.setAttribute("usable","true")
                 let txt = document.createElement("p")
                 dv.addEventListener("click",function(){
@@ -761,11 +788,13 @@ function appendToFooter(){
                     txt.innerText = items[i]["text"].replace("%1$s",items[i]["user_id"])
                     txt.className = "default filter"
                 }
-                document.body.appendChild(dv)
+                
+                full.appendChild(dv)
+                
               }
             }
           });
-          
+          document.body.appendChild(full)
           xhr.open("POST", "https://brainly.com/api/28/api_notifications/view");
           xhr.setRequestHeader("authority", "brainly.com");
           xhr.setRequestHeader("sec-ch-ua", "\"Chromium\";v=\"94\", \"Google Chrome\";v=\"94\", \";Not A Brand\";v=\"99\"");
