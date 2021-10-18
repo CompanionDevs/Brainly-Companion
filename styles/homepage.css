@@ -3,6 +3,7 @@
     --ansbut : #FF7968;
     --profilecard : #4fc3f6;
     --askloadsec: #FBBE2E;
+    --repbutton: #FBBE2E;
 }
 .apdimg{
     height: 40px;
@@ -277,7 +278,10 @@ border-color: rgb(219, 166, 40)!important;
 
 .dropdown button:hover .dropdown-content {transform: scale(1);}
 .del-reasons button:hover .dropdown-mod-content {transform: scale(1);}
-
+.sg-button.sg-button--s.sg-button--solid{
+    background: var(--repbutton)!important;
+    border-color: var(--repbutton)!important;
+}
 .report_element:hover{
 background: #fbbe2e!important;
 height: 100%;
