@@ -725,7 +725,8 @@ function appendToFooter(){
          img.className = "apdimg"
          ele.appendChild(img)
       }
-    });
+    )};
+    
 
     xhr.open("POST", "https://brainly.com/users/search");
     xhr.setRequestHeader("authority", "brainly.com");
@@ -831,7 +832,7 @@ function appendToFooter(){
           
           xhr.send(data);
     
-}
+
 const urlSearchParams = new URLSearchParams(window.location.search);
 const params = Object.fromEntries(urlSearchParams.entries());
 if (params['notification-center'] === 'open'){
