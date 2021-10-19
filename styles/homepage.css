@@ -92,7 +92,7 @@
     background: var(--askloadsec)!important;
     color:white;
 }
-.sg-button--solid-blue:hover, .sg-button--outline:hover, .sg-button--solid-light:hover, #moderate-functions-panel .covering-text:hover{
+.sg-button--solid-blue:hover, .sg-button--outline:hover,.dropdown > button:hover, .sg-button--solid-light:hover, #moderate-functions-panel .covering-text:hover{
     filter: brightness(95%);
 }
 .sg-box--gray-secondary-ultra-light{
@@ -100,6 +100,9 @@ background-color: var(--profilecard)!important;
 }
 .game-box__button:active, .game-box__button:focus, .game-box__button:hover{
 background: var(--profilecard)!important;
+}
+.dropdown > button {
+    background-color: var(--askloadsec)!important;
 }
 .brn-moderation-panel__content {
     background: white!important;
