@@ -720,11 +720,12 @@ function appendToFooter(){
          ele.appendChild(img)
          ele.appendChild(heart)
          heart.outerHTML = '<?xml version="1.0" encoding="UTF-8"?><svg width="20px" height="20px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><title>Icon/Social/heart</title><defs><path d="M22.0238309,32.5523514 C20.8804715,33.5990446 19.1258621,33.5924041 17.9903933,32.5371955 L17.8253933,32.3860273 C9.95336183,25.2033121 4.81039296,20.5004581 5.00539296,14.6333357 C5.09304825,12.0404382 6.3919659,9.63881517 8.5139868,8.14615035 C12.2005494,5.66363283 17.1675808,6.38291215 19.9996121,9.80954724 C22.827659,6.37603732 27.8003935,5.65582052 31.4851592,8.14615035 C33.6071989,9.63879852 34.906122,12.0404316 34.9937531,14.6333357 C35.2038312,20.5004581 30.0457061,25.2033121 22.1738309,32.416261 L22.0238309,32.5523514 Z" id="path-1"></path></defs><g id="Icon/Social/heart" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><mask id="mask-2" fill="white"><use xlink:href="#path-1"></use></mask><use id="Path" fill="crimson" xlink:href="#path-1"></use><g id="Group" mask="url(#mask-2)" fill="crimson"><g id="symbolInstance"><rect id="color-mask-box" x="0" y="0" width="40" height="40"></rect></g></g></g></svg>'
-         }
+         
          
          img.className = "apdimg"
          ele.appendChild(img)
       }
+    }
     )};
     
 
@@ -832,7 +833,7 @@ function appendToFooter(){
           
           xhr.send(data);
     
-
+}
 const urlSearchParams = new URLSearchParams(window.location.search);
 const params = Object.fromEntries(urlSearchParams.entries());
 if (params['notification-center'] === 'open'){
