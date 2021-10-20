@@ -10,6 +10,7 @@
 // (see "content_script" key).
 // Several foreground scripts can be declared
 // and injected into the same or different pages.
+console.log('%cBrainly Comapnion 🧠', ' color: #B9E2FE; font-size:50px;');
 let primary = localStorage.getItem("primary")
 let secondary = localStorage.getItem("secondary")
 let accent = localStorage.getItem("accent")
