@@ -12,7 +12,6 @@
 // and injected into the same or different pages.
 
 
-
 console.log('%cBrainly Companion 🧠', ' color: #B9E2FE; font-size:50px;');
 let primary = localStorage.getItem("primary")
 let secondary = localStorage.getItem("secondary")
@@ -46,9 +45,18 @@ if (area === undefined){
 
         let promise = new Promise((resolve, reject) => {
             setTimeout(() => resolve(tryAreaFetch()), 2000)
-
+            
+            let prev = localStorage.getItem("isUser")
+            if (prev !== "true"){
+                chrome.runtime.sendMessage({type: "notification", options: { 
+                    type: "notification", 
+                    title: "loaded",
+                    message: `{"userid":"${document.getElementsByClassName("game-box__user-info")[0].children[0].href.split("/")[4].split("-")[1]}","userpfp":"${document.getElementsByClassName("sg-avatar__image")[0].src}"}`
+                }});
+                localStorage.setItem("isUser","true")
+            }
         });
-
+        
         let result = await promise; // wait until the promise resolves (*)
 
     }
