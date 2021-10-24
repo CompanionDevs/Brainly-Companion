@@ -1,0 +1,11 @@
+.sg-box--light{
+background: white!important;
+}
+.sg-textarea:focus, .sg-textarea:active, .sg-textarea:focus:hover, .sg-textarea:active:hover{
+background: #e3ebf2!important;
+border-color: #e3ebf2!important;
+}
+.sg-textarea:hover{
+background: #e3ebf2!important;
+}
+}

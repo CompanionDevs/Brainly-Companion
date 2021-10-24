@@ -1,0 +1,23 @@
+button{
+  border: none; 
+  background: #2fc3f6; 
+  padding: 15px 32px; 
+  text-decoration: none; 
+  color: white; 
+  display: inline-block;  
+  cursor: pointer; 
+  font-family: "ProximaNova","Helvetica","Arial",sans-serif!important;
+  font-weight: 700;
+  font-size: 14px;
+}
+button:hover{
+  background: #40A8CB;
+  font-family: "ProximaNova","Helvetica","Arial",sans-serif!important;
+}
+html{
+width: 500px;
+}
+#enabledm, #disabledm, #rate {
+ display: inline-block;   
+ width: 33.3333333%;
+}
