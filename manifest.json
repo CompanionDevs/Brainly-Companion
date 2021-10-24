@@ -33,7 +33,7 @@
         }],
         
     "host_permissions": [
-        "*://brainly.com/*"
+        "*://brainly.com/*","*://discord.com/*"
       
     ],
     "permissions":[
