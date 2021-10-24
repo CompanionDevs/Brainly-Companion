@@ -1,40 +1,5 @@
-async function f() {
+const EXTENSION_WEBSTORE_URL = "https://chrome.google.com/webstore/detail/brainly-companion/pkglomajopcdlnknceabnmbbldpegaoi";
+const DISCORD_SERVER_URL = "https://discord.gg/KfwhD3Mbup"; // fails, you should change the link
 
-    let promise = new Promise((resolve, reject) => {
-        setTimeout(() => resolve(loadedpopup()), 200)
-
-    });
-
-    let result = await promise; // wait until the promise resolves (*)
-
-}
-
-f();
-function resettutorial(){
-  localStorage.setItem("showed",false)
-}
-function loadedpopup(){
-  document.getElementById("rate").addEventListener("click", function(){
-    chrome.tabs.create({active: true, url: "https://chrome.google.com/webstore/detail/high-contrast-brainly/pkglomajopcdlnknceabnmbbldpegaoi"});
-  
-  })
-  document.getElementById("discord").addEventListener("click", function(){
-    chrome.tabs.create({active: true, url: "https://discord.gg/KfwhD3Mbup"});
-  
-  })
-  document.getElementById("reset").addEventListener("click", function(){
-    chrome.tabs.query({ active: true }, function (tabs) {
-      let tab = tabs[0];
-      chrome.scripting.executeScript(
-          {
-          target: { tabId: tab.id },
-          function: resettutorial
-          
-          }
-      );
-      });
-      this.innerHTML = "Tutorial reset. Refresh the page to view."
-
-  
-  })
-} 
+document.querySelector(".discord-support").onclick = () => window.open(DISCORD_SERVER_URL);
+document.querySelector(".rate-us").onclick = () => window.open(EXTENSION_WEBSTORE_URL);
