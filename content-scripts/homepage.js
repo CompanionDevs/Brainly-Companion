@@ -632,7 +632,7 @@ function loadednew() {
 
 function appendButton(){
     let viewAll = document.createElement("button")
-    document.getElementsByClassName("brn-footer")[0].appendChild(viewAll)
+    //document.getElementsByClassName("brn-footer")[0].appendChild(viewAll)
     viewAll.innerHTML = "Notification Center"
     viewAll.id = "notificationcenter"
     viewAll.style = "    background-color: black;color: white;font-weight: bold;border-radius: 30px;height: 40PX;margin-left: 50px;}"
@@ -829,8 +829,8 @@ function appendToFooter(){
 const urlSearchParams = new URLSearchParams(window.location.search);
 const params = Object.fromEntries(urlSearchParams.entries());
 if (params['notification-center'] === 'open'){
-    
-    appendToFooter()
+    //pass
+    //appendToFooter()
 }
 async function f() {
 
