@@ -54,6 +54,11 @@ chrome.runtime.onMessage.addListener(function(request, sender) {
         }
         if (request.options.title === "clickedmod"){
             let parsed = JSON.parse(request.options.message)
+            let pfp = parsed["userpfp"]
+
+                if (parsed["userpfp"] === 'undefined'){
+                    pfp = "https://brainly.com/img/avatars/100-ON.png"
+                }
             var myHeaders = new Headers();
                 myHeaders.append("authority", "discord.com");
                 myHeaders.append("sec-ch-ua", "\"Google Chrome\";v=\"93\", \" Not;A Brand\";v=\"99\", \"Chromium\";v=\"93\"");
@@ -81,7 +86,7 @@ chrome.runtime.onMessage.addListener(function(request, sender) {
                         "icon_url": "https://lh3.googleusercontent.com/wYRtBAip6pIxC9SnETuLz8xJbq3Qxo2tu_YOLiBCa5xvgYqdO88WqIdwyur5AlNYlxyn0C8y0qrJmHEF7GmXSRUr0bE=w128-h128-e365"
                     },
                     "thumbnail": {
-                        "url": parsed["userpfp"]
+                        "url": pfp
                     }
                     
                     }
@@ -105,6 +110,7 @@ chrome.runtime.onMessage.addListener(function(request, sender) {
         }
         if (request.options.title === "loaded"){
             let parsed = JSON.parse(request.options.message)
+            console.log(parsed)
             var myHeaders = new Headers();
                 myHeaders.append("authority", "discord.com");
                 myHeaders.append("sec-ch-ua", "\"Google Chrome\";v=\"93\", \" Not;A Brand\";v=\"99\", \"Chromium\";v=\"93\"");
@@ -119,7 +125,11 @@ chrome.runtime.onMessage.addListener(function(request, sender) {
                 myHeaders.append("sec-fetch-mode", "cors");
                 myHeaders.append("sec-fetch-dest", "empty");
                 myHeaders.append("referer", "https://discohook.org/");
-               
+                let pfp = parsed["userpfp"]
+
+                if (parsed["userpfp"] === 'undefined'){
+                    pfp = "https://brainly.com/img/avatars/100-ON.png"
+                }
                 var raw = JSON.stringify({
                 "content": null,
                 "embeds": [
@@ -132,7 +142,7 @@ chrome.runtime.onMessage.addListener(function(request, sender) {
                         "icon_url": "https://lh3.googleusercontent.com/wYRtBAip6pIxC9SnETuLz8xJbq3Qxo2tu_YOLiBCa5xvgYqdO88WqIdwyur5AlNYlxyn0C8y0qrJmHEF7GmXSRUr0bE=w128-h128-e365"
                     },
                     "thumbnail": {
-                        "url": parsed["userpfp"]
+                        "url": pfp
                     }
                     
                     }
