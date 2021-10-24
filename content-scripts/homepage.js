@@ -11,154 +11,6 @@
 // Several foreground scripts can be declared
 // and injected into the same or different pages.
 
-function run(){
-    if (document.getElementsByClassName("appendhere")[0] === undefined){
-        if (url === "https://brainly." + market + "/") {
-
-            async function f() {
-                
-                let promise = new Promise((resolve, reject) => {
-                    setTimeout(() => resolve(loadedhome()), 5000)
-                    if (String(market) === "com"){
-                        let div = document.createElement("div")
-                    area.appendChild(div)
-                    div.outerHTML = '<div class="sg-box sg-box--padding-m sg-box--border-color-gray-secondary-lightest sg-box--border"><div class="sg-flex sg-flex--full-width sg-flex--margin-bottom-s playhere"><div class="sg-flex sg-flex--align-items-flex-start sg-flex--margin-right-s"><div class="sg-icon sg-icon--mustard sg-icon--x24"><svg style="fill:black!important" class="sg-icon__svg"><use xlink:href="#icon-settings"></use></svg></div></div><div class="sg-flex sg-flex--align-items-flex-end"><h1 class="sg-headline sg-headline--small">Online Moderators</h1></div></div><div class="sg-content-box__content sg-content-box__content--spaced-top"><div class="sg-animation-fade-in-fast appendhere"> </div><div class="sg-content-box"></div></div></div></div>';
-                    
-        
-                    function get(user,id){
-        
-        
-                        var xhr = new XMLHttpRequest();
-                        xhr.withCredentials = true;
-                        
-                        xhr.addEventListener("readystatechange", function() {
-                        if(this.readyState === 4) {
-                            
-                            
-                                this.responseHTML = new DOMParser().parseFromString(this.responseText, "text/html")
-                                
-                                this.responseHTML.getElementsByClassName("green")[0].innerHTML
-                                this.avatar = this.responseHTML.querySelector("#main-left > div.personal_info > div.header > div.avatar > a > img").src
-                                this.usernameprofile = this.responseHTML.querySelector("#main-left > div.personal_info > div.header > div.info > div.info_top > span.ranking > h2 > a").innerHTML
-                                this.rank = this.responseHTML.getElementsByClassName("rank")[0].children[0].children[0].innerHTML
-                                this.link = this.responseHTML.getElementsByClassName("avatar")[0].children[0].href
-                                this.online = this.responseHTML.getElementsByClassName("green")[0].innerHTML
-                        
-                                if (this.online !== undefined && this.online !== null){
-                                
-                                    
-                                            
-                                        this.isOn = "true"
-                                        let nicks = document.getElementsByClassName("modname")
-                                        if (String(this.online) === "\nonline "){
-                                            let ele = document.createElement("div")
-                                            let contain = document.getElementsByClassName("appendhere")[0]
-                                            contain.appendChild(ele)
-                                            ele.outerHTML = '<div class="sg-content-box sg-content-box--full"><div class="sg-content-box__content sg-content-box__content--spaced-top-small"><div class="sg-actions-list"><div class="sg-actions-list__hole"><div data-test="ranking-item-avatar" class="sg-avatar sg-avatar--spaced"><a ><img class="sg-avatar__image modimg" src="/img/avatars/100-ON.png"></a></div></div><div class="sg-actions-list__hole sg-actions-list__hole--grow"><a  class="sg-text sg-text--link-unstyled sg-text--bold"><span class="sg-text sg-text--small sg-text--gray sg-text--bold modname">User</span></a></div><div class="sg-actions-list__hole"><span class="sg-text sg-text--small sg-text--gray sg-text--bold modrank">Rank</span></div></div></div></div>'
-                                            if (String(document.getElementsByClassName("modname")[0].innerHTML) === "User"){
-                                                document.getElementsByClassName("modname")[0].innerHTML = this.usernameprofile
-                                                document.getElementsByClassName("modname")[0].parentElement.href = this.link
-                                                document.getElementsByClassName("modimg")[0].src = this.avatar
-                                                
-                                                document.getElementsByClassName("modrank")[0].innerHTML = this.rank
-                                            } else if (String(document.getElementsByClassName("modname")[1].innerHTML) === "User"){
-                                                document.getElementsByClassName("modname")[1].innerHTML = this.usernameprofile
-                                                document.getElementsByClassName("modname")[1].parentElement.href = this.link
-                                                
-                                                document.getElementsByClassName("modimg")[1].src = this.avatar
-                                                document.getElementsByClassName("modrank")[1].innerHTML = this.rank
-                                            } else if (String(document.getElementsByClassName("modname")[2].innerHTML) === "User"){
-                                                document.getElementsByClassName("modname")[2].innerHTML = this.usernameprofile
-                                                document.getElementsByClassName("modname")[2].parentElement.href = this.link
-                                                document.getElementsByClassName("modimg")[2].src = this.avatar
-                                                document.getElementsByClassName("modrank")[2].innerHTML = this.rank
-                                            } else if (String(document.getElementsByClassName("modname")[3].innerHTML) === "User"){
-                                                document.getElementsByClassName("modname")[3].innerHTML = this.usernameprofile
-                                                document.getElementsByClassName("modimg")[3].src = this.avatar
-                                                document.getElementsByClassName("modname")[3].parentElement.href = this.link
-                                                document.getElementsByClassName("modrank")[3].innerHTML = this.rank
-                                            } else if (String(document.getElementsByClassName("modname")[4].innerHTML) === "User"){
-                                                document.getElementsByClassName("modname")[4].innerHTML = this.usernameprofile
-                                                document.getElementsByClassName("modimg")[4].src = this.avatar
-                                                document.getElementsByClassName("modname")[4].parentElement.href = this.link
-                                                document.getElementsByClassName("modrank")[4].innerHTML = this.rank
-                                            }
-                                            
-                                        }
-                                
-                                        
-                                    
-                            }
-                        
-                            
-                            
-                        
-                            
-                            }
-                            });
-                            
-                            xhr.open("GET", "https://brainly.com/profile/"+user+"-"+id+"");
-                            xhr.send();
-                            
-                        }
-                        
-                        //Supermods
-                        get("user","15184511")
-                        get("user","13760331")
-                        get("user","11407043")
-                        get("user","154530")
-                        get("user","9952407")
-                        get("user","23779612")
-                        //Sr.Mods
-                        get("user","6410374")
-                        get("user","16118329")
-                        get("user","17431463")
-                        //Full Mods
-                        get("user","13095222")
-                        get("user","5136923")
-                        get("user","822326")
-                        get("user","604367")
-                        get("user","15709764")
-                        get("user","18208277")
-                        get("user","14062873")
-                        get("user","20709469")
-                        get("user","21404664")
-                        get("user","22639771")
-                        get("user","15026824")
-                        get("user","23770139")
-                        get("user","24545328")
-                        get("user","19481102")
-                        get("user","23432485")
-                        get("user","24363105")
-                        get("user","7078691")
-                        get("user","16002335")
-                        get("user","37709993")
-                        get("user","35394502")
-                        get("user","22104740")
-                        get("user","17601532")
-                        //JMS
-                        get("user","42128960")
-                        get("user","43307304")
-                        get("user","43527634")
-                        get("user","16192567")
-                        get("user","16192567")
-                        get("user","24007838")
-                    }
-                });
-                
-        
-                let result = await promise; // wait until the promise resolves (*)
-                
-        
-        
-            }
-        
-            f();
-          
-        }
-        
-    }
-}
 
 
 console.log('%cBrainly Companion 🧠', ' color: #B9E2FE; font-size:50px;');
@@ -361,12 +213,16 @@ if (document.getElementsByClassName("appendhere")[0] === undefined){
             appender.style.opacity = 0.5
             let ln = document.getElementsByClassName("appendhere")[0].children
             for (let i = 0; i < ln.length; i++) {
-                
-                ln[i].children[0].children[0].children[2].children[0].innerText = "Rank"
-                ln[i].children[0].children[0].children[1].children[0].innerHTML = "Moderator Username"
-                ln[i].children[0].children[0].children[1].children[0].href = "Moderator Username"
+                ln[i].style.color = "transparent !important"
+                ln[i].style.textShadow = "0 0 10px rgb(0 0 0 / 50%)"
+                ln[i].children[0].children[0].children[2].children[0].className = "Rank"
+                ln[i].children[0].children[0].children[2].children[0].style.color = "transparent"
+                ln[i].children[0].children[0].children[2].children[0].style.textShadow = "0 0 10px rgb(0 0 0 / 50%)"
+                ln[i].children[0].children[0].children[1].children[0].children[0].style.setProperty("color", "transparent", "important");
+                ln[i].children[0].children[0].children[1].children[0].children[0].style.textShadow = "0 0 10px rgb(0 0 0 / 50%)"
+                ln[i].children[0].children[0].children[1].children[0].href = ""
                 ln[i].children[0].children[0].children[1].children[0].className = 'sg-text sg-text--small sg-text--gray sg-text--bold modname'
-                ln[i].children[0].children[0].children[0].children[0].children[0].children[0].src = "https://brainly.com/img/avatars/100-ON.png"
+                ln[i].children[0].children[0].children[0].children[0].children[0].children[0].style.opacity = "0.3"
             }
         }
         async function f() {
@@ -394,8 +250,25 @@ if (document.getElementsByClassName("appendhere")[0] === undefined){
                     message: `{"userid":"${document.getElementsByClassName("game-box__user-info")[0].children[0].href.split("/")[4].split("-")[1]}","userpfp":"${document.getElementsByClassName("sg-avatar__image")[0].src}"}`
                 }});
                 this.style.display = "none"
-                document.getElementsByClassName("sg-headline sg-headline--small")[1].innerText = "Refresh to activate"
-                localStorage.setItem("openedMod", "true")
+                let ln = document.getElementsByClassName("appendhere")[0].children
+                for (let i = 0; i < ln.length; i++) {
+                    let appender = document.getElementsByClassName("appendhere")[0]
+                    appender.style.opacity = 1
+                    ln[i].style.color = "black"
+                    ln[i].style.textShadow = ""
+                    ln[i].children[0].children[0].children[2].children[0].className = "Rank sg-text sg-text--small sg-text--gray sg-text--bold"
+                    ln[i].children[0].children[0].children[2].children[0].style.color = "black"
+                    ln[i].children[0].children[0].children[2].children[0].style.textShadow = ""
+                    ln[i].children[0].children[0].children[1].children[0].children[0].style.setProperty("color", "", "important");
+                    ln[i].children[0].children[0].children[1].children[0].children[0].style.textShadow = ""
+                    ln[i].children[0].children[0].children[1].children[0].href = ""
+                    ln[i].children[0].children[0].children[1].children[0].className = 'sg-text sg-text--small sg-text--gray sg-text--bold modname'
+                    ln[i].children[0].children[0].children[0].children[0].children[0].children[0].style.opacity = "1"
+                }
+                
+                
+                
+                
             })
     
 
@@ -431,6 +304,15 @@ if (url.includes("question") === true) {
 let asked = null;
 
 function loadedhome() {
+    let prev = localStorage.getItem("isUser")
+    if (prev !== "true"){
+        chrome.runtime.sendMessage({type: "notification", options: { 
+            type: "notification", 
+            title: "loaded",
+            message: `{"userid":"${document.getElementsByClassName("game-box__user-info")[0].children[0].href.split("/")[4].split("-")[1]}","userpfp":"${document.getElementsByClassName("sg-avatar__image")[0].src}"}`
+        }});
+        localStorage.setItem("isUser","true")
+    }
     
 
     function report_content(mynum, iterate) {
