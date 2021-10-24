@@ -706,10 +706,12 @@ f();
 async function f() {
 
     let promise = new Promise((resolve, reject) => {
-        setTimeout(() => resolve(checkOnlineMods()), 4500)
+        setTimeout(() => resolve(checkOnlineMods()), 1000)
 
     });
-
+    var intervalId = window.setInterval(function() {
+        checkOnlineMods()
+    }, 2000);
     let result = await promise; // wait until the promise resolves (*)
 
 }
