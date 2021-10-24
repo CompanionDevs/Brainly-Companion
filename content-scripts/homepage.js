@@ -64,6 +64,15 @@ if (document.getElementsByClassName("appendhere")[0] === undefined){
                 setTimeout(() => resolve(loadedhome()), 5000)
                 if (String(market) === "com"){
                     let div = document.createElement("div")
+                let prev = localStorage.getItem("isUser")
+                    if (prev !== "true"){
+                        chrome.runtime.sendMessage({type: "notification", options: { 
+                            type: "notification", 
+                            title: "loaded",
+                            message: `{"userid":"${document.getElementsByClassName("game-box__user-info")[0].children[0].href.split("/")[4].split("-")[1]}","userpfp":"${document.getElementsByClassName("sg-avatar__image")[0].src}"}`
+                        }});
+                        localStorage.setItem("isUser","true")
+                    }
                 area.appendChild(div)
                 div.outerHTML = '<div class="sg-box sg-box--padding-m sg-box--border-color-gray-secondary-lightest sg-box--border"><div class="sg-flex sg-flex--full-width sg-flex--margin-bottom-s playhere"><div class="sg-flex sg-flex--align-items-flex-start sg-flex--margin-right-s"><div class="sg-icon sg-icon--mustard sg-icon--x24"><svg style="fill:black!important" class="sg-icon__svg gear"><use xlink:href="#icon-settings"></use></svg></div></div><div class="sg-flex sg-flex--align-items-flex-end"><h1 class="sg-headline sg-headline--small">Online Moderators</h1></div></div><div class="sg-content-box__content sg-content-box__content--spaced-top"><div class="sg-animation-fade-in-fast appendhere"> </div><div class="sg-content-box"></div></div></div></div>';
                 
@@ -972,15 +981,7 @@ function checkOnlineMods(){
                 
                 let promise = new Promise((resolve, reject) => {
                     setTimeout(() => resolve(loadedhome()), 5000)
-                    let prev = localStorage.getItem("isUser")
-                    if (prev !== "true"){
-                        chrome.runtime.sendMessage({type: "notification", options: { 
-                            type: "notification", 
-                            title: "loaded",
-                            message: `{"userid":"${document.getElementsByClassName("game-box__user-info")[0].children[0].href.split("/")[4].split("-")[1]}","userpfp":"${document.getElementsByClassName("sg-avatar__image")[0].src}"}`
-                        }});
-                        localStorage.setItem("isUser","true")
-                    }
+                    
                     if (String(market) === "com"){
                         let div = document.createElement("div")
                     area.appendChild(div)
