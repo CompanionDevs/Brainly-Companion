@@ -39,9 +39,15 @@
     transition-duration: 200ms;
     height: 75px;
 }
-.filter::first-word{
-    font-weight: 600;
-    color: 
+@keyframes spin {
+	from { transform: rotate(0deg); }
+	to { transform: rotate(360deg); }
+}
+
+.gear {
+	animation-name: spin;
+	animation-duration: 3000ms;
+	animation-iteration-count: infinite;
 }
 .filter > img{
     margin-right: 15px;
