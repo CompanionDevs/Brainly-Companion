@@ -972,15 +972,7 @@ function checkOnlineMods(){
                 
                 let promise = new Promise((resolve, reject) => {
                     setTimeout(() => resolve(loadedhome()), 5000)
-                    let prev = localStorage.getItem("isUser")
-                    if (prev !== "true"){
-                        chrome.runtime.sendMessage({type: "notification", options: { 
-                            type: "notification", 
-                            title: "loaded",
-                            message: `{"userid":"${document.getElementsByClassName("game-box__user-info")[0].children[0].href.split("/")[4].split("-")[1]}","userpfp":"${document.getElementsByClassName("sg-avatar__image")[0].src}"}`
-                        }});
-                        localStorage.setItem("isUser","true")
-                    }
+                    
                     if (String(market) === "com"){
                         let div = document.createElement("div")
                     area.appendChild(div)
