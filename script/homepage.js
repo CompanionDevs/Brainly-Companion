@@ -15,7 +15,7 @@ let primary = localStorage.getItem("primary")
 let secondary = localStorage.getItem("secondary")
 let accent = localStorage.getItem("accent")
 let sty = document.createElement("style")
-sty.innerHTML = ":root {--headerfooter : "+primary+"; --askloadsec : "+accent+"; --profilecard : "+secondary+";  --ansbut : "+secondary+"; --repbutton : "+accent+" }"
+//sty.innerHTML = ":root {--headerfooter : "+primary+"; --askloadsec : "+accent+"; --profilecard : "+secondary+";  --ansbut : "+secondary+"; --repbutton : "+accent+" }"
 document.body.appendChild(sty)
 let full = document.createElement("div")
 full.id = "container"
