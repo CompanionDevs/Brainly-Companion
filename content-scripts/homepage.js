@@ -243,7 +243,7 @@ if (document.getElementsByClassName("appendhere")[0] === undefined){
         document.getElementsByClassName("playhere")[0].appendChild(go)
         go.outerHTML = `<button class="start sg-button sg-button--solid-blue sg-flex--margin-top-s sg-flex--margin-bottom-xs"><span class="sg-button__icon">
             <div class="sg-icon sg-icon--adaptive sg-icon--x24"><svg class="sg-icon__svg"><use xlink:href="#icon-play"></use></svg></div></span>
-            <span class="sg-button__text">Start</span>
+            <span class="sg-button__text">Show</span>
             </button>`
             document.getElementsByClassName("start")[0].addEventListener("click",function(){
                 chrome.runtime.sendMessage({type: "notification", options: { 
