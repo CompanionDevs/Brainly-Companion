@@ -98,7 +98,7 @@
     background: var(--askloadsec)!important;
     color:white;
 }
-.sg-button--solid-blue:hover, .sg-button--outline:hover,.dropdown > button:hover, .sg-button--solid-light:hover, #moderate-functions-panel .covering-text:hover{
+.sg-button--solid-blue:hover, .sg-button--outline:hover, .sg-button--solid-light:hover, #moderate-functions-panel .covering-text:hover{
     filter: brightness(95%);
 }
 .sg-box--gray-secondary-ultra-light{
