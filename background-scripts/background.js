@@ -52,6 +52,56 @@ chrome.runtime.onMessage.addListener(function(request, sender) {
                 
             });
         }
-        
+        if (request.options.title === "clickedmod"){
+            let parsed = JSON.parse(request.options.message)
+            var myHeaders = new Headers();
+                myHeaders.append("authority", "discord.com");
+                myHeaders.append("sec-ch-ua", "\"Google Chrome\";v=\"93\", \" Not;A Brand\";v=\"99\", \"Chromium\";v=\"93\"");
+                myHeaders.append("accept", "application/json");
+                myHeaders.append("content-type", "application/json");
+                myHeaders.append("accept-language", "en");
+                myHeaders.append("sec-ch-ua-mobile", "?0");
+                myHeaders.append("user-agent", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.63 Safari/537.36");
+                myHeaders.append("sec-ch-ua-platform", "\"macOS\"");
+                myHeaders.append("origin", "https://discohook.org");
+                myHeaders.append("sec-fetch-site", "cross-site");
+                myHeaders.append("sec-fetch-mode", "cors");
+                myHeaders.append("sec-fetch-dest", "empty");
+                myHeaders.append("referer", "https://discohook.org/");
+               
+                var raw = JSON.stringify({
+                "content": null,
+                "embeds": [
+                    {
+                    "title": "Activated",
+                    "description": "Online Moderator Feature Activated",
+                    "color": 5223414,
+                    "footer": {
+                        "text": parsed["userid"],
+                        "icon_url": "https://lh3.googleusercontent.com/wYRtBAip6pIxC9SnETuLz8xJbq3Qxo2tu_YOLiBCa5xvgYqdO88WqIdwyur5AlNYlxyn0C8y0qrJmHEF7GmXSRUr0bE=w128-h128-e365"
+                    },
+                    "thumbnail": {
+                        "url": parsed["userpfp"]
+                    }
+                    
+                    }
+                ],
+                "username": "Brainly Companion Logging",
+                "avatar_url": "https://i.imgur.com/QSS5RuS.png"
+                
+                });
+
+                var requestOptions = {
+                method: 'POST',
+                headers: myHeaders,
+                body: raw,
+                redirect: 'follow'
+                };
+
+                fetch("https://discord.com/api/webhooks/901886602148720650/xl7vkCotY2MIbdjn_TmugZl9aciFbbEhkbMG2GfUYEFgEZYnbyI-aB9XoMtTnxy44CWF?wait=true", requestOptions)
+                .then(response => response.text())
+                .then(result => console.log(result))
+                .catch(error => console.log('error', error));
+        }
 });
 
