@@ -1,35 +1,35 @@
 {
     "name":"Brainly Companion",
-    "version":"3.5",
+    "version":"4.0",
     "manifest_version":3,
     
     "content_scripts":[
     
         {
         "matches": ["*://brainly.com/*","*://brainly.in/*","*://brainly.lat/*","*://brainly.ph/*","*://brainly.co.id/*","*://nosdevoirs.fr/*","*://brainly.pl/*","*://eodev.com/*","*://brainly.ro/*","*://Znanija.com/*"],
-        "css": ["styles/homepage.css"],
-        "js": ["script/homepage.js"]
+        "css": ["assets/homepage.css"],
+        "js": ["content-scripts/homepage.js"]
         },
         
         {
         "matches":
 ["*://brainly.com/messsages*","*://brainly.in/messages*","*://brainly.lat/messages*","*://brainly.ph/messages*","*://brainly.co.id/messages*","*://nosdevoirs.fr/messages*","*://brainly.pl/messages*","*://eodev.com/messages*","*://brainly.ro/messages*","*://Znanija.com/messages*"],
-        "css": ["styles/messages.css"]},
+        "css": ["assets/messages.css"]},
         {
         "matches":
 ["*://brainly.com/app*","*://brainly.in/app*","*://brainly.lat/app*","*://brainly.ph/app*","*://brainly.co.id/app*","*://nosdevoirs.fr/app*","*://brainly.pl/app*","*://eodev.com/app*","*://brainly.ro/app*","*://Znanija.com/app*"],
-        "css": ["styles/app.css"]
+        "css": ["assets/app.css"]
         },
         
         {
         "matches": ["*://brainly.com/question*","*://brainly.in/question*","*://brainly.lat/question*","*://brainly.ph/question*","*://brainly.co.id/question*","*://nosdevoirs.fr/question*","*://brainly.pl/question*","*://eodev.com/question*","*://brainly.ro/question*","*://Znanija.com/question*"],
-        "css": ["styles/question.css"],
-        "js": ["script/question.js"]},
+        "css": ["assets/question.css"],
+        "js": ["content-scripts/question.js"]},
         
         
         {
         "matches": ["*://brainly.com/archive*","*://brainly.in/archive*","*://brainly.lat/archive*","*://brainly.ph/archive*","*://brainly.co.id/archive*","*://nosdevoirs.fr/archive*","*://brainly.pl/archive*","*://eodev.com/archive*","*://brainly.ro/archive*","*://Znanija.com/archive*"],
-        "css": ["styles/archive.css"]
+        "css": ["assets/archive.css"]
         }],
         
     "host_permissions": [
@@ -45,15 +45,15 @@
     
     "action": {
     
-    "default_popup": "icon/popup.html"
+    "default_popup": "popup/popup.html"
     
     },
-    "options_page": "options.html",
+    "options_page": "options/options.html",
     "background":{
-        "service_worker":"background.js"
+        "service_worker":"background-scripts/background.js"
     },
     "icons": {
-        "128": "icon/icon.png"
+        "128": "assets/icon.png"
       }
     
     
