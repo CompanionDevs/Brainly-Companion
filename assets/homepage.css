@@ -4,6 +4,9 @@
     --profilecard : #4fc3f6;
     --askloadsec: #FBBE2E;
 }
+.hide{
+    display:none;
+}
 .apdimg{
     height:50px;
 }
