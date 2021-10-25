@@ -19,6 +19,9 @@ border-color: #C3D1DD!important;
 .brn-qpage-next-answer-box{
 border-color: #c3d1dd!important;
 }
+.sg-button.sg-button--s.sg-button--transparent > span.sg-button__text{
+    color: black!important;
+}
 .brn-qpage-next-answer-box--expert-verified{
 border-color: #60d399!important;
 }
@@ -38,20 +41,14 @@ background: #fbbe2e!important;
 .sg-button--outline{
 color: white!important;
 }
-.sg-box--padding-m.sg-box--border{
+.sg-box.sg-box--light.sg-box--padding-m.sg-box--border-color-gray-secondary-lightest.sg-box--border, .sg-icon.sg-icon--mustard.sg-icon--x16{
 border-color: #fbbe2e!important;
-}
-.brn-qpage-next-question-box{
-border-color: #2fc3f6!important;
-}
-.brn-qpage-next-answer-box{
-border-color: #2fc3f6!important;
-}
-.brn-qpage-next-question-activity{
-border-color: #2fc3f6!important;
 }
 .brn-qpage-next-answer-box--expert-verified{
 border-color: #60d399!important;
+}
+.sg-icon.sg-icon--mustard.sg-icon--x16{
+    fill: #fbbe2e!important;
 }
 .sg-label--mint-secondary-light{
 background-color: #60d399!important;
@@ -68,6 +65,7 @@ padding: 2px!important;
 .sg-text--gray-secondary{
 color: #687b8c!important;
 }
+/*calculator*/
 #calc{
  border: none;
     transition-duration: 150ms;
@@ -99,14 +97,6 @@ input#btn[type = "button"]{
 }
 input#btn[value = "C"]{
     background: #FF7968;
-    color: white;
-}
-input#btn[value = "n!"], input#btn[value = "sin"], input#btn[value = "cos"], input#btn[value = "tan"], input#btn[value = "E"], input#btn[value = "exp"],input#btn[value = "ln2"],input#btn[value = "l2e"],input#btn[value = "l10e"],input#btn[value = "ln10"], input#btn[value = "log"], input#btn[value = "+"], input#btn[value = "-"], input#btn[value = ","], input#btn[value = "("], input#btn[value = ")"], input#btn[value = "pi"], input#btn[value = "^"], input#btn[value = "sqrt"], input#btn[value = "%"], input#btn[value = "*"], input#btn[value = "/"], input#btn[value = "<-"], input#btn[value = "."]{
-    background: #687B8C;
-    color: white;
-}
-input#btn[value = "="]{
-    background: #60D399;
 }
 #calc>tbody>tr>td{
     border-style: hidden;
