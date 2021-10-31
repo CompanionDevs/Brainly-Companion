@@ -826,12 +826,19 @@ function appendToFooter(){
                 let dv = document.createElement("div")
                 dv.id = jsn["users_data"][i]["id"]
                 dv.setAttribute("nick",jsn["users_data"][i]["nick"])
+                
+                try{dv.setAttribute("question",jsn["data"]["items"][i]["model_id"])}catch(err){}
                 try{dv.setAttribute("avatar",jsn["users_data"][i]["avatar"]["64"])}catch(err){}
                 dv.className = "divfilt"
                 dv.setAttribute("usable","true")
                 let txt = document.createElement("p")
                 dv.addEventListener("click",function(){
-                    window.open("https://brainly.com/profile/"+this.getAttribute("nick")+"-"+this.getAttribute("id"), '_blank').focus();
+                    if (this.children[0].classList[0] === "comment"){
+                        window.open("https://brainly.com/question/"+this.getAttribute("question"), '_blank').focus();
+                    } else {
+                        window.open("https://brainly.com/profile/"+this.getAttribute("nick")+"-"+this.getAttribute("id"), '_blank').focus();
+                    }
+                   
                     
                     
                 })
