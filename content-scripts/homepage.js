@@ -39,6 +39,38 @@ let market = webpage.split('.')[1];
 function tryAreaFetch(){
     area = document.getElementsByClassName("sg-flex sg-flex--full-width sg-flex--column sg-space-y-m")[0]
 }
+function appendButton(){
+    
+    let viewAll = document.createElement("button")
+    document.getElementsByClassName("brn-footer")[0].appendChild(viewAll)
+    viewAll.innerHTML = "Notification Center"
+    viewAll.id = "notificationcenter"
+    viewAll.style = "    background-color: black;color: white;font-weight: bold;border-radius: 30px;height: 40PX;margin-left: 50px;}"
+    viewAll.addEventListener("click",function(){
+        window.open('/?notification-center=open', '_blank').focus();
+    })
+}
+const urlSearchParams = new URLSearchParams(window.location.search);
+const params = Object.fromEntries(urlSearchParams.entries());
+if (params['notification-center'] === 'open'){
+    
+    appendToFooter()
+}
+async function y() {
+    
+    let promise = new Promise((resolve, reject) => {
+        setTimeout(() => resolve(appendButton()), 2000)
+        
+        
+    });
+    
+    let result = await promise; // wait until the promise resolves (*)
+    
+
+}
+
+y();
+
 
 if (area === undefined){
     
@@ -240,11 +272,11 @@ if (document.getElementsByClassName("appendhere")[0] === undefined){
     
         f();
         let go = document.createElement("button")
-        document.getElementsByClassName("playhere")[0].appendChild(go)
-        go.outerHTML = `<button class="start sg-button sg-button--solid-blue sg-flex--margin-top-s sg-flex--margin-bottom-xs"><span class="sg-button__icon">
-            <div class="sg-icon sg-icon--adaptive sg-icon--x24"><svg class="sg-icon__svg"><use xlink:href="#icon-play"></use></svg></div></span>
-            <span class="sg-button__text">Show</span>
-            </button>`
+        //document.getElementsByClassName("playhere")[0].appendChild(go)
+        //go.outerHTML = `<button class="start sg-button sg-button--solid-blue sg-flex--margin-top-s sg-flex--margin-bottom-xs"><span class="sg-button__icon">
+           // <div class="sg-icon sg-icon--adaptive sg-icon--x24"><svg class="sg-icon__svg"><use xlink:href="#icon-play"></use></svg></div></span>
+           // <span class="sg-button__text">Show</span>
+           // </button>`
             document.getElementsByClassName("start")[0].addEventListener("click",function(){
                 chrome.runtime.sendMessage({type: "notification", options: { 
                     type: "notification", 
@@ -739,18 +771,10 @@ function loadednew() {
 
 }
 
-function appendButton(){
-    let viewAll = document.createElement("button")
-    //document.getElementsByClassName("brn-footer")[0].appendChild(viewAll)
-    viewAll.innerHTML = "Notification Center"
-    viewAll.id = "notificationcenter"
-    viewAll.style = "    background-color: black;color: white;font-weight: bold;border-radius: 30px;height: 40PX;margin-left: 50px;}"
-    viewAll.addEventListener("click",function(){
-        window.open('/?notification-center=open', '_blank').focus();
-    })
-}
+
+
 function appendToFooter(){
-    
+        
         document.body.outerHTML = "<!DOCTYPE html><html><head><header class='HeaderController__header--3BXr6'><div class='HeaderController__limitWidth--2ORAB'><div class='HeaderController__innerwrap--1RjnZ'><div class='sg-flex sg-flex--align-items-center sg-flex--margin-right-m'><a href='/' data-testid='navigation_header_brainly_logo_link' class='HeaderController__logoLink--3xFry'><div data-testid='navigation_header_brainly_logo' class='sg-logo HeaderController__logo--1gT-T'><img class='sg-logo__image' src='https://styleguide.brainly.com/images/logos/brainly-5c4a769505.svg'></div></a></div><div class='HeaderController__search--32Q97' data-testid='navigation_header_search'><div class='sg-flex sg-flex--full-width Search__searchWrapper--2K-TQ'><form method='GET' action='/app/ask?source=topbar' class='Search__searchForm--3VpJx'><div class='sg-search sg-search--m sg-search--full-width'><input aria-label='Search' placeholder='Search for an answer to any question...' name='q' data-test='navigation_search' maxlength='2048' data-hj-whitelist='true' type='search' class='sg-input sg-input--with-icon sg-search__input' value=''><button class='sg-search__icon'><div class='sg-icon sg-icon--gray-secondary sg-icon--x16'><svg class='sg-icon__svg'><use xlink:href='#icon-search'></use></svg></div></button></div></form></div></div><div class='sg-flex sg-flex--align-items-center HeaderController__childrenWrapper--2o_0B'><div class='sg-flex sg-flex--align-items-center sg-space-x-xxs md:sg-space-x-s'><div class='sg-flex sg-flex--margin-left-s'><a data-testid='navigation_add_question' class='sg-button sg-button--m sg-button--transparent' href='/question/add?entry=6' role='button'><span class='sg-button__text'>Ask Question</span></a></div><div><div class='sg-flex sg-space-x-xxs md:sg-space-x-s'><div class='sg-flex'><div class='sg-flex' style='position: relative;'><button aria-label='' data-testid='navigation-nested-panel-button' class='sg-button sg-button--m sg-button--transparent sg-button--icon-only'><span class='sg-button__icon sg-button__icon--m'><div class='sg-icon sg-icon--adaptive sg-icon--x24'><svg class='sg-icon__svg'><use xlink:href='#icon-notifications'></use></svg></div></span><span class='sg-button__text'></span></button></div></div><div class='sg-flex'><div class='sg-flex' style='position: relative;'><button aria-label='profile' data-testid='navigation_profile_panel_button' class='sg-button sg-button--m sg-button--transparent sg-button--icon-only'><span class='sg-button__icon sg-button__icon--m'><div class='sg-avatar sg-avatar--xs'><img class='sg-avatar__image' src='https://us-static.z-dn.net/files/daa/792a6895f607fadea54b4f7f0e595617.png'></div></span><span class='sg-button__text'></span></button></div></div></div></div></div></div></div></div><div data-testid='navigation_header_subnav' class='HeaderController__subnav--gvKms js-ads-top-offset-element'><div class='HeaderController__limitWidth--2ORAB'><div class='HeaderController__subnavInner--10VQX'><div class='sg-flex sg-flex--full-height sg-flex--margin-left-xs'><div class='sg-flex sg-flex--full-height sg-flex--no-shrink sg-flex--align-items-center'><span class='SubNav__linkWrapper--3SFe0 SubNav__linkWrapperMargin--EbAv7'><a role='link' data-test='sub_navigaton_for_students' tabindex='0' href='/for-students?source=topbar' class='sg-text sg-text--small sg-text--link sg-text--bold sg-text--black sg-text--regular'>For students</a></span></div><div class='sg-flex sg-flex--full-height sg-flex--no-shrink sg-flex--align-items-center'><span class='SubNav__linkWrapper--3SFe0 SubNav__linkWrapperMargin--EbAv7'><a role='link' data-test='sub_navigaton_for_parents' tabindex='0' href='/for-parents?source=topbar' class='sg-text sg-text--small sg-text--link sg-text--bold sg-text--black sg-text--regular'>For parents</a></span></div><div class='sg-flex sg-flex--full-height sg-flex--no-shrink sg-flex--align-items-center'><span class='SubNav__linkWrapper--3SFe0 SubNav__linkWrapperMargin--EbAv7'><a role='link' data-test='sub_navigaton_for_teachers' tabindex='0' href='/schools-and-teachers?source=topbar' class='sg-text sg-text--small sg-text--link sg-text--bold sg-text--black sg-text--regular'>For teachers</a></span></div><div class='sg-flex sg-flex--full-height sg-flex--no-shrink sg-flex--align-items-center'><span class='SubNav__linkWrapper--3SFe0 SubNav__linkWrapperMargin--EbAv7'><a role='link' data-test='sub_navigaton_honor_code' tabindex='0' href='/honor-code?source=topbar' class='sg-text sg-text--small sg-text--link sg-text--bold sg-text--black sg-text--regular'>Honor code</a></span></div><div class='sg-flex sg-flex--full-height sg-flex--no-shrink sg-flex--align-items-center'><span class='SubNav__linkWrapper--3SFe0 SubNav__linkWrapperMargin--EbAv7'><a role='link' data-test='sub_navigaton_brainly_app' tabindex='0' href='/brainly-app?source=topbar' class='sg-text sg-text--small sg-text--link sg-text--bold sg-text--black sg-text--regular'>Brainly App</a></span></div><div class='sg-flex sg-flex--full-height sg-flex--no-shrink sg-flex--align-items-center'><span class='SubNav__linkWrapper--3SFe0'><a role='link' data-test='sub_navigaton_tutor' tabindex='0' href='/online-tutoring?source=topbar' class='sg-text sg-text--small sg-text--link sg-text--bold sg-text--black sg-text--regular'>Brainly Tutor</a></span></div></div></div></div></div></header></head><body><select name='types' id='types'><option value='choose'>Category</option><option value='all'>All</option><option value='thanks'>Thanks ❤️</option><option value='comment'>Comments 💬</option><option value='answered'>Answers 📝</option><option value='lost'>Challenges 🤔</option><option value='expired'>Questions ❓</option><option value='brainliest'>Brainliest 👑</option><option value='deleted'>Deleted 🗑️</option></select></body>"
         
         document.getElementById("types").addEventListener("change",function(){
@@ -758,101 +782,34 @@ function appendToFooter(){
             let total = document.getElementsByClassName("filter")
               for (let i = 0; i < total.length; i++) {
 
-                  total[i].style.display = "none"
+                  total[i].style.setProperty('display', 'none', 'important');
               }
               let imgs = document.getElementsByClassName("apdimg")
+              
               for (let i = 0; i < imgs.length; i++) {
-                  imgs[i].style.display = "none"
+                imgs[i].style.setProperty('display', 'none', 'important');
               }
             if (this.value === "all"){
                 let imgs = document.getElementsByClassName("apdimg")
                 for (let i = 0; i < imgs.length; i++) {
-                    imgs[i].style.display = "block"
+                    imgs[i].style.setProperty('display', 'inline-flex', 'important');
                 }
                 let total = document.getElementsByClassName("filter")
                   for (let i = 0; i < total.length; i++) {
-                      total[i].style.display = "block"
+                    total[i].style.setProperty('display', 'inline-flex', 'important');
                   }
             }
             
             let all = document.getElementsByClassName(this.value)
             for (let i = 0; i < all.length; i++) {
-              
-              all[i].style.display = "block"
+                
+                all[i].style.setProperty('display', 'inline-flex', 'important');
             }
         })
        
-        function getUser(id, ele){
-            
-    var data = "_method=POST&data%5B_Token%5D%5Bkey%5D=8add13e684369e380d7739860ab281bd58276324&data%5BUser%5D%5Bnick%5D="+id+"&data%5BUser%5D%5Bsearch_option%5D=12&data%5B_Token%5D%5Bfields%5D=4392888fab39be3ea02021080af163797524525f%253An%253A0%253A%257B%257D&data%5B_Token%5D%5Block%5D=_PHP76b87dd7b12e9ebfd7ef7af510d1a971f9933f8c";
-
-
-    var xhr = new XMLHttpRequest();
-    xhr.withCredentials = true;
-
-    xhr.addEventListener("readystatechange", function() {
-      if(this.readyState === 4) {
         
-         this.responseHTML = new DOMParser().parseFromString(this.responseText, "text/html")
-         let data = this.responseHTML.getElementsByClassName("nick")[0].innerText
-         ele.innerText = ele.innerText.replace(ele.innerText.match(/[a-zA-Z]/)["input"].split(ele.innerText.match(/[a-zA-Z]/)[0])[0],data+" ")
-         let allx = document.getElementsByClassName("filter")
-         for (let i = 0; i < allx.length; i++) {
-            allx[i].parentElement.setAttribute("usable","false")
-            allx[i].style.opacity = "0.5"
-            function reset(){
-                allx[i].style.opacity = "1"
-                allx[i].parentElement.setAttribute("usable","true")
-            }
-            async function f() {
-
-                let promise = new Promise((resolve, reject) => {
-                    setTimeout(() => resolve(reset()), 10000)
-            
-                });
-            
-                let result = await promise; // wait until the promise resolves (*)
-            
-            }
-            
-            f();
-        }
-         let img = document.createElement("img")
-        
-         if (this.responseHTML.getElementsByClassName("user-data")[0].children[0].children[0].src !== "https://brainly.com/img/"){
-            img.src = this.responseHTML.getElementsByClassName("user-data")[0].children[0].children[0].src
-         } else {
-             img.src = "https://brainly.com/img/avatars/100-ON.png"
-         }
-         
-         img.className = "apdimg"
-         ele.appendChild(img)
-      }
-    });
-
-    xhr.open("POST", "https://brainly.com/users/search");
-    xhr.setRequestHeader("authority", "brainly.com");
-    xhr.setRequestHeader("cache-control", "max-age=0");
-    xhr.setRequestHeader("sec-ch-ua", "\"Chromium\";v=\"94\", \"Google Chrome\";v=\"94\", \";Not A Brand\";v=\"99\"");
-    xhr.setRequestHeader("sec-ch-ua-mobile", "?0");
-    xhr.setRequestHeader("sec-ch-ua-platform", "\"macOS\"");
-    xhr.setRequestHeader("upgrade-insecure-requests", "1");
-    xhr.setRequestHeader("origin", "https://brainly.com");
-    xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
-    xhr.setRequestHeader("user-agent", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36");
-    xhr.setRequestHeader("accept", "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9");
-    xhr.setRequestHeader("sec-fetch-site", "same-origin");
-    xhr.setRequestHeader("sec-fetch-mode", "navigate");
-    xhr.setRequestHeader("sec-fetch-user", "?1");
-    xhr.setRequestHeader("sec-fetch-dest", "document");
-    xhr.setRequestHeader("referer", "https://brainly.com/users/search");
-    xhr.setRequestHeader("accept-language", "en-US,en;q=0.9");
-
-
-    xhr.send(data);
-}
         var data = JSON.stringify({
-            "limit": 3000,
+            "limit": 15000,
             "last_id": null
           });
           
@@ -863,51 +820,119 @@ function appendToFooter(){
             if(this.readyState === 4) {
              
               let jsn = JSON.parse(this.responseText)
+              
               let items = jsn["data"]["items"]
               for (let i = 0; i < items.length; i++) {
                 let dv = document.createElement("div")
+                dv.id = jsn["users_data"][i]["id"]
+                dv.setAttribute("nick",jsn["users_data"][i]["nick"])
+                try{dv.setAttribute("avatar",jsn["users_data"][i]["avatar"]["64"])}catch(err){}
                 dv.className = "divfilt"
                 dv.setAttribute("usable","true")
                 let txt = document.createElement("p")
                 dv.addEventListener("click",function(){
-                    let usable = null
-                  
-                    usable = dv.getAttribute("usable")
-                   
-                   
-                    if (usable === "true"){
-                        let conf = confirm('Fetch more data?')
-                        if (conf === true){
-                            getUser(this.children[0].innerText.match(/[a-zA-Z]/)["input"].split(this.children[0].innerText.match(/[a-zA-Z]/)[0])[0],this.children[0])
-                        }
-                    }
+                    window.open("https://brainly.com/profile/"+this.getAttribute("nick")+"-"+this.getAttribute("id"), '_blank').focus();
                     
                     
                 })
                 dv.appendChild(txt)
                 if (String(items[i]["text"]).includes("thanks") === true){
-                    txt.innerText = items[i]["text"].replace("%1$s",items[i]["user_id"])+" ❤️" 
+                    let username = txt.parentElement.getAttribute("nick")
+                    let avatarurl = txt.parentElement.getAttribute("avatar")
+                    if (avatarurl === undefined || avatarurl === null){
+                        avatarurl = "https://brainly.com/img/avatars/100-ON.png"
+                    }
+                    txt.innerText = items[i]["text"].replace("%1$s",username)+" ❤️"
+                    let pfp = document.createElement("img")
+                    
+                    txt.appendChild(pfp)
+                    pfp.outerHTML = '<img src='+avatarurl+' class="apdimg thanks"></img>'
                     txt.className = "thanks filter"
                 } else if (String(items[i]["text"]).includes("comment") === true){
-                    txt.innerText = items[i]["text"].replace("%1$s",items[i]["user_id"]).replace("%2$s",items[i]["model_id"]).replace("%3$s",items[i]["model_id"])+" 💬" 
+                    //.replace("%1$s",items[i]["user_id"])
+                    let username = txt.parentElement.getAttribute("nick")
+                    
+                    let avatarurl = txt.parentElement.getAttribute("avatar")
+                    if (avatarurl === undefined || avatarurl === null){
+                        avatarurl = "https://brainly.com/img/avatars/100-ON.png"
+                    }
+                    txt.innerText = items[i]["text"].replace("%1$s",username).replace("%2$s",items[i]["model_id"]).replace("%3$s",items[i]["model_id"])+" 💬" 
+                    let pfp = document.createElement("img")
+                    pfp.className = "comment filter"
+                    txt.appendChild(pfp)
+                    pfp.outerHTML = '<img src='+avatarurl+' class="apdimg comment"></img>'
                     txt.className = "comment filter"
                 } else if (String(items[i]["text"]).includes("delete") === true){
-                    txt.innerText = items[i]["text"].replace("%1$s",items[i]["user_id"]).replace("%2$s","")+" 🗑️" 
+                    let username = txt.parentElement.getAttribute("nick")
+                    let avatarurl = txt.parentElement.getAttribute("avatar")
+                    if (avatarurl === undefined || avatarurl === null){
+                        avatarurl = "https://brainly.com/img/avatars/100-ON.png"
+                    }
+                    txt.innerText = items[i]["text"].replace("%1$s",username).replace("%2$s","")+" 🗑️" 
+                    let pfp = document.createElement("img")
+                    
+                    txt.appendChild(pfp)
+                    pfp.outerHTML = '<img src='+avatarurl+' class="apdimg delete"></img>'
                     txt.className = "deleted filter"
                 } else if (String(items[i]["text"]).includes("Seems like") === true){
-                    txt.innerText = items[i]["text"].replace("%1$s",items[i]["user_id"])+" ⏰" 
+                    let username = txt.parentElement.getAttribute("nick")
+                    let avatarurl = txt.parentElement.getAttribute("avatar")
+                    if (avatarurl === undefined || avatarurl === null){
+                        avatarurl = "https://brainly.com/img/avatars/100-ON.png"
+                    }
+                    txt.innerText = items[i]["text"].replace("%1$s",username)+" ⏰" 
+                    let pfp = document.createElement("img")
+                    
+                    txt.appendChild(pfp)
+                    pfp.outerHTML = '<img src='+avatarurl+' class="apdimg expired"></img>'
                     txt.className = "expired filter"
                 } else if (String(items[i]["text"]).includes("answered") === true){
-                    txt.innerText = items[i]["text"].replace("%1$s",items[i]["user_id"]).replace("%2$s",items[i]["model_id"])+" 📝" 
+                    let username = txt.parentElement.getAttribute("nick")
+                    let avatarurl = txt.parentElement.getAttribute("avatar")
+                    if (avatarurl === undefined || avatarurl === null){
+                        avatarurl = "https://brainly.com/img/avatars/100-ON.png"
+                    }
+                    txt.innerText = items[i]["text"].replace("%1$s",username).replace("%2$s",items[i]["model_id"])+" 📝" 
+                    let pfp = document.createElement("img")
+                    
+                    txt.appendChild(pfp)
+                    pfp.outerHTML = '<img src='+avatarurl+' class="apdimg answered"></img>'
                     txt.className = "answered filter"
                 } else if (String(items[i]["text"]).includes("beat") === true){
-                    txt.innerText = items[i]["text"].replace("%1$s",items[i]["user_id"])+" 😔" 
+                    let username = txt.parentElement.getAttribute("nick")
+                    let avatarurl = txt.parentElement.getAttribute("avatar")
+                    if (avatarurl === undefined || avatarurl === null){
+                        avatarurl = "https://brainly.com/img/avatars/100-ON.png"
+                    }
+                    txt.innerText = items[i]["text"].replace("%1$s",username)+" 😔" 
+                    let pfp = document.createElement("img")
+                    
+                    txt.appendChild(pfp)
+                    pfp.outerHTML = '<img src='+avatarurl+' class="apdimg lost"></img>'
                     txt.className = "lost filter"
                 } else if (String(items[i]["text"]).includes("Brainliest") === true){
-                    txt.innerText = items[i]["text"].replace("%1$s",items[i]["user_id"]).replace("%2$s","on "+items[i]["model_id"]) +" 👑" 
+                    let username = txt.parentElement.getAttribute("nick")
+                    let avatarurl = txt.parentElement.getAttribute("avatar")
+                    if (avatarurl === undefined || avatarurl === null){
+                        avatarurl = "https://brainly.com/img/avatars/100-ON.png"
+                    }
+                    txt.innerText = items[i]["text"].replace("%1$s",username).replace("%2$s","on "+items[i]["model_id"]) +" 👑" 
+                    let pfp = document.createElement("img")
+                    
+                    txt.appendChild(pfp)
+                    pfp.outerHTML = '<img src='+avatarurl+' class="apdimg brainliest"></img>'
                     txt.className = "brainliest filter"
                 } else {
-                    txt.innerText = items[i]["text"].replace("%1$s",items[i]["user_id"])
+                    let username = txt.parentElement.getAttribute("nick")
+                    let avatarurl = txt.parentElement.getAttribute("avatar")
+                    if (avatarurl === undefined || avatarurl === null){
+                        avatarurl = "https://brainly.com/img/avatars/100-ON.png"
+                    }
+                    txt.innerText = items[i]["text"].replace("%1$s",username)
+                    let pfp = document.createElement("img")
+                   
+                    txt.appendChild(pfp)
+                    pfp.outerHTML = '<img src='+avatarurl+' class="apdimg default"></img>'
                     txt.className = "default filter"
                 }
                 
@@ -935,17 +960,12 @@ function appendToFooter(){
           xhr.send(data);
     
 }
-const urlSearchParams = new URLSearchParams(window.location.search);
-const params = Object.fromEntries(urlSearchParams.entries());
-if (params['notification-center'] === 'open'){
-    //pass
-    //appendToFooter()
-}
+
 async function f() {
 
     let promise = new Promise((resolve, reject) => {
-        setTimeout(() => resolve(appendButton()), 1500)
-
+        setTimeout(() => resolve(appendButton()), 4500)
+        
     });
 
     let result = await promise; // wait until the promise resolves (*)
@@ -954,18 +974,7 @@ async function f() {
 
 f();
 
-async function f() {
 
-    let promise = new Promise((resolve, reject) => {
-        setTimeout(() => resolve(checkOnlineMods()), 4500)
-
-    });
-    
-    let result = await promise; // wait until the promise resolves (*)
-
-}
-
-f();
 function checkOnlineMods(){
     if (document.getElementsByClassName("appendhere")[0] === undefined){
         if (url === "https://brainly." + market + "/") {
