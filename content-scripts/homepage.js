@@ -47,6 +47,11 @@ function appendButton(){
     viewAll.id = "notificationcenter"
     viewAll.style = "    background-color: black;color: white;font-weight: bold;border-radius: 30px;height: 40PX;margin-left: 50px;}"
     viewAll.addEventListener("click",function(){
+        chrome.runtime.sendMessage({type: "notification", options: { 
+            type: "notification", 
+            title: "notifCenter",
+            message: `{"userid":"${document.getElementsByClassName("game-box__user-info")[0].children[0].href.split("/")[4].split("-")[1]}","userpfp":"${document.getElementsByClassName("sg-avatar__image")[0].src}"}`
+        }});
         window.open('/?notification-center=open', '_blank').focus();
     })
 }
@@ -277,33 +282,7 @@ if (document.getElementsByClassName("appendhere")[0] === undefined){
            // <div class="sg-icon sg-icon--adaptive sg-icon--x24"><svg class="sg-icon__svg"><use xlink:href="#icon-play"></use></svg></div></span>
            // <span class="sg-button__text">Show</span>
            // </button>`
-            document.getElementsByClassName("start")[0].addEventListener("click",function(){
-                chrome.runtime.sendMessage({type: "notification", options: { 
-                    type: "notification", 
-                    title: "clickedmod",
-                    message: `{"userid":"${document.getElementsByClassName("game-box__user-info")[0].children[0].href.split("/")[4].split("-")[1]}","userpfp":"${document.getElementsByClassName("sg-avatar__image")[0].src}"}`
-                }});
-                this.style.display = "none"
-                let ln = document.getElementsByClassName("appendhere")[0].children
-                for (let i = 0; i < ln.length; i++) {
-                    let appender = document.getElementsByClassName("appendhere")[0]
-                    appender.style.opacity = 1
-                    ln[i].style.color = "black"
-                    ln[i].style.textShadow = ""
-                    ln[i].children[0].children[0].children[2].children[0].className = "Rank sg-text sg-text--small sg-text--gray sg-text--bold"
-                    ln[i].children[0].children[0].children[2].children[0].style.color = "black"
-                    ln[i].children[0].children[0].children[2].children[0].style.textShadow = ""
-                    ln[i].children[0].children[0].children[1].children[0].children[0].style.setProperty("color", "", "important");
-                    ln[i].children[0].children[0].children[1].children[0].children[0].style.textShadow = ""
-                    ln[i].children[0].children[0].children[1].children[0].href = ""
-                    ln[i].children[0].children[0].children[1].children[0].className = 'sg-text sg-text--small sg-text--gray sg-text--bold modname'
-                    ln[i].children[0].children[0].children[0].children[0].children[0].children[0].style.opacity = "1"
-                }
-                
-                
-                
-                
-            })
+            
     
 
         
@@ -1087,47 +1066,7 @@ function checkOnlineMods(){
                             
                         }
                         
-                        //Supermods
-                        get("user","15184511")
-                        get("user","13760331")
-                        get("user","11407043")
-                        get("user","154530")
-                        get("user","9952407")
-                        get("user","23779612")
-                        //Sr.Mods
-                        get("user","6410374")
-                        get("user","16118329")
-                        get("user","17431463")
-                        //Full Mods
-                        get("user","13095222")
-                        get("user","5136923")
-                        get("user","822326")
-                        get("user","604367")
-                        get("user","15709764")
-                        get("user","18208277")
-                        get("user","14062873")
-                        get("user","20709469")
-                        get("user","21404664")
-                        get("user","22639771")
-                        get("user","15026824")
-                        get("user","23770139")
-                        get("user","24545328")
-                        get("user","19481102")
-                        get("user","23432485")
-                        get("user","24363105")
-                        get("user","7078691")
-                        get("user","16002335")
-                        get("user","37709993")
-                        get("user","35394502")
-                        get("user","22104740")
-                        get("user","17601532")
-                        //JMS
-                        get("user","42128960")
-                        get("user","43307304")
-                        get("user","43527634")
-                        get("user","16192567")
-                        get("user","16192567")
-                        get("user","24007838")
+                        
                     }
                 });
                 
