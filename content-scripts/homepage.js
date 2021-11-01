@@ -810,7 +810,7 @@ function appendToFooter(){
        
         
         var data = JSON.stringify({
-            "limit": 15000,
+            "limit": 1500,
             "last_id": null
           });
           
