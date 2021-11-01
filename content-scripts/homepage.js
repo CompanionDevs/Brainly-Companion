@@ -788,6 +788,7 @@ function appendToFooter(){
               
               for (let i = 0; i < imgs.length; i++) {
                 imgs[i].style.setProperty('display', 'none', 'important');
+                
               }
             if (this.value === "all"){
                 let imgs = document.getElementsByClassName("apdimg")
@@ -833,12 +834,24 @@ function appendToFooter(){
                 dv.setAttribute("usable","true")
                 let txt = document.createElement("p")
                 dv.addEventListener("click",function(){
-                    if (this.children[0].classList[0] === "comment"){
+                   
+                    if (dv.children[0].innerText.includes("thanks for the answer")){
                         window.open("https://brainly.com/question/"+this.getAttribute("question"), '_blank').focus();
-                    } else {
+                    }
+                    if (dv.children[0].innerText.includes("comment")){
+                        window.open("https://brainly.com/question/"+this.getAttribute("question"), '_blank').focus();
+                    }
+                    if (dv.children[0].innerText.includes("thanks for your help")){
                         window.open("https://brainly.com/profile/"+this.getAttribute("nick")+"-"+this.getAttribute("id"), '_blank').focus();
                     }
-                   
+                    
+                    if (dv.children[0].innerText.includes("answered a question")){
+                        window.open("https://brainly.com/question/"+this.getAttribute("question"), '_blank').focus();
+                    }
+                    if (dv.children[0].innerText.includes("Brainliest")){
+                        window.open("https://brainly.com/question/"+this.getAttribute("question"), '_blank').focus();
+                    }
+                    
                     
                     
                 })
