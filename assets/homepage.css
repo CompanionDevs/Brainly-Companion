@@ -16,7 +16,7 @@
     margin-right: -2px!important;
     margin-bottom: 15px!important;
 }
-.filter{
+p.filter{
     height: 50px;
     border: 2px solid #c3d1dd;
     cursor: pointer;
@@ -54,8 +54,8 @@
 }
 .filter{
     flex-wrap: nowrap;
-    align-items: center;
-    justify-content: flex-end;
+    align-items: center!important;
+    justify-content: flex-end!important;
 }
 .filter:hover{
   background-color: #ebf2f7!important;
