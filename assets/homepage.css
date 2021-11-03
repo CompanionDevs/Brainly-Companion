@@ -67,7 +67,7 @@ p.filter{
     width: 350px;
     display:none;
 }
-#container < .divfilt{
+.notifcenter > #container{
     margin-left:10%;
 }
 #types{
