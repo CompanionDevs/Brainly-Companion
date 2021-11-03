@@ -274,7 +274,7 @@ width: 100%;
 .sg-text--link{
 color: black!important;
 }
-.sg-icon--mint, .sg-icon--mustard{
+.game-box__progress-item-icon > .sg-icon--mint > svg, .game-box__progress-item-icon > .sg-icon--mustard > svg{
 fill: white!important;
 }
 .sg-text--mint-dark, .sg-text--mustard-dark{
