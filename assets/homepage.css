@@ -67,6 +67,9 @@ p.filter{
     width: 350px;
     display:none;
 }
+.brn-blocker-box.brn-blocker-box--billboard.js-react-adblock-banner{
+    display: none;
+}
 .notifcenter > #container{
     margin-left:10%;
 }
