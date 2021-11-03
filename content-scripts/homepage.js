@@ -849,8 +849,8 @@ function appendToFooter(){
                     
                     txt.appendChild(pfp)
                     pfp.innerHTML = '<img src='+avatarurl+' class="apdimg thanks"></img>'
-                    pfp.appendChild(heartsvg);
                     txt.className = "thanks filter"
+                    pfp.appendChild(heartsvg);
                 } else if (String(items[i]["text"]).includes("comment") === true){
                     //.replace("%1$s",items[i]["user_id"])
                     let username = txt.parentElement.getAttribute("nick")
@@ -859,12 +859,16 @@ function appendToFooter(){
                     if (avatarurl === undefined || avatarurl === null){
                         avatarurl = "https://brainly.com/img/avatars/100-ON.png"
                     }
-                    txt.innerText = items[i]["text"].replace("%1$s",username).replace("%2$s",items[i]["model_id"]).replace("%3$s",items[i]["model_id"])+" 💬" 
-                    let pfp = document.createElement("img")
+                    txt.innerText = items[i]["text"].replace("%1$s",username).replace("%2$s",items[i]["model_id"]).replace("%3$s",items[i]["model_id"])
+                    let pfp = document.createElement("div")
+                    pfp.style.position = "relative";
+                    let commentsvg = document.createElement("div")
+                    commentsvg.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" style = "position: absolute;bottom: 0px;right: 10px;" width="20" height="20" viewBox="0 0 24 24"><path d="M0 1v16.981h4v5.019l7-5.019h13v-16.981h-24zm7 10c-.828 0-1.5-.671-1.5-1.5s.672-1.5 1.5-1.5c.829 0 1.5.671 1.5 1.5s-.671 1.5-1.5 1.5zm5 0c-.828 0-1.5-.671-1.5-1.5s.672-1.5 1.5-1.5c.829 0 1.5.671 1.5 1.5s-.671 1.5-1.5 1.5zm5 0c-.828 0-1.5-.671-1.5-1.5s.672-1.5 1.5-1.5c.829 0 1.5.671 1.5 1.5s-.671 1.5-1.5 1.5z"/></svg>`
                     pfp.className = "comment filter"
                     txt.appendChild(pfp)
-                    pfp.outerHTML = '<img src='+avatarurl+' class="apdimg comment"></img>'
+                    pfp.innerHTML = '<img src='+avatarurl+' class="apdimg comment"></img>'
                     txt.className = "comment filter"
+                    pfp.appendChild(commentsvg);
                 } else if (String(items[i]["text"]).includes("delete") === true){
                     let username = txt.parentElement.getAttribute("nick")
                     let avatarurl = txt.parentElement.getAttribute("avatar")
@@ -919,12 +923,16 @@ function appendToFooter(){
                     if (avatarurl === undefined || avatarurl === null){
                         avatarurl = "https://brainly.com/img/avatars/100-ON.png"
                     }
-                    txt.innerText = items[i]["text"].replace("%1$s",username).replace("%2$s","on "+items[i]["model_id"]) +" 👑" 
-                    let pfp = document.createElement("img")
+                    txt.innerText = items[i]["text"].replace("%1$s",username).replace("%2$s","on "+items[i]["model_id"])
+                    let pfp = document.createElement("div")
+                    pfp.style.position = "relative";
+                    let crownsvg = document.createElement("div")
+                    crownsvg.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" style = "position: absolute;bottom: 0px;right: 10px;fill: #fbbe2e;" width="20" height="20" viewBox="0 0 24 24"><path d="M22 19v3h-20v-3h20zm0-15c-1.5 0-2.662 1.685-1.598 3.194.535.759.406 1.216.045 1.749-.765 1.127-1.872 2.057-3.447 2.057-2.521 0-3.854-2.083-4.131-3.848-.096-.614-.15-1.074.436-1.644.402-.39.695-.904.695-1.508 0-1.104-.896-2-2-2s-2 .896-2 2c0 .604.293 1.118.695 1.508.586.57.531 1.03.436 1.644-.277 1.765-1.61 3.848-4.131 3.848-1.575 0-2.682-.93-3.447-2.058-.362-.532-.491-.989.045-1.748 1.064-1.509-.098-3.194-1.598-3.194-1.104 0-2 .896-2 2 0 .797.464 1.495 1.144 1.808.825.38.856 1.317.856 2.171v7.021h20v-7.021c0-.854.031-1.792.856-2.171.68-.313 1.144-1.011 1.144-1.808 0-1.104-.896-2-2-2z"/></svg>`
                     
                     txt.appendChild(pfp)
-                    pfp.outerHTML = '<img src='+avatarurl+' class="apdimg brainliest"></img>'
+                    pfp.innerHTML = '<img src='+avatarurl+' class="apdimg brainliest"></img>'
                     txt.className = "brainliest filter"
+                    pfp.appendChild(crownsvg)
                 } else {
                     let username = txt.parentElement.getAttribute("nick")
                     let avatarurl = txt.parentElement.getAttribute("avatar")
