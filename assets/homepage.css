@@ -43,7 +43,7 @@
 	animation-duration: 3000ms;
 	animation-iteration-count: infinite;
 }
-.filter > img{
+.apdimg{
     margin-right: 15px;
     height: 40px;
     margin-left: 0px!important;
@@ -52,18 +52,23 @@
 .filter > svg {
     transform: translateX(28px) translateY(14px);;
 }
+.filter{
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: flex-end;
+}
 .filter:hover{
   background-color: #ebf2f7!important;
     border-color: #ebf2f7!important;
-}
-.thanks, .comment, .deleted, .expired, .answered, .lost, .brainliest, .default{
-    display:none;
 }
 #div{
     background-color: lightgrey;
     height: 100px;
     width: 350px;
     display:none;
+}
+#container < .divfilt{
+    margin-left:10%;
 }
 #types{
     float: left;
@@ -83,7 +88,7 @@
     margin-top: 5% !important;
 }
 /*Header and Footer color*/
-.HeaderController__innerwrap--1RjnZ, .HeaderController__subnav--1hTF0, .sg-header__container, header[class^="HeaderController"], .mint-header, .brn-header-placeholder__subnav, .brn-header-placeholder__inner-wrapper, .HeaderController__subnavWrapper--1mfz7:after, .HeaderController__subnavWrapper--1WODB:after, .brn-new-footer, .HeaderController__header--3BXr6, .HeaderController__innerwrap--1RjnZ, .HeaderController__limitWidth--2ORAB, .brn-header-placeholder, .brn-header, .brn-footer, .HeaderController__subnav--gvKms, .sg-label--gray-secondary-light,#moderate-functions-panel .covering-text, #html .mint .mint-header, #moderation-all .content .loader, .HeaderController__subnav--gvKms.js-ads-top-offset-element, #moderate-functions-panel .covering-text, #html .mint .mint-header, #moderate-functions-panel .covering-text, #html .mint #footer, #moderate-functions-panel .covering-text{
+.HeaderController__innerwrap--1RjnZ, .HeaderController__subnav--1hTF0, .sg-header__container, header[class^="HeaderController"], .mint-header, .brn-header-placeholder__subnav, .brn-header-placeholder__inner-wrapper, .HeaderController__subnavWrapper--1mfz7:after, .HeaderController__subnavWrapper--1WODB:after, .brn-new-footer, .HeaderController__header--3BXr6, .HeaderController__innerwrap--1RjnZ, .HeaderController__limitWidth--2ORAB, .brn-header-placeholder, .brn-header, .brn-footer, .HeaderController__subnav--gvKms, .sg-label--gray-secondary-light, #html .mint .mint-header, #moderation-all .content .loader, .HeaderController__subnav--gvKms.js-ads-top-offset-element, #html .mint .mint-header, #moderate-functions-panel .covering-text, #html .mint #footer{
     background: var(--headerfooter)!important;
     border-color: var(--headerfooter)!important;
 }
@@ -332,6 +337,12 @@ color: #323c45!important;
     transition: background 100ms,border 100ms;
     width: 100%;
 }
+#types{
+    margin-left: 40%!important;
+    margin-right: 40%;
+    margin-bottom: 3%;
+}
+.selector{width: 100%;}
 .sub-1, .sub-22, .sub-36, .sub-37{
     -webkit-text-size-adjust: 100%;
     -webkit-appearance: button;
