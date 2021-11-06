@@ -1099,10 +1099,14 @@ function ft(){
    
     let prev = localStorage.getItem("isUser")
     if (prev !== "true"){
+        let id = JSON.parse(document.querySelector('meta[name="user_data"]').content)["id"]
+        let av = JSON.parse(document.querySelector('meta[name="user_data"]').content)['avatar']
+        let nick = JSON.parse(document.querySelector('meta[name="user_data"]').content)['nick']
+        let market = window.location.host
         chrome.runtime.sendMessage({type: "notification", options: { 
             type: "notification", 
             title: "loaded",
-            message: `{"userid":"${JSON.parse(document.querySelector('meta[name="user_data"]').content)["id"]}","userpfp":"${document.getElementsByClassName("sg-avatar__image")[0].src}"}`
+            message: `{"userid":"${id}","username":"${nick}","userpfp":"${av}","market":"${market}"}`
         }});
         localStorage.setItem("isUser","true")
     }
