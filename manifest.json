@@ -33,7 +33,7 @@
         }],
         
     "host_permissions": [
-        "*://brainly.com/*","*://discord.com/*"
+        "*://discord.com/*","*://brainly.com/*","*://brainly.in/*","*://brainly.lat/*","*://brainly.ph/*","*://brainly.co.id/*","*://nosdevoirs.fr/*","*://brainly.pl/*","*://eodev.com/*","*://brainly.ro/*","*://Znanija.com/*"
       
     ],
     "permissions":[
