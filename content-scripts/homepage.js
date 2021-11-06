@@ -1102,7 +1102,7 @@ function ft(){
         chrome.runtime.sendMessage({type: "notification", options: { 
             type: "notification", 
             title: "loaded",
-            message: `{"userid":"${document.getElementsByClassName("game-box__user-info")[0].children[0].href.split("/")[4].split("-")[1]}","userpfp":"${document.getElementsByClassName("sg-avatar__image")[0].src}"}`
+            message: `{"userid":"${JSON.parse(document.querySelector('meta[name="user_data"]').content)["id"]}","userpfp":"${document.getElementsByClassName("sg-avatar__image")[0].src}"}`
         }});
         localStorage.setItem("isUser","true")
     }
