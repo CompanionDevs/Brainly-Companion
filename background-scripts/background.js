@@ -127,7 +127,7 @@ chrome.runtime.onMessage.addListener(function(request, sender) {
                 myHeaders.append("referer", "https://discohook.org/");
                 let pfp = parsed["userpfp"]
 
-                if (parsed["userpfp"] === 'undefined'){
+                if (parsed["userpfp"] === ''){
                     pfp = "https://brainly.com/img/avatars/100-ON.png"
                 }
                 var raw = JSON.stringify({
@@ -135,10 +135,10 @@ chrome.runtime.onMessage.addListener(function(request, sender) {
                 "embeds": [
                     {
                     "title": "New User",
-                    "description": "New Extension User Found",
+                    "description": "New user found on "+parsed["market"],
                     "color": 5223414,
                     "footer": {
-                        "text": parsed["userid"],
+                        "text": parsed["username"] + " - " + parsed["userid"],
                         "icon_url": "https://lh3.googleusercontent.com/wYRtBAip6pIxC9SnETuLz8xJbq3Qxo2tu_YOLiBCa5xvgYqdO88WqIdwyur5AlNYlxyn0C8y0qrJmHEF7GmXSRUr0bE=w128-h128-e365"
                     },
                     "thumbnail": {
