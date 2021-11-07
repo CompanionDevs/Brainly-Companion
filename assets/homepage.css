@@ -55,6 +55,7 @@ button.notif.homebut{
     width: 35px;
     height: 35px;
     background: #fbbe2e;
+    margin:5px;
     padding: 5px;
     border-radius: 50px;
 }
