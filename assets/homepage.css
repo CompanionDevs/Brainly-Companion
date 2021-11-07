@@ -16,6 +16,12 @@
     margin-right: -2px!important;
     margin-bottom: 15px!important;
 }
+div[data-testid = "game_box_badges"]{
+    display: none;
+}
+div[data-testid="game_box_extension"]{
+    border-bottom: 2px solid #ebf2f7!important;
+}
 p.filter{
     height: 50px;
     border: 2px solid #c3d1dd;
@@ -37,7 +43,21 @@ p.filter{
 	from { transform: rotate(0deg); }
 	to { transform: rotate(360deg); }
 }
-
+button.theme.homebut{
+    background: #fbbe2e;
+}
+button.notif.homebut{
+    background: #4fc3f6;
+}
+.homebut {
+    background: transparent;
+    border: none;
+    width: 35px;
+    height: 35px;
+    background: #fbbe2e;
+    padding: 5px;
+    border-radius: 50px;
+}
 .gear {
 	animation-name: spin;
 	animation-duration: 3000ms;
