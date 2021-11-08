@@ -9,8 +9,8 @@ function profile(){
                 <h2 class="sg-headline">Select a Theme</h2>
             </div>
             <div class = "theme-content" style = "margin-bottom: 1.5rem;">
-            <button class = "cherrybsm" onclick = "document.querySelector(':root').style.setProperty('--headerfooter','#ffc7bf'); document.querySelector(':root').style.setProperty('--askloadsec','#4fb3f6'); ">Cherry Blossom</button>
-            <button class = "hicontrast" onclick = "document.querySelector(':root').style.setProperty('--headerfooter','#4fc3f6'); document.querySelector(':root').style.setProperty('--askloadsec','#fbbe2e'); ">High-Contrast<button>
+            <button class = "cherrybsm" onclick = "localStorage.setItem('--headerfooter', '#ffc7bf');localStorage.setItem('--askloadsec', '#4fb3f6');document.querySelector(':root').style.setProperty('--headerfooter','#ffc7bf');document.querySelector(':root').style.setProperty('--askloadsec','#4fb3f6'); ">Cherry Blossom</button>
+            <button class = "hicontrast" onclick = "localStorage.setItem('--headerfooter', '#4fc3f6');localStorage.setItem('--askloadsec', '#fbbe2e');document.querySelector(':root').style.setProperty('--headerfooter','#4fc3f6');document.querySelector(':root').style.setProperty('--askloadsec','#fbbe2e'); ">High-Contrast<button>
             </div>
             <div class="sg-content-box__content sg-content-box__content--spaced-bottom-large" style = "margin-bottom: 0.5rem;">
                 <button class="sg-button sg-button--m sg-button--solid" onclick = 'document.querySelector("div.modal").remove();'>
