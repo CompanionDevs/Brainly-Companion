@@ -25,4 +25,4 @@ function profile(){
 
 var timeoutId = window.setTimeout(function() {
     profile()
-  }, 4000);
+  }, 5000);
