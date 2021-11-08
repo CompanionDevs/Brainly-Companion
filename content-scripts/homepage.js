@@ -9,6 +9,14 @@
 // Several foreground scripts can be declared
 // and injected into the same or different pages.
 console.log('%cBrainly Companion 🧠', ' color: #B9E2FE; font-size:50px;');
+
+if (localStorage.getItem("--headerfooter") !== null){
+    document.querySelector(':root').style.setProperty('--headerfooter',localStorage.getItem("--headerfooter"));
+}
+if (localStorage.getItem("--askloadsec") !== null){
+    document.querySelector(':root').style.setProperty('--askloadsec',localStorage.getItem("--askloadsec"));
+}
+
 let primary = localStorage.getItem("primary")
 let secondary = localStorage.getItem("secondary")
 let accent = localStorage.getItem("accent")
