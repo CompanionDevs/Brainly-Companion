@@ -1,8 +1,8 @@
 :root{
-    --headerfooter : #4fc3f6;
+    --headerfooter : #ffc7bf;
     --ansbut : #FF7968;
     --profilecard : #4fc3f6;
-    --askloadsec: #FBBE2E;
+    --askloadsec: #4fb3f6;
 }
 .apdimg, .filter > img{
     height:50px;
@@ -44,10 +44,10 @@ p.filter{
 	to { transform: rotate(360deg); }
 }
 button.theme.homebut{
-    background: #fbbe2e;
+    background: var(--headerfooter);
 }
 button.notif.homebut{
-    background: #4fc3f6;
+    background: var(--askloadsec);
 }
 .homebut {
     background: transparent;
@@ -55,8 +55,8 @@ button.notif.homebut{
     width: 35px;
     height: 35px;
     background: #fbbe2e;
-    margin:5px;
     padding: 5px;
+    margin:5px;
     border-radius: 50px;
 }
 .gear {
@@ -132,6 +132,7 @@ background: var(--profilecard)!important;
 }
 .dropdown > button {
     background-color: var(--askloadsec)!important;
+    border-color: var(--askloadsec)!important;
 }
 .brn-moderation-panel__content {
     background: white!important;
@@ -289,14 +290,12 @@ border-radius: 30px!important;
 }
 .dropdown button:hover{
 cursor: pointer;
-background: rgb(219, 166, 40)!important;
-border-color: rgb(219, 166, 40)!important;
 }
 
 .dropdown button:hover .dropdown-content {transform: scale(1);}
 
 .report_element:hover{
-background: #fbbe2e!important;
+background: var(--askloadsec)!important;
 height: 100%;
 width: 100%;
 }
