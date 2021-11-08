@@ -3,17 +3,17 @@ function profile(){
     thememodal.classList.add("modal");
     thememodal.innerHTML = `
 <div class="modal-bg" style="background-color: rgba(79,179,246,0.8);position: fixed;height: 100%;width: 100%;top: 0;left: 0;display:flex; justify-content:center; align-items: center;z-index: 999;overflow-x: hidden;overflow-y: auto;">
-    <div class="sg-toplayer__wrapper" style = "background: white; width: 50%; border-radius: 20px; box-shadow: 0 3px 32px 0 rgb(2 10 27 / 15%);">
-        <div class="sg-content-box" style = "display: flex;justify-content: center;flex-direction: column;align-items: center;">
+    <div class="sg-toplayer__wrapper" style = "background: white;height: max-content;padding: 40px;width: max-content;border-radius: 20px;box-shadow: 0 3px 32px 0 rgb(2 10 27 / 15%);">
+        <div class="sg-content-box" style = "display: flex;justify-content: center;flex-direction: column;align-items: center; height: 100%; width: 100%;">
             <div class="sg-content-box__content sg-content-box__content--spaced-bottom-large">
-                <h2 class="sg-headline">Select a Theme</h2>
+                <h2 class="sg-headline" style = "font-size: 40px;text-transform: uppercase;font-weight: 900;color: #60d399;">Select a Theme</h2>
             </div>
             <div class = "theme-content" style = "margin-bottom: 1.5rem;">
-            <button class="sg-button sg-button--m sg-button--solid-light chrrybsm" onclick = "localStorage.setItem('--headerfooter', '#ffc7bf');localStorage.setItem('--askloadsec', '#4fb3f6');document.querySelector(':root').style.setProperty('--headerfooter','#ffc7bf');document.querySelector(':root').style.setProperty('--askloadsec','#4fb3f6'); " style = "background: #ffc7bf!important; color: white;"><span class="sg-button__text" style = "font-weight: 900;">Cherry Blossom</span></button>
-            <button class="sg-button sg-button--m sg-button--solid-light hicontrast" onclick = "localStorage.setItem('--headerfooter', '#4fc3f6');localStorage.setItem('--askloadsec', '#fbbe2e');document.querySelector(':root').style.setProperty('--headerfooter','#4fc3f6');document.querySelector(':root').style.setProperty('--askloadsec','#fbbe2e'); " style = "color: white; background: #4fc3f6!important;"><span class="sg-button__text" style = "font-weight: 900;">High-Contrast</span></button>
+            <button class="sg-button sg-button--m sg-button--solid-light chrrybsm" onclick = "localStorage.setItem('--headerfooter', '#ffc7bf');localStorage.setItem('--askloadsec', '#4fb3f6');document.querySelector(':root').style.setProperty('--headerfooter','#ffc7bf');document.querySelector(':root').style.setProperty('--askloadsec','#4fb3f6'); " style = "background: #ffc7bf!important; color: white;"><span class="sg-button__text" style = "font-weight: 900;background: #ffc7bf!important;color: white;font-size: 20px;margin: 10px;">Cherry Blossom</span></button>
+            <button class="sg-button sg-button--m sg-button--solid-light hicontrast" onclick = "localStorage.setItem('--headerfooter', '#4fc3f6');localStorage.setItem('--askloadsec', '#fbbe2e');document.querySelector(':root').style.setProperty('--headerfooter','#4fc3f6');document.querySelector(':root').style.setProperty('--askloadsec','#fbbe2e'); " style = "color: white; background: #4fc3f6!important;"><span class="sg-button__text" style = "font-weight: 900;color: white;font-size: 20px;margin: 10px;">High-Contrast</span></button>
             </div>
             <div class="sg-content-box__content sg-content-box__content--spaced-bottom-large" style = "margin-bottom: 0.5rem;">
-                <button class="sg-button sg-button--m sg-button--solid-light" onclick = 'document.querySelector("div.modal").remove();' style = "background:  #60d399!important; color: white; width: 150px;"><span class="sg-button__text">Save</span></button>
+                <button class="sg-button sg-button--m sg-button--solid-light" onclick = 'document.querySelector("div.modal").remove();' style = "background:  #60d399!important; color: white;width: 150px;font-weight: 800;font-size: 20px;"><span class="sg-button__text">Save</span></button>
             </div>
         </div>
     </div>
