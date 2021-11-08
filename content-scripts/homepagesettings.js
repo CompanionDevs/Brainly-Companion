@@ -13,7 +13,7 @@ function profile(){
             <button class="sg-button sg-button--m sg-button--solid-light hicontrast" onclick = "localStorage.setItem('--headerfooter', '#4fc3f6');localStorage.setItem('--askloadsec', '#fbbe2e');document.querySelector(':root').style.setProperty('--headerfooter','#4fc3f6');document.querySelector(':root').style.setProperty('--askloadsec','#fbbe2e'); " style = "color: white; background: #4fc3f6!important;"><span class="sg-button__text" style = "font-weight: 900;">High-Contrast</span></button>
             </div>
             <div class="sg-content-box__content sg-content-box__content--spaced-bottom-large" style = "margin-bottom: 0.5rem;">
-                <button class="sg-button sg-button--m sg-button--solid-light" onclick = 'document.querySelector("div.modal").remove();' style = "background:  #60d399!important; color: white;"><span class="sg-button__text">Save</span></button>
+                <button class="sg-button sg-button--m sg-button--solid-light" onclick = 'document.querySelector("div.modal").remove();' style = "background:  #60d399!important; color: white; width: 150px;"><span class="sg-button__text">Save</span></button>
             </div>
         </div>
     </div>
