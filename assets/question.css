@@ -18,9 +18,18 @@ fill: white!important;
 #question-sg-layout-container > div.brn-qpage-layout.js-main-container.js-ads-screening-content > div.brn-qpage-layout__right.js-aside-content > div > div.sg-flex.sg-flex--margin-bottom-m > div > div > div:nth-child(1) > div > div.sg-flex.sg-flex--wrap.sg-space-y-xxs > ul > li > div > div > div.sg-text.sg-text--small.sg-text--black.sg-text--bold.sg-label__text, #question-sg-layout-container > div.brn-qpage-layout.js-main-container.js-ads-screening-content > div.brn-qpage-layout__right.js-aside-content > div > div.sg-flex.sg-flex--margin-bottom-m > div > div > div:nth-child(1) > div > div.sg-flex.sg-flex--align-items-center > div.sg-space-y-xs > div > div > div > div > div > div > div{
     color: black!important;
 }
+.brn-qpage-next-attachments-viewer-image-preview{
+    height: max-content!important;
+}
+button[date-testid = "ask_question_btn"] > span > div > svg{
+    fill: white!important;
+}
 .sg-box--light{
 border-color: #c3d1dd!important;
 background: white!important;
+}
+.sg-box--gray-secondary-ultra-light{
+background-color: var(--headerfooter)!important;
 }
 .brn-qpage-next-question-box{
 border-color: #C3D1DD!important;
