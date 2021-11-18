@@ -12,6 +12,9 @@ border-color: #2e2b2b!important;
 .sg-icon--dark{
 fill: white!important;
 }
+div.sg-flex.sg-flex--column.brn-answer-editor-layer__attachment-grabber-container > div > div:nth-child(2) > div > div > div > div > button > div > svg{
+    fill:black!important;
+}
 #question-sg-layout-container > div.brn-qpage-layout.js-main-container.js-ads-screening-content > div.brn-qpage-layout__right.js-aside-content > div > div.sg-flex.sg-flex--margin-bottom-m > div > div > div:nth-child(1) > div > div.sg-flex.sg-space-x-xs > div:nth-child(1) > div > div > div > div > div > div > div.sg-flex.sg-flex--margin-right-xxs > div > svg, #question-sg-layout-container > div.brn-qpage-layout.js-main-container.js-ads-screening-content > div.brn-qpage-layout__right.js-aside-content > div > div.sg-flex.sg-flex--margin-bottom-m > div > div > div:nth-child(1) > div > div.sg-flex.sg-flex--wrap.sg-space-y-xxs > ul > li > div > div > div.sg-label__icon > div > svg{
     fill:black!important;
 }
