@@ -31,9 +31,6 @@ button[date-testid = "ask_question_btn"] > span > div > svg{
 border-color: #c3d1dd!important;
 background: white!important;
 }
-.sg-box--gray-secondary-ultra-light{
-background-color: var(--headerfooter)!important;
-}
 .brn-qpage-next-question-box{
 border-color: #C3D1DD!important;
 }
