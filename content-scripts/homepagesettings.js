@@ -28,16 +28,19 @@ function profile(){
     </button>
 </div></div></div>`;
     //options on gamebox
-        if (document.querySelector("div[data-testid = 'game_box_container'] > div[data-testid = 'game_box_current_plan_facade']") !== null){
+    if (document.querySelector("div[data-testid = 'game_box_container'] > div[data-testid = 'game_box_current_plan_facade']") !== null){
             document.querySelector("div[data-testid = 'game_box_container'] > div[data-testid = 'game_box_current_plan_facade']").prepend(ext);}
 
-    //plan name
-    if (document.querySelector("div[data-testid = 'game_box_current_plan_facade'] > div[data-testid = 'game_box_current_plan'] > div > div[data-testid = 'game_box_current_plan_name']") !== null){
-        document.querySelector("div[data-testid = 'game_box_current_plan_facade'] > div[data-testid = 'game_box_current_plan'] > div > div[data-testid = 'game_box_current_plan_name']").innerHTML = "Brainly Companion";
-    }
-        document.getElementById("theme").addEventListener("click",function(){document.querySelector("body").appendChild(thememodal);});
+    document.getElementById("theme").addEventListener("click",function(){document.querySelector("body").appendChild(thememodal);});
 }
 
 var timeoutId = window.setTimeout(function() {
     profile()
   }, 5000);
+
+window.setInterval(function(){
+    //plan name
+    if (document.querySelector("div[data-testid = 'game_box_current_plan_facade'] > div[data-testid = 'game_box_current_plan'] > div > div[data-testid = 'game_box_current_plan_name']") !== null){
+        document.querySelector("div[data-testid = 'game_box_current_plan_facade'] > div[data-testid = 'game_box_current_plan'] > div > div[data-testid = 'game_box_current_plan_name']").innerHTML = "Brainly Companion";
+    }
+}, 1000)
