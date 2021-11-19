@@ -2,22 +2,23 @@ function profile(){
     let thememodal = document.createElement("div");
     thememodal.classList.add("modal");
     thememodal.innerHTML = `
-<div class="modal-bg" style="background-color: rgba(79,179,246,0.8);position: fixed;height: 100%;width: 100%;top: 0;left: 0;display:flex; justify-content:center; align-items: center;z-index: 999;overflow-x: hidden;overflow-y: auto;">
+    <div class="modal-bg" style="background-color: rgba(79,179,246,0.8);position: fixed;height: 100%;width: 100%;top: 0;left: 0;display:flex; justify-content:center; align-items: center;z-index: 999;overflow-x: hidden;overflow-y: auto;">
     <div class="sg-toplayer__wrapper" style = "background: white;height: max-content;padding: 40px;width: max-content;border-radius: 20px;box-shadow: 0 3px 32px 0 rgb(2 10 27 / 15%);">
         <div class="sg-content-box" style = "display: flex;justify-content: center;flex-direction: column;align-items: center; height: 100%; width: 100%;">
             <div class="sg-content-box__content sg-content-box__content--spaced-bottom-large">
-                <h2 class="sg-headline" style = "font-size: 40px;text-transform: uppercase;font-weight: 900;color: #60d399;">Select a Theme</h2>
+                <h2 class="sg-headline" style = "font-size: 40px;font-weight: 900;">Themes</h2>
             </div>
             <div class = "theme-content" style = "margin-bottom: 1.5rem;">
-            <button class="sg-button sg-button--m sg-button--solid-light chrrybsm" onclick = "localStorage.setItem('--headerfooter', '#ffc7bf');localStorage.setItem('--askloadsec', '#4fb3f6');document.querySelector(':root').style.setProperty('--headerfooter','#ffc7bf');document.querySelector(':root').style.setProperty('--askloadsec','#4fb3f6'); " style = "background: #ffc7bf!important; color: white;"><span class="sg-button__text" style = "font-weight: 900;background: #ffc7bf!important;color: white;font-size: 20px;margin: 10px;">Cherry Blossom</span></button>
-            <button class="sg-button sg-button--m sg-button--solid-light hicontrast" onclick = "localStorage.setItem('--headerfooter', '#4fc3f6');localStorage.setItem('--askloadsec', '#fbbe2e');document.querySelector(':root').style.setProperty('--headerfooter','#4fc3f6');document.querySelector(':root').style.setProperty('--askloadsec','#fbbe2e'); " style = "color: white; background: #4fc3f6!important;"><span class="sg-button__text" style = "font-weight: 900;color: white;font-size: 20px;margin: 10px;">High-Contrast</span></button>
+            <button class="sg-button sg-button--m sg-button--solid-light chrrybsm" onclick = "localStorage.setItem('--headerfooter', '#ffc7bf');localStorage.setItem('--askloadsec', '#4fb3f6');document.querySelector(':root').style.setProperty('--headerfooter','#ffc7bf');document.querySelector(':root').style.setProperty('--askloadsec','#4fb3f6');localStorage.setItem('--ansbut', '#FF7968');document.querySelector(':root').style.setProperty('--ansbut','#FF7968'); " style = "background: #ffc7bf!important; color: white;"><span class="sg-button__text" style = "font-weight: 900;background: #ffc7bf!important;color: white;font-size: 15px;margin: 10px;">Cherry Blossom</span></button>
+            <button class="sg-button sg-button--m sg-button--solid-light hicontrast" onclick = "localStorage.setItem('--headerfooter', '#4fc3f6');localStorage.setItem('--askloadsec', '#fbbe2e');document.querySelector(':root').style.setProperty('--headerfooter','#4fc3f6');document.querySelector(':root').style.setProperty('--askloadsec','#fbbe2e');localStorage.setItem('--ansbut', '#FF7968');document.querySelector(':root').style.setProperty('--ansbut','#FF7968'); " style = "color: white; background: #4fc3f6!important;"><span class="sg-button__text" style = "font-weight: 900;color: white;font-size: 15px;margin: 10px;">High-Contrast</span></button>
+            <button class="sg-button sg-button--m sg-button--solid-light hicontrast" onclick = "localStorage.setItem('--headerfooter', '#1b4b70');localStorage.setItem('--ansbut', '#4b7e94');localStorage.setItem('--askloadsec', '#4b7e94');document.querySelector(':root').style.setProperty('--headerfooter','#1b4b70');document.querySelector(':root').style.setProperty('--askloadsec','#4b7e94');document.querySelector(':root').style.setProperty('--ansbut','#4b7e94'); " style = "color: white; background: #4fc3f6!important;"><span class="sg-button__text" style = "font-weight: 900;color: white;font-size: 15px;margin: 10px;">Hannah's Theme</span></button>
             </div>
             <div class="sg-content-box__content sg-content-box__content--spaced-bottom-large" style = "margin-bottom: 0.5rem;">
-                <button class="sg-button sg-button--m sg-button--solid-light" onclick = 'document.querySelector("div.modal").remove();' style = "background:  #60d399!important; color: white;width: 150px;font-weight: 800;font-size: 20px;"><span class="sg-button__text">Save</span></button>
+                <button class="sg-button sg-button--m sg-button--solid-light" onclick = 'document.querySelector("div.modal").remove();' style = "background:  #60d399!important; color: white;width: 100px;font-weight: 800;font-size: 15px;"><span class="sg-button__text">Save</span></button>
             </div>
         </div>
     </div>
-</div>`;
+    </div>`;
     let ext = document.createElement("div");
     ext.innerHTML = `<div data-testid="game_box_extension" class="sg-flex sg-flex--align-items-center sg-flex--justify-content-space-between GameBoxCurrentPlan-module__container--2Royn sg-space-x-m"><div class="sg-flex sg-flex--column sg-space-y-xxs"><div class="sg-flex sg-flex--align-items-center sg-flex--justify-content-space-between"><div class="sg-flex"><div class="sg-text sg-text--xsmall sg-text--bold">Extension Options</div></div></div><div data-testid="game_box_current_plan_name" style = "display: inline-flex;" class="sg-text sg-text--gray sg-text--bold">
     <button class="theme homebut" id = "theme">
@@ -26,23 +27,15 @@ function profile(){
     <button class="notif homebut"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="bell" class="svg-inline--fa fa-bell" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" style="color: white; height: 24px; width:17px;"><path fill="currentColor" d="M256 32V51.2C329 66.03 384 130.6 384 208V226.8C384 273.9 401.3 319.2 432.5 354.4L439.9 362.7C448.3 372.2 450.4 385.6 445.2 397.1C440 408.6 428.6 416 416 416H32C19.4 416 7.971 408.6 2.809 397.1C-2.353 385.6-.2883 372.2 8.084 362.7L15.5 354.4C46.74 319.2 64 273.9 64 226.8V208C64 130.6 118.1 66.03 192 51.2V32C192 14.33 206.3 0 224 0C241.7 0 256 14.33 256 32H256zM224 512C207 512 190.7 505.3 178.7 493.3C166.7 481.3 160 464.1 160 448H288C288 464.1 281.3 481.3 269.3 493.3C257.3 505.3 240.1 512 224 512z"></path></svg>
     </button>
 </div></div></div>`;
-    //options on question page
-    if (document.querySelector("body > div.js-page-wrapper > div > div.sg-flex.sg-flex--column.js-feed > div.sg-layout > div > div.sg-layout__aside-content > div.sg-flex.sg-flex--margin-bottom-m > div > div > div:nth-child(2)") !== null){
-    document.querySelector("body > div.js-page-wrapper > div > div.sg-flex.sg-flex--column.js-feed > div.sg-layout > div > div.sg-layout__aside-content > div.sg-flex.sg-flex--margin-bottom-m > div > div > div:nth-child(2)").prepend(ext);}
-    //options on homepage
-    if (document.querySelector("#question-sg-layout-container > div.brn-qpage-layout.js-main-container.js-ads-screening-content > div.brn-qpage-layout__right.js-aside-content > div > div.sg-flex.sg-flex--margin-bottom-m > div > div > div:nth-child(2)") !== null){
-    document.querySelector("#question-sg-layout-container > div.brn-qpage-layout.js-main-container.js-ads-screening-content > div.brn-qpage-layout__right.js-aside-content > div > div.sg-flex.sg-flex--margin-bottom-m > div > div > div:nth-child(2)").prepend(ext);}
-    
-    //plan name on question page
-    if (document.querySelector("#question-sg-layout-container > div.brn-qpage-layout.js-main-container.js-ads-screening-content > div.brn-qpage-layout__right.js-aside-content > div > div.sg-flex.sg-flex--margin-bottom-m > div > div > div:nth-child(2) > div.sg-flex.sg-flex--align-items-center.sg-flex--justify-content-space-between.GameBoxCurrentPlan-module__container--2Royn.sg-space-x-m > div.sg-flex.sg-flex--column.sg-space-y-xxs > div.sg-text.sg-text--gray.sg-text--bold") !== null){
-        document.querySelector("#question-sg-layout-container > div.brn-qpage-layout.js-main-container.js-ads-screening-content > div.brn-qpage-layout__right.js-aside-content > div > div.sg-flex.sg-flex--margin-bottom-m > div > div > div:nth-child(2) > div.sg-flex.sg-flex--align-items-center.sg-flex--justify-content-space-between.GameBoxCurrentPlan-module__container--2Royn.sg-space-x-m > div.sg-flex.sg-flex--column.sg-space-y-xxs > div.sg-text.sg-text--gray.sg-text--bold").innerHTML = "Brainly Companion";
+    //options on gamebox
+        if (document.querySelector("div[data-testid = 'game_box_container'] > div[data-testid = 'game_box_current_plan_facade']") !== null){
+            document.querySelector("div[data-testid = 'game_box_container'] > div[data-testid = 'game_box_current_plan_facade']").prepend(ext);}
+
+    //plan name
+    if (document.querySelector("div[data-testid = 'game_box_current_plan_facade'] > div[data-testid = 'game_box_current_plan'] > div > div[data-testid = 'game_box_current_plan_name']") !== null){
+        document.querySelector("div[data-testid = 'game_box_current_plan_facade'] > div[data-testid = 'game_box_current_plan'] > div > div[data-testid = 'game_box_current_plan_name']").innerHTML = "Brainly Companion";
     }
-    //plan name on homepage
-    if (document.querySelector("body > div.js-page-wrapper > div > div.sg-flex.sg-flex--column.js-feed > div.sg-layout > div > div.sg-layout__aside-content > div.sg-flex.sg-flex--margin-bottom-m > div > div > div:nth-child(2) > div.sg-flex.sg-flex--align-items-center.sg-flex--justify-content-space-between.GameBoxCurrentPlan-module__container--2Royn.sg-space-x-m > div.sg-flex.sg-flex--column.sg-space-y-xxs > div.sg-text.sg-text--gray.sg-text--bold") !== null){
-        document.querySelector("body > div.js-page-wrapper > div > div.sg-flex.sg-flex--column.js-feed > div.sg-layout > div > div.sg-layout__aside-content > div.sg-flex.sg-flex--margin-bottom-m > div > div > div:nth-child(2) > div.sg-flex.sg-flex--align-items-center.sg-flex--justify-content-space-between.GameBoxCurrentPlan-module__container--2Royn.sg-space-x-m > div.sg-flex.sg-flex--column.sg-space-y-xxs > div.sg-text.sg-text--gray.sg-text--bold").innerHTML = "Brainly Companion";
-    }
-    
-    document.getElementById("theme").addEventListener("click",function(){document.querySelector("body").appendChild(thememodal);});
+        document.getElementById("theme").addEventListener("click",function(){document.querySelector("body").appendChild(thememodal);});
 }
 
 var timeoutId = window.setTimeout(function() {
