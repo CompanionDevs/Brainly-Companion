@@ -369,9 +369,6 @@ width: 100%;
 .sg-text--link{
 color: black!important;
 }
-.sg-text--mint-dark, .sg-text--mustard-dark{
-color: white!important;
-}
 .sg-text--gray{
 color: #323c45!important;
 }
@@ -383,7 +380,7 @@ input#searchbox {
     padding-left: 10px;
     background: #EBF2F7!important;
     color:#687B8C!important;
-    width: 150px;
+    width: 100%;
 }
 #gobutton {
     border: none;
@@ -396,8 +393,8 @@ input#searchbox {
     cursor: pointer!important;
     height: 35px;
     position: absolute;
-    right: -5%;
-    top: -1%;
+    right: 1%!important;
+    top: 1%!important;
 }
 button#gobutton1 {
     border-radius: 26px;
@@ -410,7 +407,9 @@ button#gobutton1 {
     padding-top:0;
     cursor: pointer;
 }
-
+body > div.js-page-wrapper > div > nav > div.brn-moderation-panel__content.sg-box.sg-box--padding-m.sg-box--shadow.js-moderation-panel-content > div.sg-content-box > div.sg-content-box__content > div > ul > li:nth-child(9), body > div.js-page-wrapper > div > nav > div.brn-moderation-panel__content.sg-box.sg-box--padding-m.sg-box--shadow.js-moderation-panel-content > div.sg-content-box > div.sg-content-box__content > div > ul > li:nth-child(6){
+    display:none;
+}
 .sg-actions-list{
     display: flex;
     position: relative;
@@ -421,6 +420,15 @@ button#gobutton1 {
 }
 .quick{
     box-shadow:0 2px 4px 0 rgb(0 0 0 / 10%), 0 3px 5px 0 rgb(0 0 0 / 10%);
+}
+.modall:hover{
+    color: #0089e3!important;
+}
+#querytool{
+    position: absolute;
+    right: 15%;
+    top: 12%;
+    cursor:pointer;
 }
 .quick-1, .quick-2, .quick-3{
     opacity: 0;
