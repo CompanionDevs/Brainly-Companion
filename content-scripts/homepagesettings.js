@@ -1,55 +1,270 @@
+let remove_dictionary = {
+    "1": "'Too Many Questions'",
+    "2": "'Link in Question'",
+    "3": "'Essay or Project'",
+    "4": "'Too Trivial'",
+    "5": "'Brainly-Related Question'",
+    "6": "'Wrong Subject'",
+    "8": "'Default'",
+    "9": "'Not English'",
+    "10": "'Multiple Posting'",
+    "12": "'Personal Information'",
+    "13": "'Self Harm'",
+    "14": "'Unclear Question'",
+    "15": "'Unclear Attatchment'",
+    "16": "'Too General'",
+    "17": "'Incomplete Question'"
+};
+
 function profile(){
     let thememodal = document.createElement("div");
     thememodal.classList.add("modal");
+
+    let modmodal = document.createElement("div");
+    modmodal.classList.add("modal");
+
     thememodal.innerHTML = `
+
+
     <div class="modal-bg" style="background-color: rgba(79,179,246,0.8);position: fixed;height: 100%;width: 100%;top: 0;left: 0;display:flex; justify-content:center; align-items: center;z-index: 999;overflow-x: hidden;overflow-y: auto;">
-    <div class="sg-toplayer__wrapper" style = "background: white;height: max-content;padding: 40px;width: max-content;border-radius: 20px;box-shadow: 0 3px 32px 0 rgb(2 10 27 / 15%);">
-        <div class="sg-content-box" style = "display: flex;justify-content: center;flex-direction: column;align-items: center; height: 100%; width: 100%;">
-            <div class="sg-content-box__content sg-content-box__content--spaced-bottom-large">
-                <h2 class="sg-headline" style = "font-size: 40px;font-weight: 900;">Themes</h2>
+        <div class="sg-toplayer__wrapper" style = "background: white;height: max-content;padding: 40px;width: max-content;border-radius: 20px;box-shadow: 0 3px 32px 0 rgb(2 10 27 / 15%);">
+        <div class="sg-content-box" style="display: flex;justify-content: center;flex-direction: column;align-items: center; height: 100%; width: 100%;">
+        <div class="sg-content-box__content sg-content-box__content--spaced-bottom-large" style="width: 100%;">
+            <h2 class="sg-headline" style="font-size: 40px;color: #323C45;font-weight: 900;">Themes</h2>
+        </div>
+    <div class="theme-content" style="margin-bottom: 1.5rem;padding: 10px;border: 2px solid #c3d1dd;border-radius: 20px; position: relative;">
+        <h1 class="sg-text-bit sg-text-bit--mint-primary" style="font-size: 22px;background: white;position: absolute;top: -21px;">Preset Themes</h1>
+        <button id = "cherrybsm" class="sg-button sg-button--m sg-button--solid-light chrrybsm" style="background: #ffc7bf!important; color: white;"><span class="sg-button__text" style="font-weight: 900;background: #ffc7bf!important;color: white;font-size: 15px;margin: 10px;">Cherry Blossom</span></button>
+        <button id = "hicont" class="sg-button sg-button--m sg-button--solid-light hicontrast" style="color: white; background: #4fc3f6!important;"><span class="sg-button__text" style="font-weight: 900;color: white;font-size: 15px;margin: 10px;">High-Contrast</span></button>
+        <button id = "hannah" class="sg-button sg-button--m sg-button--solid-light hicontrast" style="color: white; background: #4fc3f6!important;"><span class="sg-button__text" style="font-weight: 900;color: white;font-size: 15px;margin: 10px;">Hannah's Theme</span></button>
+    </div>
+    <div class="customtheme" style="border: 2px solid #c3d1dd;border-radius: 20px;width: max-content;padding: 10px;margin-bottom: 0.5rem;position: relative;">
+        <h1 class="sg-text-bit sg-text-bit--mustard-primary" style="font-size: 22px;position: absolute;top: -20px;background: white;">Custom Theme</h1>
+        <div class="custinp" style="width: max-content;display: flex;">
+            <div class="headerfooter" style="margin-right: 10px;display: flex;border-right: 1px solid #c3d1dd;"><h1 class="sg-text-bit sg-text-bit--small sg-text-bit--peach-primary">Header &amp; Footer</h1>
+                <input class = "color-input" type="color" style="width: 25px;margin-left: 5px;background: transparent;border: none;position: relative;top: -2px;" id="headerfooter" name="headerfooter" value="#ffffff">
             </div>
-            <div class = "theme-content" style = "margin-bottom: 1.5rem;">
-            <button class="sg-button sg-button--m sg-button--solid-light chrrybsm" onclick = "localStorage.setItem('--headerfooter', '#ffc7bf');localStorage.setItem('--askloadsec', '#4fb3f6');document.querySelector(':root').style.setProperty('--headerfooter','#ffc7bf');document.querySelector(':root').style.setProperty('--askloadsec','#4fb3f6');localStorage.setItem('--ansbut', '#FF7968');document.querySelector(':root').style.setProperty('--ansbut','#FF7968'); " style = "background: #ffc7bf!important; color: white;"><span class="sg-button__text" style = "font-weight: 900;background: #ffc7bf!important;color: white;font-size: 15px;margin: 10px;">Cherry Blossom</span></button>
-            <button class="sg-button sg-button--m sg-button--solid-light hicontrast" onclick = "localStorage.setItem('--headerfooter', '#4fc3f6');localStorage.setItem('--askloadsec', '#fbbe2e');document.querySelector(':root').style.setProperty('--headerfooter','#4fc3f6');document.querySelector(':root').style.setProperty('--askloadsec','#fbbe2e');localStorage.setItem('--ansbut', '#FF7968');document.querySelector(':root').style.setProperty('--ansbut','#FF7968'); " style = "color: white; background: #4fc3f6!important;"><span class="sg-button__text" style = "font-weight: 900;color: white;font-size: 15px;margin: 10px;">High-Contrast</span></button>
-            <button class="sg-button sg-button--m sg-button--solid-light hicontrast" onclick = "localStorage.setItem('--headerfooter', '#1b4b70');localStorage.setItem('--ansbut', '#4b7e94');localStorage.setItem('--askloadsec', '#4b7e94');document.querySelector(':root').style.setProperty('--headerfooter','#1b4b70');document.querySelector(':root').style.setProperty('--askloadsec','#4b7e94');document.querySelector(':root').style.setProperty('--ansbut','#4b7e94'); " style = "color: white; background: #4fc3f6!important;"><span class="sg-button__text" style = "font-weight: 900;color: white;font-size: 15px;margin: 10px;">Hannah's Theme</span></button>
+            <div class="ansbut" style="display: flex;border-right: 1px solid #c3d1dd;margin-right: 7px;"><h1 class="sg-text-bit sg-text-bit--small sg-text-bit--peach-primary" style="color: #60d399;">button 1</h1>
+                <input class = "color-input" type="color" style="width: 25px;margin-left: 5px;background: transparent;border: none;position: relative;top: -2px;" id="ansbut" name="ansbut" value="#ffffff">
             </div>
-            <div class="sg-content-box__content sg-content-box__content--spaced-bottom-large" style = "margin-bottom: 0.5rem;">
-                <button class="sg-button sg-button--m sg-button--solid-light" onclick = 'document.querySelector("div.modal").remove();' style = "background:  #60d399!important; color: white;width: 100px;font-weight: 800;font-size: 15px;"><span class="sg-button__text">Save</span></button>
+            <div class="askloadsec" style="display: flex;"><h1 class="sg-text-bit sg-text-bit--small sg-text-bit--peach-primary" style="color: #fbbe2e;">button 2</h1>
+                <input class = "color-input" type="color" style="width: 25px;margin-left: 5px;background: transparent;border: none;position: relative;top: -2px;" id="askloadsec" name="askloadsec" value="#ffffff">
             </div>
         </div>
     </div>
+    
+    </div>
+    <div class="sg-content-box__content sg-content-box__content--spaced-bottom-large" style="margin-bottom: 0px;display: flex;justify-content: center;">
+    <button class="sg-button sg-button--m sg-button--solid-light" onclick="document.querySelector(&quot;div.modal&quot;).remove();" style="background:  #60d399!important; color: white;width: 100px;font-weight: 800;font-size: 15px;"><span class="sg-button__text">Save</span></button>
+</div>
+</div>
+    </div>
+    </div>
     </div>`;
+    modmodal.innerHTML = `
+    <div class="modal-bg" style="background-color: rgba(79,179,246,0.8);position: fixed;height: 100%;width: 100%;top: 0;left: 0;display:flex; justify-content:center; align-items: center;z-index: 999;overflow-x: hidden;overflow-y: auto;">
+    <div class="sg-toplayer__wrapper" style = "background: white;height: max-content;padding: 40px;width: max-content;border-radius: 20px;box-shadow: 0 3px 32px 0 rgb(2 10 27 / 15%);">
+        <div class="sg-content-box" style = "display: flex;justify-content: center;flex-direction: column;align-items: center; height: 100%; width: 100%;">
+            <div class="sg-content-box__content sg-content-box__content--spaced-bottom-large" style = "float: left;width: 100%;">
+                <h2 class="sg-headline" style = "font-size: 2rem ;font-weight: 900; color: #323C45;">Moderation Settings</h2>
+            </div>
+            <div class="content" style="display: flex;flex-direction: row;">
+                <div class="quick-mod" style="margin-right: 0.5rem;display: flex; align-items: center; border: 2px solid #c3d1dd;/* align-items: center; *//* justify-content: center; */border-radius: 20px;padding: 10px;">
+                    <div style = "display: block;">
+                        <button id = "set1" class="sg-button sg-button--m sg-button--solid-light chrrybsm" style="font-weight: 900;background: #ffc7bf!important;color: white;font-size: 15px;"><span class="sg-button__text" style="font-weight: 900;color: white;font-size: 15px;margin: 10px;">Set 1</span></button>
+                        <button id = "set2" class="sg-button sg-button--m sg-button--solid-light hicontrast" style="color: white; background: #4fc3f6!important;"><span class="sg-button__text" style="font-weight: 900;color: white;font-size: 15px;margin: 10px;">Set 2</span></button>
+                        <button id = "set3" class="sg-button sg-button--m sg-button--solid-light hicontrast" style="color: white; background: #fbbe2e!important;"><span class="sg-button__text" style="font-weight: 900;color: white;font-size: 15px;margin: 10px;">Set 3</span></button><br>
+
+                        <select id="reason" style="outline: none;border-radius: 26px;background: #c3d1dd;font-weight: bold;margin-top: 5px;color: #687B8C;border: none;padding: 5px;margin-left: 17%;/* padding-left: 10%; */" outline="off"><option value="0" selected="selected" disabled="disabled">Select a reason</option><option value="1">Too Many Questions</option><option value="2">Link in Question</option><option value="3">Essay or Project</option><option value="4">Too Trivial</option><option value="5">Brainly-Related Question</option><option value="6">Wrong Subject</option><option value="8">Default</option><option value="9">Not English</option><option value="10">Multiple Posting</option><option value="12">Personal Information</option>&gt;<option value="13">Self Harm</option><option value="14">Unclear Question</option><option value="15">Unclear Attatchment</option><option value="16">Too General</option><option value="17">Incomplete Question</option>Choose</select>
+                    </div>
+            </div>
+
+            <div class="misc">
+                <div class="bold-mod" style="display: flex;border: 2px solid #c3d1dd;padding: 10px;border-radius: 20px;height: max-content;">
+                    <input type="checkbox" id="toggle" style="margin: 5px;">
+                    <h1 class="sg-text-bit sg-text-bit--peach-primary sg-text-bit--small">Bold</h1>
+                </div>
+                <div class="widget" style="border: 2px solid #c3d1dd;padding: 10px;border-radius: 20px;height: max-content;margin-top: 5px;">
+                    <h1 class="sg-text-bit sg-text-bit--mint-primary sg-text-bit--small">Widgets</h1>
+                    <select type="range" id="choice" name="choice" style="outline: none;border-radius: 26px;background: #c3d1dd;font-weight: bold;margin-top: 5px;color: #687B8C;border: none;padding: 5px;">
+                        <option value="disabled" default="">Choose a widget</option><option value="weekend">Weekend Countdown</option><option value="time">Current Time</option><option value="personal">Random Greeting</option></select>  
+                </div>
+            </div>
+        </div>
+        <div class="sg-content-box__content sg-content-box__content--spaced-bottom-large" style = "margin: 0.5rem;">
+            <button class="sg-button sg-button--m sg-button--solid-light" onclick = 'document.querySelector("div.modal").remove();' style = "background:  #60d399!important; color: white;width: 100px;font-weight: 800;font-size: 15px;"><span class="sg-button__text">Save</span></button>
+        </div>
+        </div>
+    </div>
+    </div>`;
+    let modset = document.createElement("div");
     let ext = document.createElement("div");
-    ext.innerHTML = `<div data-testid="game_box_extension" id="notif" class="sg-flex sg-flex--align-items-center sg-flex--justify-content-space-between GameBoxCurrentPlan-module__container--2Royn sg-space-x-m"><div class="sg-flex sg-flex--column sg-space-y-xxs"><div class="sg-flex sg-flex--align-items-center sg-flex--justify-content-space-between"><div class="sg-flex"><div class="sg-text sg-text--xsmall sg-text--bold">Extension Options</div></div></div><div data-testid="game_box_current_plan_name" style = "display: inline-flex;" class="sg-text sg-text--gray sg-text--bold">
+    ext.innerHTML = `<div data-testid="game_box_extension" class="sg-flex sg-flex--align-items-center sg-flex--justify-content-space-between GameBoxCurrentPlan-module__container--2Royn sg-space-x-m"><div class="sg-flex sg-flex--column sg-space-y-xxs"><div class="sg-flex sg-flex--align-items-center sg-flex--justify-content-space-between"><div class="sg-flex"><div class="sg-text sg-text--xsmall sg-text--bold">Extension Options</div></div></div><div data-testid="game_box_current_plan_name" style = "display: inline-flex;" class="sg-text sg-text--gray sg-text--bold">
     <button class="theme homebut" id = "theme">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" style = "fill: white;" viewBox="0 0 24 24"><path d="M8.997 13.985c.01 1.104-.88 2.008-1.986 2.015-1.105.009-2.005-.88-2.011-1.984-.01-1.105.879-2.005 1.982-2.016 1.106-.007 2.009.883 2.015 1.985zm-.978-3.986c-1.104.008-2.008-.88-2.015-1.987-.009-1.103.877-2.004 1.984-2.011 1.102-.01 2.008.877 2.012 1.982.012 1.107-.88 2.006-1.981 2.016zm7.981-4.014c.004 1.102-.881 2.008-1.985 2.015-1.106.01-2.008-.879-2.015-1.983-.011-1.106.878-2.006 1.985-2.015 1.101-.006 2.005.881 2.015 1.983zm-12 15.847c4.587.38 2.944-4.492 7.188-4.537l1.838 1.534c.458 5.537-6.315 6.772-9.026 3.003zm14.065-7.115c1.427-2.239 5.846-9.748 5.846-9.748.353-.623-.429-1.273-.975-.813 0 0-6.572 5.714-8.511 7.525-1.532 1.432-1.539 2.086-2.035 4.447l1.68 1.4c2.227-.915 2.868-1.04 3.995-2.811zm-12.622 4.806c-2.084-1.82-3.42-4.479-3.443-7.447-.044-5.51 4.406-10.03 9.92-10.075 3.838-.021 6.479 1.905 6.496 3.447l1.663-1.456c-1.01-2.223-4.182-4.045-8.176-3.992-6.623.055-11.955 5.466-11.903 12.092.023 2.912 1.083 5.57 2.823 7.635.958.492 2.123.329 2.62-.204zm12.797-1.906c1.059 1.97-1.351 3.37-3.545 3.992-.304.912-.803 1.721-1.374 2.311 5.255-.591 9.061-4.304 6.266-7.889-.459.685-.897 1.197-1.347 1.586z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" style="fill: white;" width="24" height="24" style = "fill: white;" viewBox="0 0 24 24"><path d="M8.997 13.985c.01 1.104-.88 2.008-1.986 2.015-1.105.009-2.005-.88-2.011-1.984-.01-1.105.879-2.005 1.982-2.016 1.106-.007 2.009.883 2.015 1.985zm-.978-3.986c-1.104.008-2.008-.88-2.015-1.987-.009-1.103.877-2.004 1.984-2.011 1.102-.01 2.008.877 2.012 1.982.012 1.107-.88 2.006-1.981 2.016zm7.981-4.014c.004 1.102-.881 2.008-1.985 2.015-1.106.01-2.008-.879-2.015-1.983-.011-1.106.878-2.006 1.985-2.015 1.101-.006 2.005.881 2.015 1.983zm-12 15.847c4.587.38 2.944-4.492 7.188-4.537l1.838 1.534c.458 5.537-6.315 6.772-9.026 3.003zm14.065-7.115c1.427-2.239 5.846-9.748 5.846-9.748.353-.623-.429-1.273-.975-.813 0 0-6.572 5.714-8.511 7.525-1.532 1.432-1.539 2.086-2.035 4.447l1.68 1.4c2.227-.915 2.868-1.04 3.995-2.811zm-12.622 4.806c-2.084-1.82-3.42-4.479-3.443-7.447-.044-5.51 4.406-10.03 9.92-10.075 3.838-.021 6.479 1.905 6.496 3.447l1.663-1.456c-1.01-2.223-4.182-4.045-8.176-3.992-6.623.055-11.955 5.466-11.903 12.092.023 2.912 1.083 5.57 2.823 7.635.958.492 2.123.329 2.62-.204zm12.797-1.906c1.059 1.97-1.351 3.37-3.545 3.992-.304.912-.803 1.721-1.374 2.311 5.255-.591 9.061-4.304 6.266-7.889-.459.685-.897 1.197-1.347 1.586z"/></svg>
     </button>
-    <button class="notif homebut"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="bell" class="svg-inline--fa fa-bell" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" style="color: white; height: 24px; width:17px;"><path fill="currentColor" d="M256 32V51.2C329 66.03 384 130.6 384 208V226.8C384 273.9 401.3 319.2 432.5 354.4L439.9 362.7C448.3 372.2 450.4 385.6 445.2 397.1C440 408.6 428.6 416 416 416H32C19.4 416 7.971 408.6 2.809 397.1C-2.353 385.6-.2883 372.2 8.084 362.7L15.5 354.4C46.74 319.2 64 273.9 64 226.8V208C64 130.6 118.1 66.03 192 51.2V32C192 14.33 206.3 0 224 0C241.7 0 256 14.33 256 32H256zM224 512C207 512 190.7 505.3 178.7 493.3C166.7 481.3 160 464.1 160 448H288C288 464.1 281.3 481.3 269.3 493.3C257.3 505.3 240.1 512 224 512z"></path></svg>
+    <button id = "notif" class="notif homebut">
+        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="bell" class="svg-inline--fa fa-bell" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" style="color: white; height: 24px; width:17px;"><path fill="currentColor" d="M256 32V51.2C329 66.03 384 130.6 384 208V226.8C384 273.9 401.3 319.2 432.5 354.4L439.9 362.7C448.3 372.2 450.4 385.6 445.2 397.1C440 408.6 428.6 416 416 416H32C19.4 416 7.971 408.6 2.809 397.1C-2.353 385.6-.2883 372.2 8.084 362.7L15.5 354.4C46.74 319.2 64 273.9 64 226.8V208C64 130.6 118.1 66.03 192 51.2V32C192 14.33 206.3 0 224 0C241.7 0 256 14.33 256 32H256zM224 512C207 512 190.7 505.3 178.7 493.3C166.7 481.3 160 464.1 160 448H288C288 464.1 281.3 481.3 269.3 493.3C257.3 505.3 240.1 512 224 512z"></path></svg>
+    </button>
+    <button class="modset homebut" id = "modset" style = "background: #FFC7BF;">
+    <svg xmlns="http://www.w3.org/2000/svg" style="fill: white; width="24" height="24" viewBox="0 0 24 24"><path d="M15.273 19.469c-.662-.662-1.582-1.002-2.514-.931-1.767.137-3.58-.47-4.931-1.821-1.223-1.224-1.83-2.824-1.83-4.426 0-.604.086-1.208.258-1.792l3.771 3.771c1.912.417 4.652-2.353 4.242-4.242l-3.769-3.771c.583-.171 1.187-.257 1.79-.257 1.603 0 3.202.606 4.428 1.83 1.35 1.351 1.957 3.164 1.82 4.93-.072.933.268 1.853.93 2.514l2.843 2.843c1.066-1.793 1.689-3.88 1.689-6.117 0-6.627-5.373-12-12-12s-12 5.373-12 12 5.373 12 12 12c2.236 0 4.323-.623 6.115-1.688l-2.842-2.843z"/></svg>
     </button>
 </div></div></div>`;
-    
+
     //options on gamebox
     if (document.querySelector("div[data-testid = 'game_box_container'] > div[data-testid = 'game_box_current_plan_facade']") !== null){
-            document.querySelector("div[data-testid = 'game_box_container'] > div[data-testid = 'game_box_current_plan_facade']").prepend(ext);}
-
-    document.getElementById("theme").addEventListener("click",function(){document.querySelector("body").appendChild(thememodal);});
+            document.querySelector("div[data-testid = 'game_box_container'] > div[data-testid = 'game_box_current_plan_facade']").prepend(ext);
+        }
+        let opscript = "false";
+        let colscript = "false";
+    try{
+    document.getElementById("theme").addEventListener("click",function(){
+        document.querySelector("body").appendChild(thememodal);
+        if(colscript === "false"){
+            colorbox();
+            colscript = "true";
+        }
+    });
+    document.getElementById("modset").addEventListener("click",function(){
+        document.querySelector("body").appendChild(modmodal);
+        if(opscript === "false"){
+            loadedoptions();
+            opscript = "true";
+        }
+    document.getElementById('notif').addEventListener("click",function(){
+        appendToFooter()
+    });
+    });
+    }catch(err){};
 }
-
-var timeoutId = window.setTimeout(function() {
-    profile()
-  }, 2500);
-  
-window.setInterval(function(){
-    //plan name
-    if (document.querySelector("div[data-testid = 'game_box_current_plan_facade'] > div[data-testid = 'game_box_current_plan'] > div > div[data-testid = 'game_box_current_plan_name']") !== null){
-        document.querySelector("div[data-testid = 'game_box_current_plan_facade'] > div[data-testid = 'game_box_current_plan'] > div > div[data-testid = 'game_box_current_plan_name']").innerHTML = "Brainly Companion";
+function colorbox(){
+    let primary = document.getElementsByClassName("color-input")[0]
+    let secondary = document.getElementsByClassName("color-input")[1]
+    let accent = document.getElementsByClassName("color-input")[2]
+    let cherrybsm=  document.getElementById("cherrybsm")
+    let savedPrimary = localStorage.getItem("--headerfooter")
+    let savedSecondary = localStorage.getItem("--askloadsec")
+    let savedAccent = localStorage.getItem("--ansbut")
+    if (savedPrimary !== undefined){
+        primary.value = savedPrimary   
     }
-}, 2600)
+    if (savedSecondary !== undefined){
+        secondary.value = savedSecondary   
+    }
+    if (savedAccent !== undefined){
+        accent.value = savedAccent   
+    }
+    primary.addEventListener('change', function(){
+        localStorage.setItem("--headerfooter",document.getElementsByClassName("color-input")[0].value);
+        document.querySelector(':root').style.setProperty('--headerfooter',document.getElementsByClassName("color-input")[0].value);
+    });
+    secondary.addEventListener('change', function(){
+        localStorage.setItem("--askloadsec",document.getElementsByClassName("color-input")[1].value);
+        document.querySelector(':root').style.setProperty('--askloadsec',document.getElementsByClassName("color-input")[1].value);
+    });
+    accent.addEventListener('change', function(){
+        localStorage.setItem("--ansbut",document.getElementsByClassName("color-input")[2].value);
+        document.querySelector(':root').style.setProperty('--ansbut',document.getElementsByClassName("color-input")[2].value);
+    });
+    cherrybsm.addEventListener("click", function(){
+        localStorage.setItem('--headerfooter', '#ffc7bf');
+        localStorage.setItem('--askloadsec', '#4fb3f6');
+        document.querySelector(':root').style.setProperty('--headerfooter','#ffc7bf');
+        document.querySelector(':root').style.setProperty('--askloadsec','#4fb3f6');
+        localStorage.setItem('--ansbut', '#FF7968');
+        document.querySelector(':root').style.setProperty('--ansbut','#FF7968'); 
+        primary.value = "#ffc7bf";
+        secondary.value = "#4fb3f6";
+        accent.value = "#FF7968";
+    });
+    hicont.addEventListener("click", function(){
+        localStorage.setItem('--headerfooter', '#4fb3f6');
+        localStorage.setItem('--askloadsec', '#fbbe2e');
+        document.querySelector(':root').style.setProperty('--headerfooter','#4fb3f6');
+        document.querySelector(':root').style.setProperty('--askloadsec','#fbbe2e');
+        localStorage.setItem('--ansbut', '#FF7968');
+        document.querySelector(':root').style.setProperty('--ansbut','#FF7968'); 
+        primary.value = "#4fb3f6";
+        secondary.value = "#fbbe2e";
+        accent.value = "#FF7968";
+    });
+    hannah.addEventListener("click", function(){
+        localStorage.setItem('--headerfooter', '#1b4b70');
+        localStorage.setItem('--ansbut', '#4b7e94');
+        localStorage.setItem('--askloadsec', '#4b7e94');
+        document.querySelector(':root').style.setProperty('--headerfooter','#1b4b70');
+        document.querySelector(':root').style.setProperty('--askloadsec','#4b7e94');
+        document.querySelector(':root').style.setProperty('--ansbut','#4b7e94');
+        primary.value = "#1b4b70";
+        secondary.value = "#4b7e94";
+        accent.value = "#4b7e94";
+    });
+}
+function loadedoptions(){
+        
+        document.getElementById("choice").addEventListener("change",function(){
+            localStorage.setItem("widget",this.value)
+            chrome.storage.sync.set({"widget": this.value});
+        })
+        if (localStorage.getItem("widget") !== null || localStorage.getItem("widget") !== undefined){
+            document.getElementById("choice").value = localStorage.getItem("widget")
+        }
+            var isTrueSet = (localStorage.getItem("isBold") === 'true');
+            document.getElementById("toggle").checked = isTrueSet
+            document.getElementById("toggle").addEventListener("change",function(){
+                localStorage.setItem("isBold",this.checked)
+                chrome.storage.sync.set({"isBold": this.checked}, function() {});
+            })
+
+        
+        document.getElementById("set1").addEventListener("click",function(){
+            let reason = document.getElementById("reason").value
+            if (remove_dictionary[reason] === undefined){
+                alert("You need to select a reason.")
+            } else {
+                let conf = confirm("Are you sure you'd like to set Quick Delete 1 to reason "+remove_dictionary[reason]+"?")
+                if (conf === true){
+                    chrome.storage.sync.set({"onenum": reason}, function() {});
+                    chrome.storage.sync.set({"onetxt": remove_dictionary[reason]}, function() {});
+                }
+            }
+            
+        })
+        document.getElementById("set2").addEventListener("click",function(){
+            let reason = document.getElementById("reason").value
+            if (remove_dictionary[reason] === undefined){
+                alert("You need to select a reason.")
+            } else {
+                let conf = confirm("Are you sure you'd like to set Quick Delete 2 to reason "+remove_dictionary[reason]+"?")
+                if (conf === true){
+                    chrome.storage.sync.set({"twonum": reason}, function() {});
+                    chrome.storage.sync.set({"twotxt": remove_dictionary[reason]}, function() {});
+                }
+            }
+            
+        })
+        document.getElementById("set3").addEventListener("click",function(){
+            let reason = document.getElementById("reason").value
+            if (remove_dictionary[reason] === undefined){
+                alert("You need to select a reason.")
+            } else {
+                let conf = confirm("Are you sure you'd like to set Quick Delete 3 to reason "+remove_dictionary[reason]+"?")
+                if (conf === true){
+                    chrome.storage.sync.set({"threenum": reason}, function() {});
+                    chrome.storage.sync.set({"threetxt": remove_dictionary[reason]}, function() {});
+                }
+            }
+            
+        })
+        
+    
+    
+}
 window.setTimeout(function(){
     //plan name
     document.getElementById('notif').addEventListener("click",function(){
         appendToFooter()
-    })
+    });
 }, 2700)
 function appendToFooter(){
     document.body.outerHTML = "<!DOCTYPE html><html><head><header class='HeaderController__header--3BXr6'><div class='HeaderController__limitWidth--2ORAB'><div class='HeaderController__innerwrap--1RjnZ'><div class='sg-flex sg-flex--align-items-center sg-flex--margin-right-m'><a href='/' data-testid='navigation_header_brainly_logo_link' class='HeaderController__logoLink--3xFry'><div data-testid='navigation_header_brainly_logo' class='sg-logo HeaderController__logo--1gT-T'><img class='sg-logo__image' src='https://styleguide.brainly.com/images/logos/brainly-5c4a769505.svg'></div></a></div><div class='HeaderController__search--32Q97' data-testid='navigation_header_search'><div class='sg-flex sg-flex--full-width Search__searchWrapper--2K-TQ'><form method='GET' action='/app/ask?source=topbar' class='Search__searchForm--3VpJx'><div class='sg-search sg-search--m sg-search--full-width'><input aria-label='Search' placeholder='Search for an answer to any question...' name='q' data-test='navigation_search' maxlength='2048' data-hj-whitelist='true' type='search' class='sg-input sg-input--with-icon sg-search__input' value=''><button class='sg-search__icon'><div class='sg-icon sg-icon--gray-secondary sg-icon--x16'><svg class='sg-icon__svg'><use xlink:href='#icon-search'></use></svg></div></button></div></form></div></div><div class='sg-flex sg-flex--align-items-center HeaderController__childrenWrapper--2o_0B'><div class='sg-flex sg-flex--align-items-center sg-space-x-xxs md:sg-space-x-s'><div class='sg-flex sg-flex--margin-left-s'><a data-testid='navigation_add_question' class='sg-button sg-button--m sg-button--transparent' href='/question/add?entry=6' role='button'><span class='sg-button__text'>Ask Question</span></a></div><div><div class='sg-flex sg-space-x-xxs md:sg-space-x-s'><div class='sg-flex'><div class='sg-flex' style='position: relative;'><button aria-label='' data-testid='navigation-nested-panel-button' class='sg-button sg-button--m sg-button--transparent sg-button--icon-only'><span class='sg-button__icon sg-button__icon--m'><div class='sg-icon sg-icon--adaptive sg-icon--x24'><svg class='sg-icon__svg'><use xlink:href='#icon-notifications'></use></svg></div></span><span class='sg-button__text'></span></button></div></div><div class='sg-flex'><div class='sg-flex' style='position: relative;'><button aria-label='profile' data-testid='navigation_profile_panel_button' class='sg-button sg-button--m sg-button--transparent sg-button--icon-only'><span class='sg-button__icon sg-button__icon--m'><div class='sg-avatar sg-avatar--xs'><img class='sg-avatar__image' src='https://us-static.z-dn.net/files/daa/792a6895f607fadea54b4f7f0e595617.png'></div></span><span class='sg-button__text'></span></button></div></div></div></div></div></div></div></div><div data-testid='navigation_header_subnav' class='HeaderController__subnav--gvKms js-ads-top-offset-element'><div class='HeaderController__limitWidth--2ORAB'><div class='HeaderController__subnavInner--10VQX'><div class='sg-flex sg-flex--full-height sg-flex--margin-left-xs'><div class='sg-flex sg-flex--full-height sg-flex--no-shrink sg-flex--align-items-center'><span class='SubNav__linkWrapper--3SFe0 SubNav__linkWrapperMargin--EbAv7'><a role='link' data-test='sub_navigaton_for_students' tabindex='0' href='/for-students?source=topbar' class='sg-text sg-text--small sg-text--link sg-text--bold sg-text--black sg-text--regular'>For students</a></span></div><div class='sg-flex sg-flex--full-height sg-flex--no-shrink sg-flex--align-items-center'><span class='SubNav__linkWrapper--3SFe0 SubNav__linkWrapperMargin--EbAv7'><a role='link' data-test='sub_navigaton_for_parents' tabindex='0' href='/for-parents?source=topbar' class='sg-text sg-text--small sg-text--link sg-text--bold sg-text--black sg-text--regular'>For parents</a></span></div><div class='sg-flex sg-flex--full-height sg-flex--no-shrink sg-flex--align-items-center'><span class='SubNav__linkWrapper--3SFe0 SubNav__linkWrapperMargin--EbAv7'><a role='link' data-test='sub_navigaton_for_teachers' tabindex='0' href='/schools-and-teachers?source=topbar' class='sg-text sg-text--small sg-text--link sg-text--bold sg-text--black sg-text--regular'>For teachers</a></span></div><div class='sg-flex sg-flex--full-height sg-flex--no-shrink sg-flex--align-items-center'><span class='SubNav__linkWrapper--3SFe0 SubNav__linkWrapperMargin--EbAv7'><a role='link' data-test='sub_navigaton_honor_code' tabindex='0' href='/honor-code?source=topbar' class='sg-text sg-text--small sg-text--link sg-text--bold sg-text--black sg-text--regular'>Honor code</a></span></div><div class='sg-flex sg-flex--full-height sg-flex--no-shrink sg-flex--align-items-center'><span class='SubNav__linkWrapper--3SFe0 SubNav__linkWrapperMargin--EbAv7'><a role='link' data-test='sub_navigaton_brainly_app' tabindex='0' href='/brainly-app?source=topbar' class='sg-text sg-text--small sg-text--link sg-text--bold sg-text--black sg-text--regular'>Brainly App</a></span></div><div class='sg-flex sg-flex--full-height sg-flex--no-shrink sg-flex--align-items-center'><span class='SubNav__linkWrapper--3SFe0'><a role='link' data-test='sub_navigaton_tutor' tabindex='0' href='/online-tutoring?source=topbar' class='sg-text sg-text--small sg-text--link sg-text--bold sg-text--black sg-text--regular'>Brainly Tutor</a></span></div></div></div></div></div></header></head><body class = 'notifcenter'><div class = 'selector'><select name='types' id='types'><option value='choose'>Category</option><option value='all'>All</option><option value='thanks'>Thanks ❤️</option><option value='comment'>Comments 💬</option><option value='answered'>Answers 📝</option><option value='lost'>Challenges 🤔</option><option value='expired'>Questions ❓</option><option value='brainliest'>Brainliest 👑</option><option value='deleted'>Deleted 🗑️</option></select></div></body>"
@@ -260,3 +475,13 @@ let promise = new Promise((resolve, reject) => {
 let result = await promise; // wait until the promise resolves (*)
 }
 f();
+var timeoutId = window.setTimeout(function() {
+    profile()
+  }, 5000);
+
+window.setInterval(function(){
+    //plan name
+    if (document.querySelector("div[data-testid = 'game_box_current_plan_facade'] > div[data-testid = 'game_box_current_plan'] > div > div[data-testid = 'game_box_current_plan_name']") !== null){
+        document.querySelector("div[data-testid = 'game_box_current_plan_facade'] > div[data-testid = 'game_box_current_plan'] > div > div[data-testid = 'game_box_current_plan_name']").innerHTML = "Brainly Companion";
+    }
+}, 1000)
