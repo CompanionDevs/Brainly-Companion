@@ -6,7 +6,7 @@
         {
         "matches": ["*://brainly.com/*","*://brainly.in/*","*://brainly.lat/*","*://brainly.ph/*","*://brainly.co.id/*","*://nosdevoirs.fr/*","*://brainly.pl/*","*://eodev.com/*","*://brainly.ro/*","*://Znanija.com/*"],
         "css": ["assets/homepage.css"],
-        "js": ["content-scripts/homepage.js"]
+        "js": ["content-scripts/homepage.js","content-scripts/homepagesettings.js"]
         },
         {
         "matches":
