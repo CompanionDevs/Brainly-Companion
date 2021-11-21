@@ -15,7 +15,7 @@ function profile(){
         <h1 class="sg-text-bit sg-text-bit--mint-primary" style="font-size: 22px;background: white;position: absolute;top: -21px;">Preset Themes</h1>
         <button id = "cherrybsm" class="sg-button sg-button--m sg-button--solid-light chrrybsm" style="background: #ffc7bf!important; color: white;"><span class="sg-button__text" style="font-weight: 900;background: #ffc7bf!important;color: white;font-size: 15px;margin: 10px;">Cherry Blossom</span></button>
         <button id = "hicont" class="sg-button sg-button--m sg-button--solid-light hicontrast" style="color: white; background: #4fc3f6!important;"><span class="sg-button__text" style="font-weight: 900;color: white;font-size: 15px;margin: 10px;">High-Contrast</span></button>
-        <button id = "hannah" class="sg-button sg-button--m sg-button--solid-light hicontrast" style="color: white; background: #4fc3f6!important;"><span class="sg-button__text" style="font-weight: 900;color: white;font-size: 15px;margin: 10px;">Hannah's Theme</span></button>
+        <button id = "hannah" class="sg-button sg-button--m sg-button--solid-light hicontrast" style="color: white; background: #1b4b70!important;"><span class="sg-button__text" style="font-weight: 900;color: white;font-size: 15px;margin: 10px;">Hannah's Theme</span></button>
     </div>
     <div class="customtheme" style="border: 2px solid #c3d1dd;border-radius: 20px;width: max-content;padding: 10px;margin-bottom: 0.5rem;position: relative;">
         <h1 class="sg-text-bit sg-text-bit--mustard-primary" style="font-size: 22px;position: absolute;top: -20px;background: white;">Custom Theme</h1>
