@@ -5,6 +5,11 @@
     "content_scripts":[
         {
         "matches": ["*://brainly.com/*","*://brainly.in/*","*://brainly.lat/*","*://brainly.ph/*","*://brainly.co.id/*","*://nosdevoirs.fr/*","*://brainly.pl/*","*://eodev.com/*","*://brainly.ro/*","*://Znanija.com/*"],
+        "js": ["content-scripts/theme.js"],
+        "run_at": "document_start"
+        },
+        {
+        "matches": ["*://brainly.com/*","*://brainly.in/*","*://brainly.lat/*","*://brainly.ph/*","*://brainly.co.id/*","*://nosdevoirs.fr/*","*://brainly.pl/*","*://eodev.com/*","*://brainly.ro/*","*://Znanija.com/*"],
         "css": ["assets/homepage.css"],
         "js": ["content-scripts/homepage.js","content-scripts/homepagesettings.js"]
         },
