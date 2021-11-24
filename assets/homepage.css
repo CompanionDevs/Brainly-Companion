@@ -4,6 +4,9 @@
     --profilecard : #4fc3f6;
     --askloadsec: #FBBE2E;
     --tablewidth: 500px;
+    --headfootelem: white;
+    --secelem: white;
+    --ansbutelem: white;
 }
 .sg-textarea{
     resize: both;
@@ -38,7 +41,7 @@ div[data-testid = "game_box_badges"]{
     display: none;
 }
 div[data-testid="game_box_extension"]{
-    border-bottom: 2px solid #ebf2f7!important;
+    border-top: 2px solid #ebf2f7!important;
 }
 button.theme.homebut{
     background: var(--headerfooter);
@@ -49,6 +52,9 @@ button.notif.homebut{
 button[id ^= "report"]{
     border-color: var(--askloadsec)!important;
     background: var(--askloadsec)!important;
+}
+button[id ^= "report"] > span > div > svg > g > g{
+    fill: var(--secelem)!important;
 }
 .homebut {
     background: transparent;
@@ -127,9 +133,12 @@ button[id ^= "report"]{
     border-color: var(--headerfooter)!important;
 }
 /*Ask question, load more and secondary buttons*/
-.sg-button--solid-blue, .sg-button--solid-light, .sg-button--solid-inverted{
+.sg-button--solid-blue, .sg-button--solid-light, .sg-button--solid-inverted, a[data-testid = "all_questions_ask_question_button"], .sg-button--solid-inverted > span, .sg-button--solid-blue > span{
     background: var(--askloadsec)!important;
-    color:white;
+    color:var(--secelem)!important;
+}
+.sg-button--solid-blue:hover, .sg-button--solid-light:hover, .sg-button--solid-inverted:hover{
+    filter: brightness(95%);
 }
 .sg-button--solid-blue:hover, .sg-button--outline:hover, .sg-button--solid-light:hover, #moderate-functions-panel .covering-text:hover{
     filter: brightness(95%);
@@ -167,12 +176,11 @@ background: var(--profilecard)!important;
 .sg-menu-list__element {
 border-bottom:0px!important 
 }
-.sg-button--outline{
+.sg-button--outline, button[alt = "Start"] > span{
     background: var(--ansbut)!important;
     border: 0px!important;
-    margin-right: 18px;
-    color: white;
-    fill: white;
+    color: var(--ansbutelem)!important;
+    fill: var(--ansbutelem)!important;
 }
 .brn-progress-tracking__tab--blue{
 border-color: #2fc3f6!important;
@@ -232,7 +240,7 @@ text-shadow: none;
 border-radius: 5px;
 }
 #moderation-all {
-border: 1px solid black!important;
+border: 1px solid #c3d1dd!important;
 border-radius: 20px;
 }
 #moderation-all .content .moderation-item{
@@ -273,16 +281,9 @@ background: none;
 #moderation-all .content .moderation-item .header{
 border-color:#c3d1dd;
 }
-.sg-button--solid-inverted:hover{
-background-color:#ecb127!important;
-border-color: #ecb127!important;
-}
 .mint-button-secondary--with-icon:hover{
 background:#2e2b2b!important ;
 border-color: #2e2b2b!important;
-}
-.sg-button--s .sg-button__text{
-color: white!important;
 }
 .brn-feed-item-wrapper{
 border-bottom-color: #C3D1DD!important;
@@ -351,6 +352,7 @@ border-color: var(--askloadsec)!important;
 
 .report_element:hover{
 background: var(--askloadsec)!important;
+color: var(--secelem);
 height: 100%;
 width: 100%;
 }
@@ -366,8 +368,17 @@ background: #2fc3f6!important;
 height: 100%;
 width: 100%;
 }
-.sg-text--link{
-color: black!important;
+div.brn-footer__links > div.brn-footer__links-column > div.sg-content-box > ul > li > div > a, div.brn-footer__links > div.brn-footer__links-column > div.sg-content-box > ul > li > div > span, div.brn-footer__links > div.brn-footer__links-column > div.sg-content-box > ul > li > span > a,div.sg-text-bit.sg-text-bit--small.sg-text-bit--black.brn-footer-legal-section__header, div.brn-footer__links.brn-footer--column > div > h3, div.brn-mobile-store__title > h3, section.brn-footer-legal-section > p, section.brn-footer-legal-section > p > a, a[data-test ^= "sub_navigaton"], a[data-testid ^= "navigation_add_question"], [role = "link"]{
+    color: var(--headfootelem)!important;
+}
+button[aria-label = "notification center"] > span > div > svg, button.theme.homebut > svg{
+    fill: var(--headfootelem)!important;
+}
+.SubNav__linkWrapperActive--2QitJ:before{
+    background: var(--headfootelem)!important;
+}
+button[data-testid = "game_box_current_plan_settings_button"] > span > div > svg{
+    fill:white!important;
 }
 .sg-text--gray{
 color: #323c45!important;
