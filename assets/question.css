@@ -49,16 +49,10 @@ div.brn-qpage-layout__right.js-aside-content > div > div.sg-flex.sg-flex--margin
 .brn-qpage-next-answer-box--expert-verified{
 border-color: #60d399!important;
 }
-.sg-button--solid-inverted{
-background-color: white!important;
-}
 .sg-button--icon-only.sg-button--s{
 fill: white!important;
 background: black!important;
-}
-.sg-button--solid-inverted{
-background: #fbbe2e!important;
-}
+
 .sg-box--light{
 background: #fbbe2e!important;
 }
