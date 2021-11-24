@@ -15,19 +15,40 @@ function profile(){
         <h1 class="sg-text-bit sg-text-bit--mint-primary" style="font-size: 22px;background: white;position: absolute;top: -21px;">Preset Themes</h1>
         <button id = "cherrybsm" class="sg-button sg-button--m sg-button--solid-light chrrybsm" style="background: #ffc7bf!important; color: white;"><span class="sg-button__text" style="font-weight: 900;background: #ffc7bf!important;color: white;font-size: 15px;margin: 10px;">Cherry Blossom</span></button>
         <button id = "hicont" class="sg-button sg-button--m sg-button--solid-light hicontrast" style="color: white; background: #4fc3f6!important;"><span class="sg-button__text" style="font-weight: 900;color: white;font-size: 15px;margin: 10px;">High-Contrast</span></button>
-        <button id = "hannah" class="sg-button sg-button--m sg-button--solid-light hicontrast" style="color: white; background: #1b4b70!important;"><span class="sg-button__text" style="font-weight: 900;color: white;font-size: 15px;margin: 10px;">Hannah's Theme</span></button>
+        <button id = "hannah" class="sg-button sg-button--m sg-button--solid-light hicontrast" style="color: white; background: #1b4b70!important;"><span class="sg-button__text" style="font-weight: 900;color: white;font-size: 15px;margin: 10px;">Dark Blue</span></button>
     </div>
     <div class="customtheme" style="border: 2px solid #c3d1dd;border-radius: 20px;width: max-content;padding: 10px;margin-bottom: 0.5rem;position: relative;">
         <h1 class="sg-text-bit sg-text-bit--mustard-primary" style="font-size: 22px;position: absolute;top: -20px;background: white;">Custom Theme</h1>
         <div class="custinp" style="width: max-content;display: flex;">
-            <div class="headerfooter" style="margin-right: 10px;display: flex;border-right: 1px solid #c3d1dd;"><h1 class="sg-text-bit sg-text-bit--small sg-text-bit--peach-primary">Header &amp; Footer</h1>
-                <input class = "color-input" type="color" style="width: 25px;margin-left: 5px;background: transparent;border: none;position: relative;top: -2px;" id="headerfooter" name="headerfooter" value="#ffffff">
+            <div class="headerfooter" style="margin-right: 10px;display: flex;border-right: 1px solid #c3d1dd;flex-direction: column;">
+                <div style="display: flex;">
+                    <h1 class="sg-text-bit sg-text-bit--small sg-text-bit--peach-primary" style="font-size: 20px;">Header &amp; Footer</h1>
+                    <input class="color-input" type="color" style="width: 25px;margin-left: 5px;background: transparent;border: none;position: relative;top: -2px;" id="headerfooter" name="headerfooter" value="#ffffff">
+                </div>
+                <div style="display: flex;">
+                    <h1 class="sg-text-bit sg-text-bit--small sg-text-bit--peach-primary" style="font-size: 14px;">Text</h1>
+                    <input class="text-input" type="color" style="width: 25px;margin-left: 5px;background: transparent;border: none;position: relative;top: -2px;" id="headerfooter" name="headerfooterelem" value="#ffffff">
+                </div>
             </div>
-            <div class="ansbut" style="display: flex;border-right: 1px solid #c3d1dd;margin-right: 7px;"><h1 class="sg-text-bit sg-text-bit--small sg-text-bit--peach-primary" style="color: #60d399;">button 1</h1>
-                <input class = "color-input" type="color" style="width: 25px;margin-left: 5px;background: transparent;border: none;position: relative;top: -2px;" id="ansbut" name="ansbut" value="#ffffff">
+            <div class="ansbut" style="display: flex;border-right: 1px solid #c3d1dd;margin-right: 7px;flex-direction: column;">
+                <div style="display: flex;">
+                    <h1 class="sg-text-bit sg-text-bit--small sg-text-bit--peach-primary" style="color: #60d399; font-size: 20px;">button 1</h1>
+                    <input class="color-input" type="color" style="width: 25px;margin-left: 5px;background: transparent;border: none;position: relative;top: -2px;" id="ansbut" name="ansbut" value="#ffffff">
+                </div>
+                <div style="display: flex;">
+                    <h1 class="sg-text-bit sg-text-bit--small sg-text-bit--peach-primary" style="color: #60d399; font-size: 14px;">text</h1>
+                    <input class="text-input" type="color" style="width: 25px;margin-left: 5px;background: transparent;border: none;position: relative;top: -2px;" id="ansbut" name="ansbut" value="#ffffff">
+                </div>
             </div>
-            <div class="askloadsec" style="display: flex;"><h1 class="sg-text-bit sg-text-bit--small sg-text-bit--peach-primary" style="color: #fbbe2e;">button 2</h1>
-                <input class = "color-input" type="color" style="width: 25px;margin-left: 5px;background: transparent;border: none;position: relative;top: -2px;" id="askloadsec" name="askloadsec" value="#ffffff">
+            <div class="askloadsec" style="display: flex;flex-direction: column;">
+                <div style="display: flex;">
+                    <h1 class="sg-text-bit sg-text-bit--small sg-text-bit--peach-primary" style="color: #fbbe2e; font-size: 20px;">button 2</h1>
+                    <input class="color-input" type="color" style="width: 25px;margin-left: 5px;background: transparent;border: none;position: relative;top: -2px;" id="askloadsec" name="askloadsec" value="#ffffff">
+                </div>
+                <div style="display: flex;">
+                    <h1 class="sg-text-bit sg-text-bit--small sg-text-bit--peach-primary" style="color: #fbbe2e;font-size: 14px;">text</h1>
+                    <input class="text-input" type="color" style="width: 25px;margin-left: 5px;background: transparent;border: none;position: relative;top: -2px;" id="askloadsec" name="askloadsec" value="#ffffff">
+                </div>
             </div>
         </div>
     </div>
@@ -49,9 +70,7 @@ function profile(){
 </div></div></div>`;
 
     //options on gamebox
-    if (document.querySelector("div[data-testid = 'game_box_container'] > div[data-testid = 'game_box_current_plan_facade']") !== null){
-            document.querySelector("div[data-testid = 'game_box_container'] > div[data-testid = 'game_box_current_plan_facade']").prepend(ext);
-        }
+        document.querySelector("div[data-testid = 'game_box']").appendChild(ext);
         let opscript = "false";
         let colscript = "false";
     try{
@@ -76,32 +95,59 @@ function profile(){
 }
 function colorbox(){
     let primary = document.getElementsByClassName("color-input")[0]
+    let primarytxt = document.getElementsByClassName("text-input")[0]
     let secondary = document.getElementsByClassName("color-input")[1]
+    let secondarytxt = document.getElementsByClassName("text-input")[1]
     let accent = document.getElementsByClassName("color-input")[2]
+    let accenttxt = document.getElementsByClassName("text-input")[2]
     let cherrybsm=  document.getElementById("cherrybsm")
     let savedPrimary = localStorage.getItem("--headerfooter")
+    let savedprimarytxt = localStorage.getItem("--headfootelem")
     let savedSecondary = localStorage.getItem("--askloadsec")
+    let savedsecondarytxt = localStorage.getItem("--secelem")
     let savedAccent = localStorage.getItem("--ansbut")
+    let savedaccenttxt = localStorage.getItem("--ansbutelem")
     if (savedPrimary !== undefined){
         primary.value = savedPrimary   
+    }
+    if (savedprimarytxt !== undefined){
+        primarytxt.value = savedprimarytxt 
     }
     if (savedSecondary !== undefined){
         secondary.value = savedSecondary   
     }
+    if (savedsecondarytxt !== undefined){
+        secondarytxt.value = savedsecondarytxt
+    }
     if (savedAccent !== undefined){
         accent.value = savedAccent   
+    }
+    if (savedaccenttxt !== undefined){
+        accenttxt.value = savedaccenttxt  
     }
     primary.addEventListener('change', function(){
         localStorage.setItem("--headerfooter",document.getElementsByClassName("color-input")[0].value);
         document.querySelector(':root').style.setProperty('--headerfooter',document.getElementsByClassName("color-input")[0].value);
     });
+    primarytxt.addEventListener('change', function(){
+        localStorage.setItem("--headfootelem",document.getElementsByClassName("text-input")[0].value);
+        document.querySelector(':root').style.setProperty('--headfootelem',document.getElementsByClassName("text-input")[0].value);
+    });
     secondary.addEventListener('change', function(){
         localStorage.setItem("--askloadsec",document.getElementsByClassName("color-input")[1].value);
         document.querySelector(':root').style.setProperty('--askloadsec',document.getElementsByClassName("color-input")[1].value);
     });
+    secondarytxt.addEventListener('change', function(){
+        localStorage.setItem("--secelem",document.getElementsByClassName("text-input")[1].value);
+        document.querySelector(':root').style.setProperty('--secelem',document.getElementsByClassName("text-input")[1].value);
+    });
     accent.addEventListener('change', function(){
         localStorage.setItem("--ansbut",document.getElementsByClassName("color-input")[2].value);
         document.querySelector(':root').style.setProperty('--ansbut',document.getElementsByClassName("color-input")[2].value);
+    });
+    accenttxt.addEventListener('change', function(){
+        localStorage.setItem("--ansbutelem",document.getElementsByClassName("text-input")[2].value);
+        document.querySelector(':root').style.setProperty('--ansbutelem',document.getElementsByClassName("text-input")[2].value);
     });
     cherrybsm.addEventListener("click", function(){
         localStorage.setItem('--headerfooter', '#ffc7bf');
