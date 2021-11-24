@@ -49,10 +49,6 @@ div.brn-qpage-layout__right.js-aside-content > div > div.sg-flex.sg-flex--margin
 .brn-qpage-next-answer-box--expert-verified{
 border-color: #60d399!important;
 }
-.sg-button--icon-only.sg-button--s{
-fill: white!important;
-background: black!important;
-
 .sg-box--light{
 background: #fbbe2e!important;
 }
@@ -70,6 +66,9 @@ border-color: #60d399!important;
 }
 .sg-label--mint-secondary-light{
 background-color: #60d399!important;
+}
+button[aria-label = "arrow_up"] > span > div > svg, button[aria-label = "arrow_down"] > span > div > svg, button[data-test = "comments-item-report-button"] > span > div > svg{
+    fill: var(--secelem)!important;
 }
 .brn-qpage-next-banner{
 border-color: #2fc3f6!important;
