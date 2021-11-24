@@ -154,11 +154,20 @@ function colorbox(){
         localStorage.setItem('--askloadsec', '#4fb3f6');
         document.querySelector(':root').style.setProperty('--headerfooter','#ffc7bf');
         document.querySelector(':root').style.setProperty('--askloadsec','#4fb3f6');
+        document.querySelector(':root').style.setProperty('--headfootelem','black');
+        document.querySelector(':root').style.setProperty('--secelem','white');
+        document.querySelector(':root').style.setProperty('--ansbutelem','white');
+        localStorage.setItem('--headfootelem', 'black');
+        localStorage.setItem('--secelem', 'white');
+        localStorage.setItem('--ansbutelem', 'white');
         localStorage.setItem('--ansbut', '#FF7968');
         document.querySelector(':root').style.setProperty('--ansbut','#FF7968'); 
         primary.value = "#ffc7bf";
         secondary.value = "#4fb3f6";
         accent.value = "#FF7968";
+        primarytxt.value = "black";
+        document.getElementsByClassName("text-input")[1].value = "#ffffff";
+        document.getElementsByClassName("text-input")[2].value = "#ffffff";
     });
     hicont.addEventListener("click", function(){
         localStorage.setItem('--headerfooter', '#4fb3f6');
@@ -166,21 +175,39 @@ function colorbox(){
         document.querySelector(':root').style.setProperty('--headerfooter','#4fb3f6');
         document.querySelector(':root').style.setProperty('--askloadsec','#fbbe2e');
         localStorage.setItem('--ansbut', '#FF7968');
+        localStorage.setItem('--headfootelem', 'black');
+        localStorage.setItem('--secelem', 'white');
+        localStorage.setItem('--ansbutelem', 'white');
+        document.querySelector(':root').style.setProperty('--headfootelem','black');
+        document.querySelector(':root').style.setProperty('--secelem','white');
+        document.querySelector(':root').style.setProperty('--ansbutelem','white');
         document.querySelector(':root').style.setProperty('--ansbut','#FF7968'); 
         primary.value = "#4fb3f6";
         secondary.value = "#fbbe2e";
         accent.value = "#FF7968";
+        primarytxt.value = "black";
+        document.getElementsByClassName("text-input")[1].value = "#ffffff";
+        document.getElementsByClassName("text-input")[2].value = "#ffffff";
     });
     hannah.addEventListener("click", function(){
         localStorage.setItem('--headerfooter', '#1b4b70');
         localStorage.setItem('--ansbut', '#4b7e94');
         localStorage.setItem('--askloadsec', '#4b7e94');
+        localStorage.setItem('--headfootelem', 'white');
+        localStorage.setItem('--secelem', 'white');
+        localStorage.setItem('--ansbutelem', 'white');
+        document.querySelector(':root').style.setProperty('--headfootelem','white');
+        document.querySelector(':root').style.setProperty('--secelem','white');
+        document.querySelector(':root').style.setProperty('--ansbutelem','white');
         document.querySelector(':root').style.setProperty('--headerfooter','#1b4b70');
         document.querySelector(':root').style.setProperty('--askloadsec','#4b7e94');
         document.querySelector(':root').style.setProperty('--ansbut','#4b7e94');
         primary.value = "#1b4b70";
         secondary.value = "#4b7e94";
         accent.value = "#4b7e94";
+        primarytxt.value = "#ffffff";
+        secondarytxt.value = "#ffffff";
+        accenttxt.value = "#ffffff";
     });
 }
 
