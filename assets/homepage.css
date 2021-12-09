@@ -619,4 +619,6 @@ button#ryverappended{
     margin-top: 5px;
     margin-bottom: 2px;
 }    
-  
+div[data-testid = "community_feed_product_navigation_wrapper"]{
+    display:none;
+}
