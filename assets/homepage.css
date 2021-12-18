@@ -4,7 +4,7 @@
     --profilecard : #4fc3f6;
     --askloadsec: #FBBE2E;
     --tablewidth: 500px;
-    --headfootelem: black;
+    --headfootelem: white;
     --secelem: white;
     --ansbutelem: white;
 }
@@ -193,7 +193,7 @@ background: none
 }
 #moderate-functions-panel .covering-text .text{
 top: 160px;
-color: white;
+color: white!important;
 }
 #moderate-functions-panel .covering-text .text.orange{
 color: white;
@@ -211,7 +211,10 @@ color: white;
 border-radius: 20px;
 }
 #moderation-all .top .sub-header{
-border: none
+border: none!important;
+}
+#moderate-functions-panel.moderator .icon{
+    display: none !important;
 }
 select{
 border: 1px solid black;
@@ -220,11 +223,27 @@ select, textarea, input[type=text], input[type=password], input[type=datetime], 
 color: black;
 border-radius: 20px;
 }
-#moderation-all .content .moderation-item .header{
-background-color: #C3D1DD;
-border-radius: 5px;
-border: 1px solid black;
+.moderation-item .header{
+    background-color: #f5f5f5;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    position:relative;
+    justify-content: center;
 }
+.content[style = "background-color: rgb(238, 170, 170);"]  .header{
+    background-color:rgb(238, 170, 170)!important;
+}
+/*
+.moderation-item .content[style = "background-color: rgb(238, 170, 170);"]{
+    background-color: #f5f5f5!important;
+}
+.moderation-item:hover .content[style = "background-color: rgb(238, 170, 170);"]{
+    background-color: #efefef!important;
+}
+*/
 #html .mint .mint-header .mint-input{
 border: 2px solid #2fc3f6;
 border-radius: 20px;
@@ -241,27 +260,64 @@ border-radius: 5px;
 }
 #moderation-all {
 border: 1px solid #c3d1dd!important;
-border-radius: 20px;
+border-radius: 30px;
+}
+#content{
+    border-radius:30px!important;
+    width: 100%!important;
 }
 #moderation-all .content .moderation-item{
-border: none;
+border: none!important;
+height:max-content!important;
+}
+.moderation-item:hover .header{
+    background-color: #efefef!important;
+}
+.moderation-item:not(:hover) .header{
+    background-color: #f5f5f5!important;
+}
+.moderation-item:hover{
+    transform: scale(1.05);
+    z-index:999;
+    transition-duration: 200ms;
 }
 #moderation-all .content .moderation-item .content{
-border-radius: 7px;
-border: 1px solid #C3D1DD;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    height: 235px!important;;
 }
 #moderation-all .content .moderation-item .header .qa{
-color: white;
+    color: white;
+    font-weight: 900;
+    height: 24px;
+    font-size: 16px;
+    z-index: 5;
+    border-radius: 50px;
+    width: 25px;
+    text-shadow:none!important;
+    position: absolute;
+    display: flex;
+    left:10px;
+    top:3px;
+    background: black;
+    padding: 0px;
+    justify-content: center;
+    align-items: center;
+}
+.moderation-item .header .pull-right{
+    height: 30px;
+    width: 30px;
+    border-radius: 30px;
+    z-index: 5;
+    position: absolute;
+    top: 15%;
+    right: 5%;
 }
 #moderation-all .content .loader{
 border-radius: 20px;
 }
 #moderation-all .content .loader > .loadMore{
 color: black;
-}
-#content{
-border-radius: 20px;
-padding-bottom: 0px
 }
 #html .mint #profile #main-left .personal_info{
 border: 2px solid black;
@@ -277,9 +333,6 @@ background: #1a1a1a!important;
 }
 .brn-challenge-confetti__container:after, .brn-challenge-confetti__container:before{
 background: none;
-}
-#moderation-all .content .moderation-item .header{
-border-color:#c3d1dd;
 }
 .mint-button-secondary--with-icon:hover{
 background:#2e2b2b!important ;
@@ -367,6 +420,11 @@ width: 100%;
 background: #2fc3f6!important;
 height: 100%;
 width: 100%;
+}
+#moderation-all .top .header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 div.brn-footer__links > div.brn-footer__links-column > div.sg-content-box > ul > li > div > a, div.brn-footer__links > div.brn-footer__links-column > div.sg-content-box > ul > li > div > span, div.brn-footer__links > div.brn-footer__links-column > div.sg-content-box > ul > li > span > a,div.sg-text-bit.sg-text-bit--small.sg-text-bit--black.brn-footer-legal-section__header, div.brn-footer__links.brn-footer--column > div > h3, div.brn-mobile-store__title > h3, section.brn-footer-legal-section > p, section.brn-footer-legal-section > p > a, a[data-test ^= "sub_navigaton"], a[data-testid ^= "navigation_add_question"], [role = "link"]{
     color: var(--headfootelem)!important;
@@ -619,6 +677,4 @@ button#ryverappended{
     margin-top: 5px;
     margin-bottom: 2px;
 }    
-div[data-testid = "community_feed_product_navigation_wrapper"]{
-    display:none;
-}
+ 
