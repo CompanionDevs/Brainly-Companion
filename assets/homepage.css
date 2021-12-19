@@ -200,7 +200,6 @@ color: white;
 }
 #moderate-functions-panel .content-scroll {
     background: white;
-    border-color: #000000;
     border-radius: 15px!important;
 }
 #moderate-functions-panel .content-scroll a {
@@ -210,8 +209,12 @@ color: white;
     color: black;
 border-radius: 20px;
 }
+.span5{
+    width:253px!important;
+}
 #moderation-all .top .sub-header{
 border: none!important;
+background-color: transparent!important
 }
 #moderate-functions-panel.moderator .icon{
     display: none !important;
@@ -236,14 +239,7 @@ border-radius: 20px;
 .content[style = "background-color: rgb(238, 170, 170);"]  .header{
     background-color:rgb(238, 170, 170)!important;
 }
-/*
-.moderation-item .content[style = "background-color: rgb(238, 170, 170);"]{
-    background-color: #f5f5f5!important;
-}
-.moderation-item:hover .content[style = "background-color: rgb(238, 170, 170);"]{
-    background-color: #efefef!important;
-}
-*/
+
 #html .mint .mint-header .mint-input{
 border: 2px solid #2fc3f6;
 border-radius: 20px;
@@ -259,32 +255,61 @@ text-shadow: none;
 border-radius: 5px;
 }
 #moderation-all {
-border: 1px solid #c3d1dd!important;
-border-radius: 30px;
+    border: 1px solid #c3d1dd!important;
+    border-radius: 0px!important;
+    padding-left:6%!important;
+    padding-right:6%!important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 #content{
-    border-radius:30px!important;
+    border-radius:0px!important;
     width: 100%!important;
+    margin-top:-35px!important;
+}
+#html .mint #footer{
+    display:none!important;
 }
 #moderation-all .content .moderation-item{
 border: none!important;
 height:max-content!important;
 }
+#moderation-all .content{
+    max-width:940px!important;
+}
 .moderation-item:hover .header{
     background-color: #efefef!important;
-}
-.moderation-item:not(:hover) .header{
-    background-color: #f5f5f5!important;
 }
 .moderation-item:hover{
     transform: scale(1.05);
     z-index:999;
     transition-duration: 200ms;
 }
+#html .mint #container{
+    width:100%!important;
+}
+#moderation-all .content .moderation-item .header .task-url{
+    font-size: 22px!important;
+}
+#moderation-all .content .moderation-item .content .body{
+    padding: 4px;
+    display: flex;
+    word-wrap: break-word;
+    flex-direction: column;
+    align-items: center;
+}
 #moderation-all .content .moderation-item .content{
-    border-bottom-left-radius: 25px;
-    border-bottom-right-radius: 25px;
-    height: 235px!important;;
+    height: 235px!important;
+    padding-top: 25px;
+    margin-top: -25px;
+    border-radius: 25px!important;
+}
+#moderation-all .content .moderation-item .header{
+    padding: 2px;
+    height: 20px;
+    z-index: 5;
+    background-color: transparent!important;
 }
 #moderation-all .content .moderation-item .header .qa{
     color: white;
@@ -677,4 +702,3 @@ button#ryverappended{
     margin-top: 5px;
     margin-bottom: 2px;
 }    
- 
