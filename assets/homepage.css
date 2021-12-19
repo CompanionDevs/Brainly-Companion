@@ -263,10 +263,13 @@ border-radius: 5px;
     flex-direction: column;
     align-items: center;
 }
-#content{
+#content, div#content-old{
     border-radius:0px!important;
     width: 100%!important;
     margin-top:-35px!important;
+}
+div#content-old{
+    padding-left:200px!important;
 }
 #html .mint #footer{
     display:none!important;
