@@ -157,6 +157,9 @@ background: var(--profilecard)!important;
     animation-iteration-count: 0;
     background: none;
 }
+#content-old > table.threadList.textTop{
+    width:70%!important;
+}
 div[data-testid = "community_feed_product_navigation_wrapper"]{
     display: none!important;
 }
@@ -272,13 +275,16 @@ border-radius: 5px;
     flex-direction: column;
     align-items: center;
 }
-#content, div#content-old{
+#content{
     border-radius:0px!important;
     width: 100%!important;
     margin-top:-35px!important;
 }
 div#content-old{
+    margin-top: -35px;
+    border-radius:0px!important;
     padding-left:200px!important;
+    width:83%!important;
 }
 #html .mint #footer{
     display:none!important;
