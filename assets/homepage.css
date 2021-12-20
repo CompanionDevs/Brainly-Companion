@@ -152,11 +152,20 @@ background: var(--profilecard)!important;
 .brn-moderation-panel__content {
     background: white!important;
     border-radius:30px;
-    width: 230px!important;
 }
 .brn-placeholder__animation {
     animation-iteration-count: 0;
     background: none;
+}
+div[data-testid = "community_feed_product_navigation_wrapper"]{
+    display: none!important;
+}
+div[data-testid = "attachments-viewer-wrapper"]{
+    padding:1px!important;
+}
+div[data-testid = "question_box_header_side_label"] > div > div > svg,div[data-testid = "question_box_header_side_label"] > div:nth-child(2){
+    fill: var(--headfootelem)!important;
+    color: var(--headfootelem)!important;
 }
 .brn-qpage-next-answer-box {
     border: 2px solid #000000;
@@ -705,3 +714,4 @@ button#ryverappended{
     margin-top: 5px;
     margin-bottom: 2px;
 }    
+  
