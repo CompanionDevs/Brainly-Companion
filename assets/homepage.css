@@ -310,6 +310,7 @@ border-radius: 5px;
     min-height:64px;
     width: 100%;
     padding:8px;
+    margin-bottom:8px;
     border-radius: 10px;
     display:flex;
 }
