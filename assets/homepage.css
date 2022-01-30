@@ -275,6 +275,53 @@ border-radius: 5px;
     flex-direction: column;
     align-items: center;
 }
+
+/*notifications*/
+#notifmodal > div{
+    display:flex;
+    flex-direction:column;
+}
+.notifications{
+    flex:1;
+    background: #e1eaf1;
+    border-radius: 10px;
+    margin: 5px;
+    overflow-y:scroll;
+}
+.notif-elem{
+    height: 80px;
+    border-radius: 10px;
+    width: 240px;
+    box-shadow: 0px 1px 3px 0px #c3d1dd;
+    background: white;
+    cursor:pointer;
+}
+.notification-filters{
+    display:flex;
+    justify-content: space-evenly;
+    margin-top:10px;
+}
+.notifications{
+    padding:0.5rem;
+}
+.notification{
+    background: white;
+    height: max-content;
+    min-height:64px;
+    width: 100%;
+    padding:8px;
+    border-radius: 10px;
+    display:flex;
+}
+.notification .pfp{
+    width:max-content;
+}
+.notification .notif-content{
+    flex:1;
+}
+.notification-filters > div{
+    cursor:pointer;
+}
 #content{
     border-radius:0px!important;
     width: 100%!important;
