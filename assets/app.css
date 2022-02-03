@@ -1,3 +1,6 @@
 .sg-box--light{
 background-color: white!important;
 }
+.sg-text--no-wrap{
+  text-transform: capitalize;
+}
