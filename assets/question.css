@@ -27,6 +27,9 @@ div.sg-flex.sg-flex--column.brn-answer-editor-layer__attachment-grabber-containe
 button[date-testid = "ask_question_btn"] > span > div > svg{
     fill: white!important;
 }
+.brn-rich-content>h3, .brn-rich-content>ol li, .brn-rich-content>p, .brn-rich-content>ul li{
+    font-size:1.1rem;
+}
 .sg-box--light{
 border-color: #c3d1dd!important;
 background: white!important;
