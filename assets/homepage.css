@@ -128,7 +128,7 @@ button[id ^= "report"] > span > div > svg > g > g{
     border: 3px solid black !important;
   }
 /*Header and Footer color*/
-.HeaderController__innerwrap--1RjnZ, .HeaderController__subnav--1hTF0, .sg-header__container, header[class^="HeaderController"], .mint-header, .brn-header-placeholder__subnav, .brn-header-placeholder__inner-wrapper, .HeaderController__subnavWrapper--1mfz7:after, .HeaderController__subnavWrapper--1WODB:after, .brn-new-footer, .HeaderController__header--3BXr6, .HeaderController__innerwrap--1RjnZ, .HeaderController__limitWidth--2ORAB, .brn-header-placeholder, .brn-header, .brn-footer, .HeaderController__subnav--gvKms, .sg-label--gray-secondary-light, #html .mint .mint-header, #moderation-all .content .loader, .HeaderController__subnav--gvKms.js-ads-top-offset-element, #html .mint .mint-header, #moderate-functions-panel .covering-text, #html .mint #footer{
+.HeaderController__innerwrap--1RjnZ, .HeaderController__subnav--1hTF0, .sg-header__container, div[class^="Header-module"], div[data-testid ^= "navigation_header"], .mint-header, .brn-header-placeholder__subnav, .brn-header-placeholder__inner-wrapper, .HeaderController__subnavWrapper--1mfz7:after, .HeaderController__subnavWrapper--1WODB:after, .brn-new-footer, .HeaderController__header--3BXr6, .HeaderController__innerwrap--1RjnZ, .HeaderController__limitWidth--2ORAB, .brn-header-placeholder, .brn-header, .brn-footer, .HeaderController__subnav--gvKms, .sg-label--gray-secondary-light, #html .mint .mint-header, #moderation-all .content .loader, .HeaderController__subnav--gvKms.js-ads-top-offset-element, #html .mint .mint-header, #moderate-functions-panel .covering-text, #html .mint #footer{
     background: var(--headerfooter)!important;
     border-color: var(--headerfooter)!important;
 }
@@ -166,7 +166,7 @@ div[data-testid = "community_feed_product_navigation_wrapper"]{
 div[data-testid = "attachments-viewer-wrapper"]{
     padding:1px!important;
 }
-div[data-testid = "question_box_header_side_label"] > div > div > svg,div[data-testid = "question_box_header_side_label"] > div:nth-child(2){
+div[data-testid = "question_box_header_side_label"] > div > div > svg, button[aria-label = "progress tracking panel"] path,button[aria-label = "notification center"] path, div[data-testid = "question_box_header_side_label"] > div:nth-child(2){
     fill: var(--headfootelem)!important;
     color: var(--headfootelem)!important;
 }
